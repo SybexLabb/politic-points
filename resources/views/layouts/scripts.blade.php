@@ -3,7 +3,7 @@
 <script src="{{asset('vendors/jquery/jquery-3.3.1.min.js')}}"></script>
 <script src="{{asset('vendors/jquery-ui/jquery-ui.min.js')}}"></script>
 <script src="{{asset('vendors/moment/moment.js')}}"></script>
-<script src="{{asset('vendors/bootstrap/js/bootstrap.bundle.min.js')}}"></script>    
+<script src="{{asset('vendors/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('vendors/slimscroll/jquery.slimscroll.min.js')}}"></script>
 <script src="{{asset('js/app.js')}}"></script>
 
@@ -42,8 +42,8 @@
 <script src="{{asset('vendors/jquery-flot/jquery.flot.drawSeries.js')}}"></script>
 <script src="{{asset('vendors/jquery-flot/jquery.flot.uiConstants.js')}}"></script>
 <script src="{{asset('vendors/jquery-flot/jquery.flot.legend.js')}}"></script>
-<script src="{{asset('vendors/jquery-flot/jquery.flot.pie.js')}}"></script>        
-<script src="{{asset('vendors/chartjs/Chart.min.js')}}"></script>  
+<script src="{{asset('vendors/jquery-flot/jquery.flot.pie.js')}}"></script>
+<script src="{{asset('vendors/chartjs/Chart.min.js')}}"></script>
 <script src="{{asset('vendors/jquery-jvectormap/jquery-jvectormap-2.0.3.min.js')}}"></script>
 <script src="{{asset('vendors/jquery-jvectormap/jquery-jvectormap-world-mill.js')}}"></script>
 <script src="{{asset('vendors/jquery-jvectormap/jquery-jvectormap-de-merc.js')}}"></script>
@@ -98,12 +98,12 @@
       $('.sidebar').addClass('active')
     }
   })
-  
+
 
   // $(document).ready(function(){
   //   var description = CKEDITOR.replace( 'description' );
   //   description.on( 'change', function( evt ) {
-  //       $("#description").text( evt.editor.getData())    
+  //       $("#description").text( evt.editor.getData())
   //   });
   // })
   @if(Session::has('message'))

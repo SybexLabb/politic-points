@@ -87,7 +87,7 @@
                     alert('No image has been updated');
                 }
             }
-            
+
         })
         // $('document').ready(function() {
         //     $('#blah').click(function() {

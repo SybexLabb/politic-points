@@ -10,7 +10,6 @@
             <div class="navbar-header h4 mb-0 text-center h-100 collapse-menu-bar">
                 <a href="javascript:void(0)" class="sidebarCollapse" id="collapse"><i class="icon-menu"></i></a>
             </div>
-            
 
 
             <div class="navbar-right ml-auto h-100">
@@ -41,7 +40,7 @@
                         <div class="dropdown-menu border dropdown-menu-right p-0">
                             <a href="{{ route('user_profile') }}" class="dropdown-item px-2 align-self-center d-flex">
                                 <span class="icon-pencil mr-2 h6 mb-0"></span> Edit Profile Info</a>
-
+                            
                             <a href="{{ route('update_password') }}"
                                 class="dropdown-item px-2 align-self-center d-flex">
                                 <span class="icon-pencil mr-2 h6 mb-0"></span> Update Password</a>

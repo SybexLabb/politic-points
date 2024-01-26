@@ -81,7 +81,7 @@ class GenericController extends Controller
                 }
                 $body .= " value='" . $role->attribute . "_1'>
                                   <label class='custom-control-label' for='customCheck1" . $key . "'>1</label></div></td>
-                            
+
                             <td><div class='custom-control custom-checkbox'>
                                   <input type='checkbox' name='assignee[]' class='custom-control-input' id='customCheck2" . $key . "' ";
                 if (in_array($role->attribute . "_2", $checker)) {
@@ -246,7 +246,7 @@ class GenericController extends Controller
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-12 col-sm-6 col-12" id="role-label">
                             <div class="form-group end-date">
                                 <label for="end-date" class="">Description:</label>
@@ -285,7 +285,127 @@ class GenericController extends Controller
                     </div>
                 </form>';
             return $body;
-        } else {
+        } elseif ($slug == 'presidential-score') {
+            $route_url = route('crud_generator', 'presidential_score');
+            $body = '<form class="" id="generic-form" enctype="multipart/form-data" method="POST" action="' . $route_url . '">
+                    <input type="hidden" name="_token" value="' . csrf_token() . '">
+                    <input type="hidden" name="record_id" id="record_id" value="">
+                    <div class="row">
+                        <div id="assignrole"></div>
+                        <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                            <div class="form-group start-date">
+                                <label for="start-date" class="">Name:</label>
+                                <div class="d-flex">
+                                    <input id="name" placeholder="Name" name="name" class="form-control" type="text" autocomplete="off" required/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-6" id="rank-label">
+                            <div class="form-group start-date">
+                                <label for="start-date" class="">Image:</label>
+                                <div class="d-flex">
+                                    <input type="file" id="image" accept="image/*" name="image" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-6" id="rank-label">
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-6" id="rank-label">
+                            <div class="form-group start-date">
+                                <div class="d-flex">
+                                    <td><img id="image-add" style="width:80px;height:80px;display:none;" src=""></td>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                            <div class="form-group start-date">
+                                <label for="start-date" class="">Score:</label>
+                                <div class="d-flex">
+                                    <input id="score" placeholder="Score" name="score" class="form-control" type="text" autocomplete="off" required/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                            <div class="form-group start-date">
+                                <label for="start-date" class="">Date:</label>
+                                <div class="d-flex">
+                                    <input id="date" placeholder="Date" name="date" class="form-control" type="date" autocomplete="off" required/>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>';
+            return $body;
+        } elseif ($slug == 'watch-list') {
+            $route_url = route('crud_generator', 'watch_list');
+            $body = '<form class="" id="generic-form" enctype="multipart/form-data" method="POST" action="' . $route_url . '">
+                    <input type="hidden" name="_token" value="' . csrf_token() . '">
+                    <input type="hidden" name="record_id" id="record_id" value="">
+                    <div class="row">
+                        <div id="assignrole"></div>
+                        <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                            <div class="form-group start-date">
+                                <label for="start-date" class="">title:</label>
+                                <div class="d-flex">
+                                    <input id="title" placeholder="title" name="title" class="form-control" type="text" autocomplete="off" required/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                            <div class="form-group start-date">
+                                <label for="start-date" class="">name:</label>
+                                <div class="d-flex">
+                                    <input id="name" placeholder="name" name="name" class="form-control" type="text" autocomplete="off" required/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-6 col-12" id="role-label">
+                            <div class="form-group end-date">
+                                <label for="end-date" class="">Description:</label>
+                                <div class="d-flex">
+                                    <textarea id="description" required name="description" class="form-control" ></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-sm-6 col-6" id="rank-label">
+                            <div class="form-group start-date">
+                                <label for="start-date" class="">Image:</label>
+                                <div class="d-flex">
+                                    <input type="file" id="image" accept="image/*" name="image" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-6" id="rank-label">
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-6" id="rank-label">
+                            <div class="form-group start-date">
+                                <div class="d-flex">
+                                    <td><img id="image-add" style="width:80px;height:80px;display:none;" src=""></td>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                            <div class="form-group start-date">
+                                <label for="start-date" class="">Date:</label>
+                                <div class="d-flex">
+                                    <input id="date" placeholder="Date" name="date" class="form-control" type="date" autocomplete="off" required/>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>';
+            return $body;
+        }else {
             return $body;
         }
     }
@@ -316,8 +436,8 @@ class GenericController extends Controller
                     foreach ($loop as $key => $val) {
                         $i = asset($val->image);
                         $body .= '<tr>
-                                          <td>' . ++$key . '</td> 
-                                          <td>' . $val->name . '</td> 
+                                          <td>' . ++$key . '</td>
+                                          <td>' . $val->name . '</td>
                                           <td><img style="width:80px;height:80px;" src="' . $i . '"></td>
                                           <td>' . date("M d,Y", strtotime($val->created_at)) . '</td>';
                         if (Helper::can_edit($slug) || Helper::can_delete($slug)) {
@@ -379,12 +499,12 @@ class GenericController extends Controller
                         $i = asset($val->image);
                         $category = category::where('is_active', 1)->where('is_deleted', 0)->where('id', $val->category_id)->first();
                         $body .= '<tr>
-                                          <td>' . ++$key . '</td> 
-                                          <td>' . $val->name . '</td> 
-                                          <td>' . $category->name . '</td> 
-                                          <td>$' . $val->price . '</td> 
-                                          <td>' . $val->description . '</td> 
-                                          <td>' . $val->specification . '</td> 
+                                          <td>' . ++$key . '</td>
+                                          <td>' . $val->name . '</td>
+                                          <td>' . $category->name . '</td>
+                                          <td>$' . $val->price . '</td>
+                                          <td>' . $val->description . '</td>
+                                          <td>' . $val->specification . '</td>
                                           <td><img style="width:80px;height:80px;" src="' . $i . '"></td>
                                           <td>' . date("M d,Y", strtotime($val->created_at)) . '</td>
                                           <td>
@@ -442,8 +562,8 @@ class GenericController extends Controller
                 if ($loop) {
                     foreach ($loop as $key => $val) {
                         $body .= '<tr>
-                                          <td>' . ++$key . '</td> 
-                                          <td>' . $val->name . '</td> 
+                                          <td>' . ++$key . '</td>
+                                          <td>' . $val->name . '</td>
                                           <td>' . date("M d,Y", strtotime($val->created_at)) . '</td>
                                           <td>
                                              <button type="button" class="btn btn-primary editor-form" data-edit_id= "' . $val->id . '" data-name= "' . $val->name . '" >Edit</button>
@@ -470,7 +590,218 @@ class GenericController extends Controller
             $resp['body'] = $body;
             $resp['script'] = $script;
             return $resp;
-        } else {
+        } elseif ($slug == "contact-us") {
+            $data = 'App\Models\contact_us';
+            $loop = $data::where("is_active", 1)->where("is_deleted", 0)->get();
+            if ($loop) {
+                $body = '<thead>
+                                       <tr>
+                                          <th>S. No</th>
+                                          <th>First Name</th>
+                                          <th>Last Name</th>
+                                          <th>Phone</th>
+                                          <th>Email</th>
+                                          <th>Message</th>
+                                          <th>Creation Date</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>';
+                if ($loop) {
+                    foreach ($loop as $key => $val) {
+                        $i = asset($val->image);
+                        $body .= '<tr>
+                                          <td>' . ++$key . '</td>
+                                          <td>' . $val->first_name . '</td>
+                                          <td>' . $val->last_name . '</td>
+                                          <td>' . $val->phone . '</td>
+                                          <td>' . $val->email . '</td>
+                                          <td>' . $val->message . '</td>
+                                          <td>' . date("M d,Y", strtotime($val->created_at)) . '</td>
+                                       </tr>';
+                    }
+                }
+                $body .= '<thead>
+                                       <tr>
+                                            <th>S. No</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Phone</th>
+                                            <th>Email</th>
+                                            <th>Message</th>
+                                            <th>Creation Date</th>
+                                       </tr>
+                                       </thead>
+                                       <tbody>';
+               }
+            $script = '';
+            $resp['body'] = $body;
+            $resp['script'] = $script;
+            return $resp;
+        } elseif ($slug == "presidential-score") {
+            $data = 'App\Models\presidential_score';
+            $loop = $data::where("is_active", 1)->where("is_deleted", 0)->get();
+            if ($loop) {
+                $body = '<thead>
+                                       <tr>
+                                          <th>S. No</th>
+                                          <th>Name</th>
+                                          <th>Score</th>
+                                          <th>Date</th>
+                                          <th>Image</th>
+                                          <th>Creation Date</th>
+                                          <th>Action</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>';
+                if ($loop) {
+                    foreach ($loop as $key => $val) {
+                        $i = asset($val->image);
+                        $body .= '<tr>
+                                          <td>' . ++$key . '</td>
+                                          <td>' . $val->name . '</td>
+                                          <td>' . $val->score . '</td>
+                                          <td>' . $val->date . '</td>
+                                          <td><img style="width:80px;height:80px;" src="' . $i . '"></td>
+                                          <td>' . date("M d,Y", strtotime($val->created_at)) . '</td>
+                                          <td>
+                                             <button type="button" class="btn btn-primary editor-form" data-edit_id= "' . $val->id . '" data-name= "' . $val->name . '" data-score= "' . $val->score . '" data-date= "' . $val->date . '" data-image= "' . $i . '">Edit</button>
+                                             <button type="button" class="btn btn-danger delete-record" data-model="' . $data . '" data-id= "' . $val->id . '" >Delete</button>
+                                          </td>
+                                       </tr>';
+                    }
+                }
+                $body .= '</tbody>
+                                    <tfoot>
+                                       <tr>
+                                       <th>S. No</th>
+                                       <th>Name</th>
+                                       <th>Score</th>
+                                       <th>Date</th>
+                                       <th>Image</th>
+                                       <th>Creation Date</th>
+                                       <th>Action</th>
+                                       </tr>
+                                    </tfoot>';
+            }
+            $script = '$("body").on("click" ,".editor-form",function(){
+                                        $("#name").val($(this).data("name"))
+                                        $("#score").val($(this).data("score"))
+                                        $("#date").val($(this).data("date"))
+                                        $("#record_id").val($(this).data("edit_id"))
+                                        $("#image").removeAttr("required");
+                                        $("#image-add").css("display","");
+                                        $("#image-add").attr("src",$(this).data("image"));
+                                        $("#addevent").modal("show")
+                                    })';
+            $resp['body'] = $body;
+            $resp['script'] = $script;
+            return $resp;
+        }  elseif ($slug == "volunteer") {
+            $data = 'App\Models\\' . $slug;
+            $loop = $data::where("is_active", 1)->where("is_deleted", 0)->get();
+            if ($loop) {
+                $body = '<thead>
+                                       <tr>
+                                          <th>S. No</th>
+                                          <th>First_name</th>
+                                          <th>Last_name</th>
+                                          <th>Phone</th>
+                                          <th>Email</th>
+                                          <th>Age</th>
+                                          <th>Education</th>
+                                          <th>Message</th>
+                                          <th>Created_at</th>
+
+                                       </tr>
+                                    </thead>
+                                    <tbody>';
+                if ($loop) {
+                    foreach ($loop as $key => $val) {
+                        $i = asset($val->image);
+                        $body .= '<tr>
+                                          <td>' . ++$key . '</td>
+                                          <td>' . $val->first_name . '</td>
+                                          <td>' . $val->last_name . '</td>
+                                          <td>' . $val->phone . '</td>
+                                          <td>' . $val->email . '</td>
+                                          <td>' . $val->age . '</td>
+                                          <td>' . $val->education . '</td>
+                                          <td>' . $val->message . '</td>
+                                          <td>' . $val->created_at . '</td>
+
+
+                                       </tr>';
+                    }
+                }
+                $body .= '</tbody>
+                                    <tfoot>
+
+                                    </tfoot>';
+            }
+            $script = '';
+            $resp['body'] = $body;
+            $resp['script'] = $script;
+            return $resp;
+        }  elseif ($slug == "watch-list") {
+            $data = 'App\Models\watch_list';
+            $loop = $data::where("is_active", 1)->where("is_deleted", 0)->get();
+            if ($loop) {
+                $body = '<thead>
+                                       <tr>
+                                          <th>S. No</th>
+                                          <th>Name</th>
+                                          <th>desciption</th>
+                                          <th>Date</th>
+                                          <th>Image</th>
+                                          <th>Creation Date</th>
+                                          <th>Action</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>';
+                if ($loop) {
+                    foreach ($loop as $key => $val) {
+                        $i = asset($val->image);
+                        $body .= '<tr>
+                                          <td>' . ++$key . '</td>
+                                          <td>' . $val->name . '</td>
+                                          <td>' . $val->description . '</td>
+                                          <td>' . $val->date . '</td>
+                                          <td><img style="width:80px;height:80px;" src="' . $i . '"></td>
+                                          <td>' . date("M d,Y", strtotime($val->created_at)) . '</td>
+                                          <td>
+                                             <button type="button" class="btn btn-primary editor-form" data-edit_id= "' . $val->id . '" data-name= "' . $val->name . '" data-description= "' . $val->description . '" data-date= "' . $val->date . '" data-image= "' . $i . '">Edit</button>
+                                             <button type="button" class="btn btn-danger delete-record" data-model="' . $data . '" data-id= "' . $val->id . '" >Delete</button>
+                                          </td>
+                                       </tr>';
+                    }
+                }
+                $body .= '</tbody>
+                                    <tfoot>
+                                       <tr>
+                                       <th>S. No</th>
+                                          <th>Name</th>
+                                          <th>desciption</th>
+                                          <th>Date</th>
+                                          <th>Image</th>
+                                          <th>Creation Date</th>
+                                          <th>Action</th>
+                                       </tr>
+                                    </tfoot>';
+            }
+            $script = '$("body").on("click" ,".editor-form",function(){
+                                        $("#name").val($(this).data("name"))
+                                        $("#description").val($(this).data("description"))
+                                        $("#date").val($(this).data("date"))
+                                        $("#record_id").val($(this).data("edit_id"))
+                                        $("#image").removeAttr("required");
+                                        $("#image-add").css("display","");
+                                        $("#image-add").attr("src",$(this).data("image"));
+                                        $("#addevent").modal("show")
+                                    })';
+            $resp['body'] = $body;
+            $resp['script'] = $script;
+            return $resp;
+        }else {
             return $body;
         }
     }

@@ -1,10 +1,10 @@
-@extends('layouts.main') 
+@extends('layouts.main')
 @section('content')
 <!-- START: Main Content-->
 <main>
     <div class="container-fluid site-width" id="mypitch">
         <!-- START: Card Data-->
-        
+
         <!-- Add Event Modal -->
             <div id="addevent" class="modal fade" role="dialog">
                 <div class="modal-dialog modal-lg text-left">
@@ -17,7 +17,7 @@
                             @if($eloquent == '')
                             <form class="" id="generic-form" method="POST" action="{{route('generic_submit')}}">
                                 @csrf
-                                
+
                                 <div class="row">
                                     <div class="col-md-12 col-sm-6 col-12">
                                         <div class="form-group start-date">
@@ -27,7 +27,7 @@
                                                     @if(isset($slug) && $slug == 'roles')
                                                     <option value="roles" selected="">Roles</option>
                                                     @endif
-                                                    
+
                                                 </select>
                                             </div>
                                         </div>
@@ -78,12 +78,12 @@
                             {!! $form !!}
                             @endif
                         </div>
-                        
+
                         <div class="modal-footer">
-                            
+
                             <button id="discard" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
                             <button id="add-generic" type="submit" class="btn btn-primary eventbutton">Create</button>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -129,11 +129,11 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    
+
                                     <table id="example" class="display table dataTable table-striped table-bordered">
                                         {!! $table['body'] !!}
                                     </table>
-                                    
+
                                 </div>
                             </div>
                             </div>
@@ -141,20 +141,20 @@
                     </div>
                 @endif
             @endif
-        
+
         <!-- END: Card DATA-->
     </div>
 </main>
 <!-- END: Content-->
 
-@endsection 
-@section('css') 
+@endsection
+@section('css')
 <style type="text/css">
     .start-date .js-example-basic-multiple + span {width:100% !important;}
 </style>
 <link rel="stylesheet" href="{{asset('vendors/datatable/css/dataTables.bootstrap4.min.css')}}" />
 <link rel="stylesheet" href="{{asset('vendors/datatable/buttons/css/buttons.bootstrap4.min.css')}}"/>
-@endsection 
+@endsection
 @section('js')
 <script src="{{asset('vendors/datatable/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('vendors/datatable/js/dataTables.bootstrap4.min.js')}}"></script>
@@ -163,14 +163,14 @@
 <script type="text/javascript">
 
 
-    $(document).ready(function(){
-        var description = CKEDITOR.replace( 'description');
-        description.on( 'change', function( evt ) {
-            $("#description").text( evt.editor.getData())
-        });
+    // $(document).ready(function(){
+    //     var description = CKEDITOR.replace( 'description');
+    //     description.on( 'change', function( evt ) {
+    //         $("#description").text( evt.editor.getData())
+    //     });
 
-    })
-    
+    // })
+
 </script>
 @if($eloquent != '' && $table != null)
 <script id="scriptor" type="text/javascript">
@@ -178,7 +178,7 @@
 </script>
 @endif
 <script type="text/javascript">
-   
+
    $("#add-generic").click(function(f){
         var has_error = 0
         // $("#generic-form").find("select,textarea,input")
@@ -212,7 +212,7 @@
     $("#addpitch").click(function(){
         var dup = $(this).closest("#generic-form").find("#pitchrepeted").html();
         var count = $(this).closest("#generic-form").find("#pitchcount").val();
-        
+
         if (count<5) {
             $("#pitchvar").append(dup);
             count=+count+1
@@ -257,7 +257,7 @@
         $.ajax({
             type: 'post',
             dataType : 'json',
-            url: "{{route('delete_record')}}",        
+            url: "{{route('delete_record')}}",
             data: {id:id, model:model, is_active:is_active, is_deleted:is_deleted , _token: '{{csrf_token()}}'},
             success: function (response) {
                 if (response.status == 0) {
@@ -283,12 +283,12 @@
       // trim spaces at start and end of string
       str = str.replace(/^\s+|\s+$/gm,'');
       // replace space with dash/hyphen
-      str = str.replace(/\s+/g, '-');   
+      str = str.replace(/\s+/g, '-');
       document.getElementById("slug").value = str;
       //return str;
     }
 
-    
+
 
     $("#attribute").click(function(){
         var otype = $(this).children("option:selected").val();
@@ -325,16 +325,16 @@
         $.ajax({
             type: 'post',
             dataType : 'json',
-            url: "{{route('role_assign_modal')}}",        
+            url: "{{route('role_assign_modal')}}",
             data: {role_id, role_id , _token: '{{csrf_token()}}'},
             success: function (response) {
                 if (response.body == "") {
                     toastr.error("No rights found");
                 }else{
-                    $('#body_modal').html(response.body);  
-                    $("#addrole-modal").modal("show");    
+                    $('#body_modal').html(response.body);
+                    $("#addrole-modal").modal("show");
                 }
-                
+
             }
         });
     });
