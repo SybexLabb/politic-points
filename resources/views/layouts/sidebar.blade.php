@@ -35,6 +35,26 @@
 
                     </ul>
                 </li>
+                <li class="dropdown"><a href="#"><i class="icon-layers mr-1"></i> Web CMS</a>
+                    <ul>
+                        <li
+                            class="dropdown {{ Request::path() == 'web-config' || Request::path() == 'logo-favicon' ? 'active' : '' }}">
+                            <a href="#"><i class="icon-options"></i>Website CMS</a>
+                            <ul class="sub-menu">
+                                <li class="{{ Request::path() == 'banners-cms' ? 'active' : '' }}"><a
+                                        href="{{ route('banners.cms') }}"><i class="icon-energy"></i> Banners CMS</a></li>
+                            </ul>
+                            <ul class="sub-menu">
+                                <li class="{{ Request::path() == 'home-cms' ? 'active' : '' }}"><a
+                                        href="{{ route('home.cms') }}"><i class="icon-energy"></i> Homepage CMS</a></li>
+                            </ul>
+                            <ul class="sub-menu">
+                                <li class="{{ Request::path() == 'politics-cms' ? 'active' : '' }}"><a
+                                        href="{{ route('politics.cms') }}"><i class="icon-energy"></i> Politics CMS</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
             @endif
         </ul>
     </div>

@@ -25,7 +25,7 @@
             <div class="row gx-xxl-3 gx-xl-3 gx-lg-3 align-items-center">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <div class="img-main">
-                        <img src="images/about.jpg" class="img-fluid thumb" alt="">
+                        <img src="{{asset('web/images/about.jpg')}}" class="img-fluid thumb" alt="">
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">

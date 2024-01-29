@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GenericController;
+use App\Http\Controllers\WebCmsController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -77,6 +78,13 @@ Route::group(['middleware' => 'auth'], function()
 
     Route::get('web-config', [HomeController::class , 'web_config'])->name('web_config');
     Route::post('config-update', [HomeController::class , 'config_update'])->name('config_update');
+
+    Route::post('cms-generator', [WebCmsController::class, 'cms_generator'])->name('cms.generator');
+    Route::get('banners-cms', [WebCmsController::class, 'banners'])->name('banners.cms');
+    Route::get('home-cms', [WebCmsController::class, 'home'])->name('home.cms');
+    Route::get('politics-cms', [WebCmsController::class, 'politics'])->name('politics.cms');
+
+
 
 });
 
