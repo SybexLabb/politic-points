@@ -25,36 +25,30 @@
                 <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
                     <div class="desc">
                         <div class="img-main">
-                            <img src="{{asset('web/images/politic-detail.webp')}}" class="img-fluid thumb" alt="">
+                            <img src="{{asset($senator->image)}}" class="img-fluid thumb" alt="">
                         </div>
-                        <h3>John Doe</h3>
-                        <h4>Senator from Montana</h4>
-                        <h4>Democratic Party</h4>
+                        <h3>{{ $senator->name }}</h3>
+                        <h4>{{$senator->city}}</h4>
+                        <h4>{{$senator->party}}</h4>
                         <h6>Score and Trends:</h6>
                         <ul class="d-flex flex-row flex-wrap">
-                            <li class="w-50 fw-bold">Current Score: 728</li>
-                            <li class="w-50 fw-bold">Weekly Range: 720-735</li>
-                            <li class="w-50 fw-bold">YTD Range: 715-740</li>
-                            <li class="w-50 fw-bold">1Y Range: 690-780</li>
-                            <li class="w-50 fw-bold">All-Time High (ATH): 810</li>
-                            <li class="w-50 fw-bold">All-Time Low (ATL): 630</li>
+                            <li class="w-50 fw-bold">Current Score: {{$senator->current_score}}</li>
+                            <li class="w-50 fw-bold">Weekly Range:{{$senator->weekly_range}}</li>
+                            <li class="w-50 fw-bold">YTD Range: {{$senator->ytd_range}}</li>
+                            <li class="w-50 fw-bold">1Y Range: {{$senator->y1_range}}</li>
+                            <li class="w-50 fw-bold">All-Time High (ATH): {{$senator->all_time_high}}</li>
+                            <li class="w-50 fw-bold">All-Time Low (ATL): {{ $senator->all_time_low}}</li>
                         </ul>
                         <h5>Performance Metrics</h5>
                         <ul class="d-flex flex-row flex-wrap">
                             <li class="w-50 fw-bold">
-                                <h6>Political Presence:</h6> News Mentions: High
+                                <h6>Political Presence:</h6> News Mentions: {{$senator->news_mentions}}
                             </li>
                             <li class="w-50 fw-bold">
-                                <h6>Political Engagement:</h6> Social Media Posts: Medium
+                                <h6>Political Engagement:</h6> Social Media Posts: {{$senator->social_posts	}}
                             </li>
                         </ul>
-                        <p>John Doe has served the people of Montana in the U.S. Senate since 1990. A dedicated public
-                            servant, Doe has a long history of working on bipartisan legislation, with a strong focus on
-                            conservation and agriculture. Prior to his Senate service, he was the Mayor of Missoula and
-                            has been a champion for rural healthcare and community development.Prior to his Senate
-                            service, he was the Mayor of Missoula and has been a champion for rural healthcare and
-                            community development.Prior to his Senate service, he was the Mayor of Missoula and has been
-                            a champion for rural healthcare and community development.</p>
+                        <p>{{$senator->description}}</p>
                         <h4>Legislative Activity</h4>
                         <ul>
                             <h5>Recent Legislation</h5>
@@ -84,8 +78,8 @@
                                 <div class="box-area">
                                     <h6>Contact Information:</h6>
                                     <ul>
-                                        <li><a class="icon phn-icon" href="tel:+1234567890">+123-456-7890</a></li>
-                                        <li><a class="icon em-icon" href="mailto:abc@gmail.com">abc@gmail.com</a></li>
+                                        <li><a class="icon phn-icon" href="tel:{{$senator->contact}}">{{$senator->contact}}</a></li>
+                                        <li><a class="icon em-icon" href="mailto:{{$senator->email}}">{{$senator->email}}</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -93,11 +87,11 @@
                                 <div class="box-area">
                                     <h6>Social Media Links:</h6>
                                     <ul class="d-flex flex-row">
-                                        <li><a class="social-icon" href="void:;"><i
+                                        <li><a class="social-icon" href="{{$senator->twitter}}" target="_blank"><i
                                                     class="fa-brands fa-twitter"></i></a></li>
-                                        <li><a class="social-icon" href="void:;"><i
+                                        <li><a class="social-icon" href="{{$senator->facebook}}" target="_blank"><i
                                                     class="fa-brands fa-facebook-f"></i></a></li>
-                                        <li><a class="social-icon" href="void:;"><i
+                                        <li><a class="social-icon" href="{{$senator->linkedin}}" target="_blank"><i
                                                     class="fa-brands fa-linkedin-in"></i></a></li>
                                     </ul>
                                 </div>

@@ -405,7 +405,228 @@ class GenericController extends Controller
                     </div>
                 </form>';
             return $body;
-        }else {
+        }elseif ($slug == 'senators') {
+            $route_url = route('crud_generator', 'senators');
+            $body = '<form class="" id="generic-form" enctype="multipart/form-data" method="POST" action="' . $route_url . '">
+                    <input type="hidden" name="_token" value="' . csrf_token() . '">
+                    <input type="hidden" name="record_id" id="record_id" value="">
+
+
+                    <div class="row">
+                        <div id="assignrole"></div>
+                        <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                            <div class="form-group start-date">
+                                <label for="start-date" class="">Name:</label>
+                                <div class="d-flex">
+                                    <input id="name" placeholder="Name" name="name" class="form-control" type="text" autocomplete="off" required/>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-sm-6 col-6" id="rank-label">
+                            <div class="form-group start-date">
+                                <label for="start-date" class="">Image:</label>
+                                <div class="d-flex">
+                                    <input type="file" id="image" accept="image/*" name="image" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-6" id="rank-label">
+                        <div class="form-group start-date">
+                            <div class="d-flex">
+                                <td><img id="image-add" style="width:80px;height:80px;display:none;" src=""></td>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                        <div class="form-group start-date">
+                            <label for="start-date" class="">city:</label>
+                            <div class="d-flex">
+                                <input id="city" placeholder="city" name="city" class="form-control" type="text" autocomplete="off" required/>
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                        <div class="form-group start-date">
+                            <label for="start-date" class="">party:</label>
+                            <div class="d-flex">
+                                <input id="party" placeholder="party" name="party" class="form-control" type="text" autocomplete="off" required/>
+                            </div>
+                        </div>
+                        </div>
+
+
+
+                        <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                        <div class="form-group start-date">
+                            <label for="start-date" class="">current_score:</label>
+                            <div class="d-flex">
+                                <input id="current_score" placeholder="current_score" name="current_score" class="form-control" type="text" autocomplete="off" required/>
+                            </div>
+                       </div>
+                       </div>
+
+                       <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                       <div class="form-group start-date">
+                           <label for="start-date" class="">weekly_range:</label>
+                           <div class="d-flex">
+                               <input id="weekly_range" placeholder="weekly_range" name="weekly_range" class="form-control" type="text" autocomplete="off" required/>
+                           </div>
+                      </div>
+                      </div>
+
+
+                      <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                      <div class="form-group start-date">
+                          <label for="start-date" class="">ytd_range:</label>
+                          <div class="d-flex">
+                              <input id="ytd_range" placeholder="ytd_range" name="ytd_range" class="form-control" type="text" autocomplete="off" required/>
+                          </div>
+                     </div>
+                     </div>
+
+
+                     <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                     <div class="form-group start-date">
+                         <label for="start-date" class="">1y_range:</label>
+                         <div class="d-flex">
+                             <input id="1y_range" placeholder="1y_range" name="y1_range" class="form-control" type="text" autocomplete="off" required/>
+                         </div>
+                    </div>
+                    </div>
+
+
+                    <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                    <div class="form-group start-date">
+                        <label for="start-date" class="">all_time_high:</label>
+                        <div class="d-flex">
+                            <input id="all_time_high" placeholder="all_time_high" name="all_time_high" class="form-control" type="text" autocomplete="off" required/>
+                        </div>
+                   </div>
+                   </div>
+
+
+                   <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                   <div class="form-group start-date">
+                       <label for="start-date" class="">all_time_low:</label>
+                       <div class="d-flex">
+                           <input id="all_time_low" placeholder="all_time_low" name="all_time_low" class="form-control" type="text" autocomplete="off" required/>
+                       </div>
+                  </div>
+                  </div>
+
+
+                  <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                  <div class="form-group start-date">
+                      <label for="start-date" class="">news_mentions:</label>
+                      <div class="d-flex">
+                          <input id="news_mentions" placeholder="news_mentions" name="news_mentions" class="form-control" type="text" autocomplete="off" required/>
+                      </div>
+                 </div>
+                 </div>
+
+
+
+
+
+                 <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                 <div class="form-group start-date">
+                     <label for="start-date" class="">social_posts:</label>
+                     <div class="d-flex">
+                         <input id="social_posts" placeholder="social_posts" name="social_posts" class="form-control" type="text" autocomplete="off" required/>
+                     </div>
+                </div>
+                </div>
+
+
+
+                <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                  <div class="form-group start-date">
+                      <label for="start-date" class="">description:</label>
+                      <div class="d-flex">
+                          <textarea id="description" placeholder="description" name="description" class="form-control" type="text" autocomplete="off" required/></textarea>
+                      </div>
+                 </div>
+                 </div>
+
+
+
+                 <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                  <div class="form-group start-date">
+                      <label for="start-date" class="">contact:</label>
+                      <div class="d-flex">
+                          <input id="contact" placeholder="contact" name="contact" class="form-control" type="text" autocomplete="off" required/>
+                      </div>
+                 </div>
+                 </div>
+
+
+
+                 <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                  <div class="form-group start-date">
+                      <label for="start-date" class="">email:</label>
+                      <div class="d-flex">
+                          <input id="email" placeholder="email" name="email" class="form-control" type="text" autocomplete="off" required/>
+                      </div>
+                 </div>
+                 </div>
+
+
+
+
+                 <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                  <div class="form-group start-date">
+                      <label for="start-date" class="">twitter:</label>
+                      <div class="d-flex">
+                          <input id="twitter" placeholder="twitter" name="twitter" class="form-control" type="text" autocomplete="off" required/>
+                      </div>
+                 </div>
+                 </div>
+
+
+
+                 <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                  <div class="form-group start-date">
+                      <label for="start-date" class="">facebook:</label>
+                      <div class="d-flex">
+                          <input id="facebook" placeholder="facebook" name="facebook" class="form-control" type="text" autocomplete="off" required/>
+                      </div>
+                 </div>
+                 </div>
+
+
+
+                 <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                  <div class="form-group start-date">
+                      <label for="start-date" class="">linkedin:</label>
+                      <div class="d-flex">
+                          <input id="linkedin" placeholder="linkedin" name="linkedin" class="form-control" type="text" autocomplete="off" required/>
+                      </div>
+                 </div>
+                 </div>
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+                </form>';
+            return $body;
+        }
+        else {
             return $body;
         }
     }
@@ -696,7 +917,7 @@ class GenericController extends Controller
             $resp['body'] = $body;
             $resp['script'] = $script;
             return $resp;
-        }  elseif ($slug == "volunteer") {
+        } elseif ($slug == "volunteer") {
             $data = 'App\Models\\' . $slug;
             $loop = $data::where("is_active", 1)->where("is_deleted", 0)->get();
             if ($loop) {
@@ -742,7 +963,7 @@ class GenericController extends Controller
             $resp['body'] = $body;
             $resp['script'] = $script;
             return $resp;
-        }  elseif ($slug == "watch-list") {
+        } elseif ($slug == "watch-list") {
             $data = 'App\Models\watch_list';
             $loop = $data::where("is_active", 1)->where("is_deleted", 0)->get();
             if ($loop) {
@@ -769,7 +990,7 @@ class GenericController extends Controller
                                           <td><img style="width:80px;height:80px;" src="' . $i . '"></td>
                                           <td>' . date("M d,Y", strtotime($val->created_at)) . '</td>
                                           <td>
-                                             <button type="button" class="btn btn-primary editor-form" data-edit_id= "' . $val->id . '" data-name= "' . $val->name . '" data-description= "' . $val->description . '" data-date= "' . $val->date . '" data-image= "' . $i . '">Edit</button>
+                                             <button type="button" class="btn btn-primary editor-form" data-edit_id= "' . $val->id . '" data-title= "' . $val->title .'" data-name= "' . $val->name . '" data-description= "' . $val->description . '" data-date= "' . $val->date . '" data-image= "' . $i . '">Edit</button>
                                              <button type="button" class="btn btn-danger delete-record" data-model="' . $data . '" data-id= "' . $val->id . '" >Delete</button>
                                           </td>
                                        </tr>';
@@ -801,9 +1022,128 @@ class GenericController extends Controller
             $resp['body'] = $body;
             $resp['script'] = $script;
             return $resp;
-        }else {
+        } elseif ($slug == "senators") {
+            $data = 'App\Models\senators';
+            $loop = $data::where("is_active", 1)->where("is_deleted", 0)->get();
+            if ($loop) {
+                $body = '<thead>
+                                       <tr>
+                                          <th>S. No</th>
+                                          <th>Name</th>
+                                          <th>city</th>
+                                          <th>party</th>
+                                          <th>Image</th>
+                                          <th>Current Score</th>
+                                          <th>Weekly Range</th>
+                                          <th>YTD Range</th>
+                                          <th>1y Range</th>
+                                          <th>All Time High</th>
+                                          <th>All Time Low</th>
+                                          <th>News Mentions</th>
+                                          <th>Social Posts</th>
+                                          <th>Description</th>
+                                          <th>Contact</th>
+                                          <th>Email</th>
+                                          <th>Twitter</th>
+                                          <th>Facebook</th>
+                                          <th>Linkedin</th>
+                                          <th>Creation Date</th>
+                                          <th>Action</th>
+
+                                       </tr>
+                                    </thead>
+                                    <tbody>';
+                if ($loop) {
+                    foreach ($loop as $key => $val) {
+                        $i = asset($val->image);
+                        $body .= '<tr>
+                                          <td>' . ++$key . '</td>
+                                          <td>' . $val->name . '</td>
+                                          <td>' . $val->city . '</td>
+                                          <td>' . $val->party . '</td>
+                                          <td><img style="width:80px;height:80px;" src="' . $i . '"></td>
+                                          <td>' . $val->current_score . '</td>
+                                          <td>' . $val->weekly_range . '</td>
+                                          <td>' . $val->ytd_range . '</td>
+                                          <td>' . $val->y1_range . '</td>
+                                          <td>' . $val->all_time_high . '</td>
+                                          <td>' . $val->all_time_low . '</td>
+                                          <td>' . $val->news_mentions . '</td>
+                                          <td>' . $val->social_posts . '</td>
+                                          <td>' . $val->description . '</td>
+                                          <td>' . $val->contact . '</td>
+                                          <td>' . $val->email . '</td>
+                                          <td>' . $val->twitter . '</td>
+                                          <td>' . $val->facebook . '</td>
+                                          <td>' . $val->linkedin . '</td>
+
+                                          <td>' . date("M d,Y", strtotime($val->created_at)) . '</td>
+                                          <td>
+                                             <button type="button" class="btn btn-primary editor-form" data-edit_id= "' . $val->id . '" data-name= "' . $val->name . '" data-city= "' . $val->city . '" data-party= "' . $val->party .'" data-current_score	= "' . $val->current_score	 .'" data-weekly_range= "' . $val->weekly_range .'" data-ytd_range= "' . $val->ytd_range .'" data-y1_range= "' . $val->y1_range .'" data-all_time_high	= "' . $val->all_time_high	 .'" data-all_time_low	= "' . $val->all_time_low	 .'" data-news_mentions= "' . $val->news_mentions .'" data-social_posts= "' . $val->social_posts . '" data-contact= "' . $val->contact . '" data-email	= "' . $val->email . '" data-twitter= "' . $val->twitter .   '" data-facebook= "' . $val->facebook . '" data-linkedin= "' . $val->linkedin .'" data-description= "' . $val->description . '" data-date= "' . $val->date . '" data-image= "' . $i . '">Edit</button>
+                                             <a href="' . route('legislative-activity', $val->id) . '" class="btn btn-secondary">Add Legislation</a>
+                                             <button type="button" class="btn btn-danger delete-record" data-model="' . $data . '" data-id= "' . $val->id . '" >Delete</button>
+                                             </td>
+                                       </tr>';
+                    }
+                }
+                $body .= '</tbody>
+                                    <tfoot>
+                                       <tr>
+                                       <th>S. No</th>
+                                          <th>Name</th>
+                                          <th>city</th>
+                                          <th>party</th>
+                                          <th>Image</th>
+                                          <th>Current Score</th>
+                                          <th>Weekly Range</th>
+                                          <th>YTD Range</th>
+                                          <th>1y Range</th>
+                                          <th>All Time High</th>
+                                          <th>All Time Low</th>
+                                          <th>News Mentions</th>
+                                          <th>Social Posts</th>
+                                          <th>Description</th>
+                                          <th>Contact</th>
+                                          <th>Email</th>
+                                          <th>Twitter</th>
+                                          <th>Facebook</th>
+                                          <th>Linkedin</th>
+                                          <th>Creation Date</th>
+                                          <th>Action</th>
+                                       </tr>
+                                    </tfoot>';
+            }
+            $script = '$("body").on("click" ,".editor-form",function(){
+                                        $("#name").val($(this).data("name"))
+                                        $("#city").val($(this).data("city"))
+                                        $("#party").val($(this).data("party"))
+                                        $("#current_score").val($(this).data("current_score"))
+                                        $("#weekly_range").val($(this).data("weekly_range"))
+                                        $("#ytd_range").val($(this).data("ytd_range"))
+                                        $("#1y_range").val($(this).data("y1_range"))
+                                        $("#all_time_high").val($(this).data("all_time_high"))
+                                        $("#all_time_low").val($(this).data("all_time_low"))
+                                        $("#news_mentions").val($(this).data("news_mentions"))
+                                        $("#social_posts").val($(this).data("social_posts"))
+                                        $("#description").val($(this).data("description"))
+                                        $("#contact").val($(this).data("contact"))
+                                        $("#email").val($(this).data("email"))
+                                        $("#twitter").val($(this).data("twitter"))
+                                        $("#facebook").val($(this).data("facebook"))
+                                        $("#linkedin").val($(this).data("linkedin"))
+                                        $("#record_id").val($(this).data("edit_id"))
+                                        $("#image").removeAttr("required");
+                                        $("#image-add").css("display","");
+                                        $("#image-add").attr("src",$(this).data("image"));
+                                        $("#addevent").modal("show")
+                                    })';
+            $resp['body'] = $body;
+            $resp['script'] = $script;
+            return $resp;
+        } else {
             return $body;
         }
+
     }
 
 
@@ -818,7 +1158,7 @@ class GenericController extends Controller
             $s = strtolower($s);
             $post_feilds['slug'] = $s;
         }
-        $extension = array("jpeg", "jpg", "png", "jfif");
+        $extension = array("jpeg", "jpg", "png", "jfif", "webp");
         if (isset($request->image)) {
             $file = $request->image;
             $ext = $request->image->getClientOriginalExtension();
@@ -855,6 +1195,7 @@ class GenericController extends Controller
             return redirect()->back()->with('error', "Error Code: " . $error);
         }
     }
+    
     public function delete_record(Request $request)
     {
         $token_ignore = ['_token' => '', 'id' => '', 'model' => ''];

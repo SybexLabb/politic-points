@@ -28,7 +28,7 @@ Route::get('/login', [IndexController::class, 'login'])->name('login');
 // Route::get('/', [IndexController::class, 'login'])->name('index');
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/news', [IndexController::class, 'news'])->name('news');
-Route::get('/political-detail', [IndexController::class, 'political_detail'])->name('political-detail');
+Route::get('/political-detail/{id}', [IndexController::class, 'political_detail'])->name('political-detail');
 Route::get('/political-point', [IndexController::class, 'political_point'])->name('political-point');
 Route::get('/politics', [IndexController::class, 'politics'])->name('politics');
 Route::get('/presidential-score-detail', [IndexController::class, 'presidential_score_detail'])->name('presidential-score-detail');
@@ -37,6 +37,8 @@ Route::post('/volunteer-submit', [IndexController::class, 'volunteer_submit'])->
 Route::get('/watch-list', [IndexController::class, 'watch_list'])->name('watch-list');
 Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
 Route::post('/contact-submit', [IndexController::class, 'contact_submit'])->name('contact-submit');
+
+Route::get('/legislative-activity/{id}', [IndexController::class, 'legislative_activity'])->name('legislative-activity');
 
 
 

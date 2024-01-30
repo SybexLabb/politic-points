@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\contact_us;
 use App\Models\presidential_score;
+use App\Models\recent_legislation;
+use App\Models\senators;
 use App\Models\volunteer;
 use App\Models\watch_list;
 use Illuminate\Http\Request;
@@ -38,16 +40,18 @@ class IndexController extends Controller
         return view('auth.login');
     }
     public function index(){
+        $senators = senators::where('is_active',1)->where('is_deleted',0)->take(4)->orderBy('id', 'DESC')->get();
         $watch_list = watch_list::where('is_active',1)->where('is_deleted',0)->get();
 
         $presidential_score = presidential_score::where('is_active',1)->where('is_deleted',0)->get();
-        return view('web.pages.index', compact('presidential_score','watch_list'))->with('title','Index');
+        return view('web.pages.index', compact('presidential_score','watch_list', 'senators'))->with('title','Index');
     }
     public function news(){
         return view('web.pages.news')->with('title','news');
 }
-public function political_detail(){
-    return view('web.pages.political-detail')->with('title','political-detail');
+public function political_detail($id){
+    $senator = senators::find($id);
+    return view('web.pages.political-detail', compact('senator'))->with('title','political-detail');
 
 }
 public function political_point(){
@@ -106,6 +110,14 @@ public function contact_submit(Request $request)
 
 
     return redirect()->back()->with('message','Contact Inquiry Submitted');
+}
+
+
+public function legislative_activity($id)
+{
+    $recent_legislation = senators::find($id);
+    $recent_legislation1 = recent_legislation::all();
+    return view('web.pages.legislative-activity', compact('id', 'recent_legislation1'))->with('title','legislative-activity');
 }
 
 
