@@ -38,7 +38,7 @@ Route::get('/watch-list', [IndexController::class, 'watch_list'])->name('watch-l
 Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
 Route::post('/contact-submit', [IndexController::class, 'contact_submit'])->name('contact-submit');
 
-Route::get('/legislative-activity/{id}', [IndexController::class, 'legislative_activity'])->name('legislative-activity');
+
 
 
 
@@ -85,6 +85,10 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('banners-cms', [WebCmsController::class, 'banners'])->name('banners.cms');
     Route::get('home-cms', [WebCmsController::class, 'home'])->name('home.cms');
     Route::get('politics-cms', [WebCmsController::class, 'politics'])->name('politics.cms');
+    Route::get('presedential-score', [WebCmsController::class, 'presedential_score'])->name('presedential.cms');
+
+
+    Route::get('/legislative-activity/{id}', [HomeController::class, 'legislative_activity'])->name('legislative-activity');
 
 
 

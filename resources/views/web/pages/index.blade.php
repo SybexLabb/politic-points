@@ -274,7 +274,7 @@
                             <img src="{{asset('web/images/politic-detail.webp')}}" class="img-fluid thumb" alt="">
                         </div>
                         <div class="desc">
-                            <a href="presidential-score-detail.php">Joe Biden</a>
+                            <a href="{{route('presidential-score-detail')}}">Joe Biden</a>
                             <h6>Score: 681/1000</h6>
                         </div>
                     </div>

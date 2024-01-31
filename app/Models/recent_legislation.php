@@ -13,7 +13,7 @@ class recent_legislation extends Model
 
     public function senators(){
 
-        return $this->hasOne(senators::class);
+        return $this->belongsTo(senators::class, 'senator_id');
     }
 
 

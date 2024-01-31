@@ -25,7 +25,7 @@
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <div class="desc">
                     <div class="img-main">
-                        <img src="asset{{('web/images/politic-detail.webp')}}" class="img-fluid thumb" alt="">
+                        <img src="{{asset('web/images/politic-detail.webp')}}" class="img-fluid thumb" alt="">
                     </div>
                         <h4>President Biden - Economic Outlook and Politik Points</h4>
                         <h6>Current Politik Point Score: 681/1000</h6>

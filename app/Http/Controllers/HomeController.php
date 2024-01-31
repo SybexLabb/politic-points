@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\attributes;
 use App\Models\config;
 use App\Models\logo;
+use App\Models\senators;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 
@@ -220,5 +221,13 @@ class HomeController extends Controller
             $config->save();
         }
         return redirect()->back()->with('message', 'Setting has been updated.');
+    }
+
+    public function legislative_activity($id)
+    {
+
+        $senator = senators::find($id);
+
+        return view('roles.pages.legislative-activity', compact('id', 'senator'))->with('title', 'Legislative Activity');
     }
 }

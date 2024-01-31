@@ -52,6 +52,11 @@
                                 <li class="{{ Request::path() == 'politics-cms' ? 'active' : '' }}"><a
                                         href="{{ route('politics.cms') }}"><i class="icon-energy"></i> Politics CMS</a></li>
                             </ul>
+                            <ul class="sub-menu">
+                                <li class="{{ Request::path() == 'presedential-cms' ? 'active' : '' }}"><a
+                                        href="{{ route('presedential.cms') }}"><i class="icon-energy"></i> Presedential CMS</a></li>
+                            </ul>
+
                         </li>
                     </ul>
                 </li>

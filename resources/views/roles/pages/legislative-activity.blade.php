@@ -63,6 +63,7 @@
                                     </div>
                                     <div class="media-body align-self-center pl-3">
                                         <span class="mb-0 h6 font-w-600">Add Senator Legislation</span>
+                                        <h6>{{ $senator->name }}</h6>
                                         <br />
                                         <p class="mb-0 font-w-500 h6"></p>
                                     </div>
@@ -72,7 +73,9 @@
                     </div>
                 </div>
             </div>
-
+            @php
+                $data = 'App\Models\recent_legislation';
+            @endphp
             <div class="row">
                 <div class="col-12 mt-3">
                     <div class="card">
@@ -86,7 +89,7 @@
                                 <table id="example" class="display table dataTable table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>S. No</th>
+                                            <th>S.no</th>
                                             <th>Title</th>
                                             <th>Description</th>
                                             <th>Creation Date</th>
@@ -94,25 +97,29 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($recent_legislation1 as $value)
+                                        @foreach ($senator->recentLegislations as $key => $value)
                                             <tr>
-                                                <td>{{ $value->senator_id }}</td>
+                                                <td>{{ ++$key }}</td>
                                                 <td>{{ $value->title }}</td>
                                                 <td>{{ $value->description }}</td>
                                                 <td>{{ $value->created_at }}</td>
                                                 <td>
                                                     <button class="btn btn-primary edit-button"
-                                                    data-record_id="{{ $value->id }}"
-                                                    data-title="{{ $value->title }}"
-                                                    data-description="{{ $value->description }}"
-                                                    >Edit</button>
+                                                        data-record_id="{{ $value->id }}"
+                                                        data-title="{{ $value->title }}"
+                                                        data-description="{{ $value->description }}">Edit</button>
+
+                                                    <button class="btn btn-danger delete-record"
+                                                        data-record_id="{{ $value->id }}"
+                                                        data-model = "{{ $data }}">Delete</button>
+
                                                 </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>S. No</th>
+                                            <th>S.no</th>
                                             <th>Title</th>
                                             <th>Description</th>
                                             <th>Creation Date</th>
@@ -173,12 +180,41 @@
             $("#addevent").modal("show")
         })
 
-        $(document).on('click','.edit-button', function(){
+        $(document).on('click', '.edit-button', function() {
             $('#record_id').val($(this).data('record_id'));
             $('#title').val($(this).data('title'));
             $('#description').val($(this).data('description'));
             $('#add-generic').text('Update')
             $("#addevent").modal("show")
-        });
+        })
+
+        $("body").on("click", ".delete-record", function() {
+            var id = $(this).data("record_id");
+            var model = $(this).data("model");
+            var is_active = 0;
+            var is_deleted = 1;
+            $.ajax({
+                type: 'post',
+                dataType: 'json',
+                url: "{{ route('delete_record') }}",
+                data: {
+                    id: id,
+                    model: model,
+                    is_active: is_active,
+                    is_deleted: is_deleted,
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    if (response.status == 0) {
+                        toastr.error(response.message);
+                    } else {
+                        var table = $('#example').DataTable();
+                        // table.ajax.reload();
+                        location.reload();
+                        toastr.success(response.message);
+                    }
+                }
+            });
+        })
     </script>
 @endsection

@@ -52,12 +52,16 @@ class WebCmsController extends Controller
 
     public function home(){
 
-        return view('web_cms.home')->with('title','home');
+        return view('web_cms.home')->with('title','Home');
     }
     public function politics(){
 
         return view('web_cms.Politics')->with('title','Politics');
     }
 
+    public function presedential_score(){
+
+        return view('web_cms.presidential-score')->with('title','Presedential Score');
+    }
 
 }

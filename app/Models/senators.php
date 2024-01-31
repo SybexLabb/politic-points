@@ -11,9 +11,10 @@ class senators extends Model
     protected $guarded = [];
 
 
-    public function recent_legislation () {
-        return $this->belongsTo(recent_legislation::class,'senator_id');
-
+    public function recentLegislations()
+    {
+        return $this->hasMany(recent_legislation::class, 'senator_id');
+    }
 }
 
-}
+

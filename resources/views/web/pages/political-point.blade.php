@@ -28,19 +28,21 @@
                 </div>
             </div>
             <div class="row justify-content-center">
+                <  @foreach ($senators as $value)
                 <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3 col-xxl-3">
                     <div class="card sn-card">
                         <div class="img-main">
-                            <img src="{{asset('web/images/sen1.webp')}}" class="img-fluid thumb" alt="">
+                            <img src="{{asset($value->image)}}" class="img-fluid thumb" alt="">
                         </div>
                         <div class="desc">
-                            <a href="{{route('political-detail')}}" class="link">Kevin McCarthy</a>
+                            <a href="{{route('political-detail', $value->id)}}" class="link">{{$value->name}}</a>
                             <p>Bipartisanship: -20 points (bypassing compromise for power deal) </p>
-                            <a href="{{route('political-detail')}}" class="btn view-btn">Read Full Biography</a>
+                            <a href="{{route('political-detail', $value->id)}}" class="btn view-btn">Read Full Biography</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3 col-xxl-3">
+                @endforeach
+                {{-- <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3 col-xxl-3">
                     <div class="card sn-card">
                         <div class="img-main">
                             <img src="{{asset('web/images/sen2.jpg')}}" class="img-fluid thumb" alt="">
@@ -102,7 +104,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </section>
 
     <section class="sec-table-data">

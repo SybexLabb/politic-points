@@ -49,23 +49,20 @@
                             </li>
                         </ul>
                         <p>{{$senator->description}}</p>
+
                         <h4>Legislative Activity</h4>
                         <ul>
                             <h5>Recent Legislation</h5>
+
+                        @foreach ($recent_legislation as $value )
+
+
                             <li>
-                                <h6>Public Lands Conservation Act:</h6> Legislation aimed at expanding Montana's
-                                protected wilderness to safeguard natural habitats and promote environmental
-                                stewardship.
+                                <h6>{{$value->title}}</h6> {{$value->description}}
                             </li>
-                            <li>
-                                <h6>Farm Subsidies Adjustment Act:</h6>An initiative to reform agricultural subsidies,
-                                ensuring fair distribution and support for Montana's farmers.
-                            </li>
-                            <li>
-                                <h6>Rural Healthcare Access Act:</h6>A bill providing increased funds to rural health
-                                centers, improving access to medical services for underserved communities.
-                            </li>
-                        </ul>
+                        @endforeach
+
+
 
                         <div class="graph-area my-5">
                             <h3>Score trend graph</h3>
