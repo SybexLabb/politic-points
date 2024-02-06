@@ -90,9 +90,7 @@
                                                             <span
                                                                 class="input-group-text">{{ getCMS('poltics_section1_description', 'name') }}</span>
                                                         </div>
-                                                        <input required class="form-control input-cms" type="text"
-                                                            name="{{ getCMS('poltics_section1_description', 'slug') }}"
-                                                            value="{{ getCMS('poltics_section1_description', 'value') }}">
+                                                        <textarea required class="form-control input-cms" id="description" name="{{ getCMS('poltics_section1_description','slug') }}">{{ getCMS('poltics_section1_description', 'value') }}</textarea>
                                                     </div>
                                                 </div>
 
@@ -131,9 +129,7 @@
                                                             <span
                                                                 class="input-group-text">{{ getCMS('poltics_section2_description', 'name') }}</span>
                                                         </div>
-                                                        <input required class="form-control input-cms" type="text"
-                                                            name="{{ getCMS('poltics_section2_description', 'slug') }}"
-                                                            value="{{ getCMS('poltics_section2_description', 'value') }}">
+                                                        <textarea required class="form-control input-cms" id="description" name="{{ getCMS('poltics_section2_description','slug') }}">{{ getCMS('poltics_section2_description', 'value') }}</textarea>
                                                     </div>
                                                 </div>
 

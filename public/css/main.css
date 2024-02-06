@@ -46,7 +46,7 @@ File: Main Style
 - Flip Menu
 - ToDo App
 - Form Control
-- Sparkline Chart 
+- Sparkline Chart
 - Chartist Js
 - Height
 - Flot Chart
@@ -54,7 +54,7 @@ File: Main Style
 - Apex Chart
 - c3 Chart
 - Mail App
-- Notes App 
+- Notes App
 - Quill Editor
 - Upload Button Wrapper
 - Focus
@@ -710,6 +710,7 @@ main {
     margin-top: 65px;
     top: 0px;
     margin-left: 250px;
+    margin-bottom: 65px;
 }
 
 @media (max-width: 991px) {
@@ -824,6 +825,7 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 .btn {
     font-size: inherit;
     font-weight: 500;
+    margin-top: 25px;
 }
 
 .round-button {
@@ -1139,7 +1141,7 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
   height: 34px;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -6019,8 +6021,8 @@ path.domain {
 }
 
 .table-responsive::-webkit-scrollbar-track {
-    border-radius: 10px;  
-    background-color: #ffffff; 
+    border-radius: 10px;
+    background-color: #ffffff;
 }
 
 

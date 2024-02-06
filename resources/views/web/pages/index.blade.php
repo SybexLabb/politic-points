@@ -2,14 +2,24 @@
 @section('content')
 
 <main>
-    <section class="sec-home-banner">
+    <section class="sec-home-banner" style="background: url({{ asset(getCMS('home_banner_image','value')) }});
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 90vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7">
                     <div class="desc">
-                        <h6>Core Scoring System</h6>
-                        <h4>Understanding Politics, One Point At A Time</h4>
-                        <p>The President's Politic Points total has remained steady at 65 this week, despite the recent approval of a significant infrastructure spending package. Our analysis indicates that while the bill garnered bipartisan support, there were apprehensions regarding its potential impact on inflation and the deficit. The President has accrued points for his economic initiatives thus far this year, but it will be crucial to uphold party unity in the run-up to the midterms to maintain his current score.</p>
+                        <h6>{{ getCMS('home_banner_title','value') }}</h6>
+                        <h4>{{ getCMS('home_banner_heading','value') }}</h4>
+                        <p>{!! str_replace("\r\n", "<p>", getCMS('home_banner_description','value')) !!}</p>
                         <div class="btn-grp">
                             <a href="void:;" class="btn learn-btn hvr-bounce-to-left">Join Campaign!</a>
                             <a href="void:;" class="btn view-btn hvr-bounce-to-left">Donate Now!</a>
@@ -25,18 +35,14 @@
             <div class="row gx-xxl-3 gx-xl-3 gx-lg-3 align-items-center">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <div class="img-main">
-                        <img src="{{asset('web/images/about.jpg')}}" class="img-fluid thumb" alt="">
+                        <img src="{{asset(getCMS('home_section1_image','value'))}}" class="img-fluid thumb" alt="">
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <div class="desc">
-                        <h6>ABOUT POLITICS POINT</h6>
-                        <h4>About Us</h4>
-                        <p>Politik Points is a platform that operates independently and without bias. Our goal is to enhance political transparency and accountability through the use of objective data-driven analysis. We aim to provide voters with fair and fact-based scoring, offering valuable insights to complement their decision-making process. We aim to promote engaged citizenship by equipping voters with the necessary resources to make well-informed choices.</p>
-
-                        <p>The Politik Points scoring system synthesizes a politician's record into an easy-to-understand score reflecting key categories like policy expertise, ethics, bipartisanship, and leadership skills. This quantitative assessment is designed to help voters quickly compare politicians' competence and performance.</p>
-
-                        <p>Our team comprises political scientists, data analysts, journalists, and civic technologists dedicated to upholding impartiality and rigor. We encourage public scrutiny of our methodology and results to enhance our commitment to impartiality continually.</p>
+                        <h6>{{ getCMS('home_section1_title','value') }}</h6>
+                        <h4>{{ getCMS('home_section1_heading','value') }}</h4>
+                        <p>{!! str_replace("\r\n", "<p>", getCMS('home_section1_description','value')) !!}</p>
 
                         <!-- <div class="card-grp">
                             <div class="row justify-content-around">
@@ -94,12 +100,9 @@
             <div class="row align-items-center gx-xxl-5 gx-xl-5 gx-lg-5">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <div class="desc">
-                        <h6>MISSION & VISION</h6>
-                        <h4>Our Mission</h4>
-                        <p>At Politik Points, we aim to facilitate an enlightening discovery process as you delve into candidates' positions. We offer data-driven analysis to inform your perspectives without seeking to replace them.</p>
-                        <p>Our Politik Point scores provide an objective snapshot of a politician's track record. However, it is crucial to consider numerous other factors when deciding whom to support. Voters should undertake additional research on the issues and stances that are important to them.</p>
-                        <p>No solitary metric or ideology can perfectly determine a leader's suitability to govern. Our aim is to foster thoughtful contemplation, enabling you to evaluate leaders from diverse perspectives.</p>
-                        <p>Our objective is to ignite an inquisitive pursuit of facts. We provide rigorous and impartial information, empowering you to think critically and determine what matters most. Consider our scores as a starting point, rather than a final verdict. The journey of democracy is one that we embark upon together.</p>
+                        <h6>{{ getCMS('home_section2_title','value') }}</h6>
+                        <h4>{{ getCMS('home_section2_heading','value') }}</h4>
+                        <p>{!! str_replace("\r\n", "<p>", getCMS('home_section2_description','value')) !!}</p>
                         <!-- <div class="card-grp">
                             <div class="row justify-content-center">
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
@@ -130,8 +133,8 @@
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <div class="desc">
-                        <h6>Politik Point market caps</h6>
-                        <h4>For the executive and legislative branches</h4>
+                        <h6>{{ getCMS('home_section3_title','value') }}</h6>
+                        <h4>{{ getCMS('home_section3_heading','value') }}</h4>
                         <div class="faq-area">
                             <div class="row justify-content-center">
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -262,8 +265,8 @@
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <div class="head">
-                        <h6>TOP INTEREST SCORES</h6>
-                        <h4>Presidential Score</h4>
+                        <h6>{{ getCMS('home_section4_title','value') }}</h6>
+                        <h4>{{ getCMS('home_section4_heading','value') }}</h4>
                     </div>
                 </div>
             </div>
@@ -288,8 +291,8 @@
             <div class="row align-items-center">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <div class="desc">
-                        <h4>Contribute Now!</h4>
-                        <p>We aim to continuously improve our scoring system and expand our coverage of politicians. If you are interested in contributing to Politik Points, don't hesitate to get in touch with us contact us for more information on how to get involved.</p>
+                        <h4>{{ getCMS('home_section5_title','value') }}</h4>
+                        <p>{{ getCMS('home_section5_heading','value') }}</p>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
@@ -310,8 +313,8 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <div class="head">
-                        <h6>POLITICS POINT</h6>
-                        <h4>All Senators</h4>
+                        <h6>{{ getCMS('home_section6_title','value') }}</h6>
+                        <h4>{{ getCMS('home_section6_heading','value') }}</h4>
                     </div>
                 </div>
             </div>
@@ -379,8 +382,8 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <div class="desc">
-                        <h4>Stay Updated</h4>
-                        <p>Sign up for our newsletter and follow us on social media to stay updated on the latest Politik Point scores and analysis. Don't miss out on significant political developments and insights – join the conversation and be part of our community.</p>
+                        <h4>{{ getCMS('home_section7_title','value') }}</h4>
+                        <p>{{ getCMS('home_section7_heading','value') }}</p>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
@@ -429,8 +432,8 @@
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
                     <div class="head">
-                        <h6>WATCH LIST</h6>
-                        <h4>Politic Points Weekly</h4>
+                        <h6>{{ getCMS('home_section8_title','value') }}</h6>
+                        <h4>{{ getCMS('home_section8_heading','value') }}</h4>
                     </div>
                 </div>
                 @foreach ($watch_list as $item)
@@ -530,8 +533,8 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <div class="head">
-                        <h6>NEWS</h6>
-                        <h4>Latest News</h4>
+                        <h6>{{ getCMS('home_section9_title','value') }}</h6>
+                        <h4>{{ getCMS('home_section9_heading','value') }}</h4>
                     </div>
                 </div>
             </div>

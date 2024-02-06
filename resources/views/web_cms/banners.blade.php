@@ -76,25 +76,13 @@
                                                 </div>
 
                                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <label
-                                                                class="col-md-12 col-sm-12 col-form-label">{{ getCMS('home_banner_image', 'name') }}</label>
-                                                        </div>
-                                                        <img class="banner-image"
-                                                            src="{{ asset(getCMS('home_banner_image', 'value')) }}">
-                                                        <input style="display:none;" type="file"
-                                                            name="{{ getCMS('home_banner_image', 'slug') }}">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
                                                     <label for="validationCustomUsername"></label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">{{ getCMS('home_banner_title', 'name') }}</span>
+                                                            <span
+                                                                class="input-group-text">{{ getCMS('home_banner_description', 'name') }}</span>
                                                         </div>
-                                                        <input required class="form-control input-cms" type="text" name="{{ getCMS('home_banner_title','slug') }}" value="{{ getCMS('home_banner_title', 'value') }}">
+                                                        <textarea required class="form-control input-cms" id="description" name="{{ getCMS('home_banner_description','slug') }}">{{ getCMS('home_banner_description', 'value') }}</textarea>
                                                     </div>
                                                 </div>
 

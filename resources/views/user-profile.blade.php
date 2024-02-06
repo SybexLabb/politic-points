@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('content')    
+@section('content')
 <main>
             <div class="container-fluid site-width">
                 <!-- START: Breadcrumbs-->
@@ -31,12 +31,12 @@
                                     @if($user->profile_pic != "")
                                     @php $path = $user->profile_pic; @endphp
                                     @else
-                                    @php $path = "images/no-img.png"; @endphp
+                                    @php $path = "web/images/no-img.png"; @endphp
                                     @endif
                                     <a href="#"><img src="{{asset($path)}}" width="100" alt="{{$user->name}}" class="img-fluid rounded-circle" id="blah"></a>
                                     <form method="POST" action="{{route('upload_image')}}" enctype="multipart/form-data" id="form-image-upload">
                                     @csrf
-                                    <input type="file" id="upload-img" name="pic_attach" style="display:none"/> 
+                                    <input type="file" id="upload-img" name="pic_attach" style="display:none"/>
                                     </form>
                                     <div class="media-body z-index-1">
                                         <div class="pl-4">
@@ -49,7 +49,7 @@
                         </div>
                         <div class="card-content">
                                 <div class="card-body">
-                                    <div class="row">                                           
+                                    <div class="row">
                                         <div class="col-12">
                                             @if ($message = Session::get('success'))
                                             <div class="alert alert-success alert-block">
@@ -95,18 +95,18 @@
                                                     <div class="col-md-4 mb-3">
                                                         <label for="validationCustomUsername">DOB</label>
                                                         <div class="input-group">
-                                                            
+
                                                             <input type="date" max="{{date('Y-m-d' , strtotime('-18 years'))}}" class="form-control" name="dob" id="validationCustomUsername" aria-describedby="inputGroupPrepend" value="{{$user->dob}}" required>
                                                             <div class="invalid-feedback">
                                                                 Please enter your Date of Birth.
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <div class="col-md-8 mb-3">
                                                         <label for="validationCustomUsername">Residential Address</label>
                                                         <div class="input-group">
-                                                            
+
                                                             <input type="text" class="form-control" name="address" placeholder="Enter your Residential Address" id="validationCustomUsername" aria-describedby="inputGroupPrepend" value="{{$user->address}}" required>
                                                             <div class="invalid-feedback">
                                                                 Please enter your Residential Address.
@@ -122,13 +122,13 @@
                                                         </div>
                                                     </div>
 
-                                                    
-                                                    
-                                                    
+
+
+
 
                                                 </div>
-                                                
-                                                
+
+
                                                 <button class="btn btn-primary" type="submit">Submit form</button>
                                             </form>
                                         </div>
@@ -137,7 +137,7 @@
                             </div>
                     </div>
                 </div>
-                
+
                 <div class="row mt-3"></div>
                 <!-- END: Card DATA-->
             </div>
@@ -146,7 +146,7 @@
 
 @section('css')
 <style type="text/css">
-    
+
 </style>
 @endsection
 
@@ -154,19 +154,19 @@
 <script>
 
     $('document').ready(function(){
-        $('#blah').click(function(){ 
-            $('#upload-img').trigger('click'); 
-        });    
+        $('#blah').click(function(){
+            $('#upload-img').trigger('click');
+        });
     });
-    
+
     function readURL(input) {
       if (input.files && input.files[0]) {
         var reader = new FileReader();
-        
+
         reader.onload = function(e) {
           $('#blah').attr('src', e.target.result);
         }
-        
+
         reader.readAsDataURL(input.files[0]); // convert to base64 string
       }
     }
@@ -174,7 +174,7 @@
       $("#heading_upload").hide();
       readURL(this);
     });
-    
+
     $("#upload-img").change(function(e) {
         var val = $(this).val();
         if (val.match(/(?:gif|jpg|png|bmp)$/)) {
@@ -185,7 +185,7 @@
             }
         }
     });
-    
-    
+
+
 </script>
 @endsection

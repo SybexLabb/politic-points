@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-lg  p-0">
             <div class="navbar-header  h-100 h4 mb-0 align-self-center logo-bar text-left">
                 <a href="{{ url('/') }}" class="horizontal-logo text-left">
-                    <span class="h4 font-weight-bold align-self-center mb-0 ml-auto">Dashbaord</span>
+                    <span class="h4 font-weight-bold align-self-center mb-0 ml-auto">Dashboard</span>
                 </a>
             </div>
 
@@ -28,7 +28,7 @@
                                     @if ($user->profile_pic != '')
                                         @php $path = $user->profile_pic; @endphp
                                     @else
-                                        @php $path = "images/no-img.png"; @endphp
+                                        @php $path = "web/images/no-img.png"; @endphp
                                     @endif
                                 @endif
                                 <img src="{{ asset($path) }}" alt="{{ $user->name }} Profile"
@@ -40,7 +40,7 @@
                         <div class="dropdown-menu border dropdown-menu-right p-0">
                             <a href="{{ route('user_profile') }}" class="dropdown-item px-2 align-self-center d-flex">
                                 <span class="icon-pencil mr-2 h6 mb-0"></span> Edit Profile Info</a>
-                            
+
                             <a href="{{ route('update_password') }}"
                                 class="dropdown-item px-2 align-self-center d-flex">
                                 <span class="icon-pencil mr-2 h6 mb-0"></span> Update Password</a>

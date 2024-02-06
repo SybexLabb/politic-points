@@ -51,9 +51,9 @@
                     <div class="contact-main">
                         <h6 class="contact-h">Contact Information</h6>
                         <ul class="contact-ul">
-                            <li class="contact-li"><a href="javascript:;" class="contact-a lct-icon">99 Roving St., Big City</a></li>
-                            <li class="contact-li"><a href="mailto:info@example.com" class="contact-a mail-icon">info@example.com</a></li>
-                            <li class="contact-li"><a href="tel:+1232341234" class="contact-a phn-icon">+123-234-1234</a></li>
+                            <li class="contact-li"><a href="javascript:;" class="contact-a lct-icon">{{ $address->value }}</a></li>
+                            <li class="contact-li"><a href="mailto:{{ $emailaddress->value }}" class="contact-a mail-icon">{{ $emailaddress->value }}</a></li>
+                            <li class="contact-li"><a href="tel:{{ $phonenumber->value }}" class="contact-a phn-icon">{{ $phonenumber->value }}</a></li>
                         </ul>
                     </div>
                 </div>

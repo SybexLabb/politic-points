@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2024 at 07:53 AM
+-- Generation Time: Feb 06, 2024 at 01:41 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `political_points`
+-- Database: `political_point`
 --
 
 -- --------------------------------------------------------
@@ -81,7 +81,10 @@ CREATE TABLE `config` (
 --
 
 INSERT INTO `config` (`id`, `user_id`, `type`, `value`, `view`, `is_active`, `is_deleted`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(23, NULL, 'address', 'Karachi', 'address', 1, 0, '2024-01-26 11:34:07', '2024-01-26 11:34:07', NULL);
+(23, NULL, 'address', '99 Roving St., Big City', 'Address', 1, 0, '2024-01-26 11:34:07', '2024-02-06 10:45:09', NULL),
+(24, NULL, 'emailaddress', 'info@example.com', 'Email', 1, 0, '2024-02-06 10:45:58', '2024-02-06 10:45:58', NULL),
+(25, NULL, 'phonenumber', '+123-234-1234', 'Phone', 1, 0, '2024-02-06 10:45:58', '2024-02-06 10:45:58', NULL),
+(26, NULL, 'location', 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d317893.9737282887!2d-0.11951900000000001!3d51.503186!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900d26973%3A0x4291f3172409ea92!2slastminute.com%20London%20Eye!5e0!3m2!1sen!2sus!4v1698870181177!5m2!1sen!2sus', 'Location', 1, 0, '2024-02-06 12:38:46', '2024-02-06 12:38:46', NULL);
 
 -- --------------------------------------------------------
 
@@ -109,7 +112,8 @@ CREATE TABLE `contact_us` (
 INSERT INTO `contact_us` (`id`, `first_name`, `last_name`, `phone`, `email`, `message`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
 (1, 'Merrill', 'Mullins', '11', 'kokegida@mailinator.com', 'Aut et et aut dolore', 1, 0, '2024-01-26 06:50:12', '2024-01-26 06:50:12'),
 (2, 'Finn', 'Raymond', '81', 'raxywusi@mailinator.com', 'Cupidatat ex at qui', 1, 0, '2024-01-26 06:52:05', '2024-01-26 06:52:05'),
-(3, 'Burton', 'Stein', '4', 'nakesin@mailinator.com', 'Amet expedita perfe', 1, 0, '2024-01-31 10:53:29', '2024-01-31 10:53:29');
+(3, 'Burton', 'Stein', '4', 'nakesin@mailinator.com', 'Amet expedita perfe', 1, 0, '2024-01-31 10:53:29', '2024-01-31 10:53:29'),
+(4, 'Idona', 'Mullins', '42', 'xuqalumoba@mailinator.com', 'Doloremque iure est', 1, 0, '2024-02-06 07:36:43', '2024-02-06 07:36:43');
 
 -- --------------------------------------------------------
 
@@ -149,7 +153,9 @@ CREATE TABLE `logo` (
 
 INSERT INTO `logo` (`id`, `image`, `slug`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
 (2, 'uploads/logo/584dbe679b36fae8565f757c5ec4ac91/00v0enA1pNvRg9mGbV18nBNjzP8RWLwWTVMMjYOr.png', 'favicon', 1, 0, '2024-01-26 10:34:03', '2024-01-26 10:34:03'),
-(3, 'uploads/logo/e866bcf8f6e889cd5c557d073fe5f6a6/hMhH2Zvptfm37noH6gFjT1Ym2ipdXy74ZXPMfpyw.png', 'favicon', 1, 0, '2024-01-26 10:34:15', '2024-01-26 10:34:15');
+(3, 'uploads/logo/e866bcf8f6e889cd5c557d073fe5f6a6/hMhH2Zvptfm37noH6gFjT1Ym2ipdXy74ZXPMfpyw.png', 'favicon', 1, 0, '2024-01-26 10:34:15', '2024-01-26 10:34:15'),
+(4, 'uploads/logo/66f58d40d843ef6a26a472b6dcedc028/7Q4bTKR1Ibp0CUiVPqXzWdjWjmSof0yx4bPFjeE8.png', 'favicon', 1, 0, '2024-02-06 06:11:47', '2024-02-06 06:11:47'),
+(5, 'uploads/logo/0880d2fd0343ffd4216509f5781024c1/ycMrG9pIEeMt4Y9dxz6yjSxEIZig5RsMs4q1RbB7.png', 'favicon', 1, 0, '2024-02-06 06:12:01', '2024-02-06 06:12:01');
 
 -- --------------------------------------------------------
 
@@ -362,7 +368,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `profile_pic`, `residential_address`, `dob`, `gender`, `role_id`, `is_active`, `is_deleted`, `created_at`, `updated_at`, `deleted_at`, `remember_token`) VALUES
-(1, 'Admin', NULL, 'admin@project.com', NULL, '$2y$10$6tezehF81JI2UgkcTxzVrenp7asoY2Nc98fbZKNTiIyK0hDDi93Da', NULL, NULL, NULL, NULL, 1, 1, 0, NULL, NULL, NULL, NULL);
+(1, 'Admin', NULL, 'admin@project.com', NULL, '$2y$10$6tezehF81JI2UgkcTxzVrenp7asoY2Nc98fbZKNTiIyK0hDDi93Da', NULL, NULL, NULL, NULL, 1, 1, 0, '2024-01-23 06:46:42', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -395,7 +401,11 @@ INSERT INTO `volunteer` (`id`, `first_name`, `last_name`, `phone`, `email`, `age
 (3, 'Kylan', 'Elliott', 28, 'lijuwutyh@mailinator.com', 'Saepe rem consequatu', 'Vel duis incididunt', 'Totam reprehenderit', 1, 0, '2024-01-26 08:46:46', '2024-01-26 08:46:46'),
 (4, 'Jorden', 'Ortega', 11, 'wonuxa@mailinator.com', 'Facere vel reiciendi', 'Omnis laborum Est c', 'Dignissimos ipsa al', 1, 0, '2024-01-26 08:48:11', '2024-01-26 08:48:11'),
 (5, 'Hadassah', 'Page', 69, 'xuhyfu@mailinator.com', 'Culpa eum doloribus', 'Quae sint quis et a', 'Delectus ullam itaq', 1, 0, '2024-01-31 10:53:19', '2024-01-31 10:53:19'),
-(6, 'Madison', 'Downs', 48, 'kywiv@mailinator.com', 'Mollitia cum est et', 'Perferendis quis lor', 'Et laboriosam conse', 1, 0, '2024-02-01 06:08:18', '2024-02-01 06:08:18');
+(6, 'Madison', 'Downs', 48, 'kywiv@mailinator.com', 'Mollitia cum est et', 'Perferendis quis lor', 'Et laboriosam conse', 1, 0, '2024-02-01 06:08:18', '2024-02-01 06:08:18'),
+(7, 'Hakeem', 'Roy', 10, 'luwi@mailinator.com', 'Minus non nihil volu', 'Quia ratione in in d', 'Adipisci et et deser', 1, 0, '2024-02-06 07:33:41', '2024-02-06 07:33:41'),
+(8, 'Fitzgerald', 'Harrington', 81, 'sajovuby@mailinator.com', 'Voluptatibus asperio', 'Dolor pariatur Offi', 'Animi est cupiditat', 1, 0, '2024-02-06 07:34:58', '2024-02-06 07:34:58'),
+(9, 'Davis', 'Noel', 12, 'mycugire@mailinator.com', 'Modi esse voluptas i', 'Sed quam officia obc', 'Fuga Quasi est lab', 1, 0, '2024-02-06 07:35:39', '2024-02-06 07:35:39'),
+(10, 'Grant', 'Osborne', 30, 'jitabaza@mailinator.com', 'Id reprehenderit re', 'Vitae asperiores mag', 'Suscipit illo repreh', 1, 0, '2024-02-06 07:36:26', '2024-02-06 07:36:26');
 
 -- --------------------------------------------------------
 
@@ -462,46 +472,46 @@ INSERT INTO `web_cms` (`id`, `name`, `slug`, `value`, `tag`, `is_active`, `is_de
 (7, 'Watchlist Banner', 'watchlist_banner', 'uploads/product/news-bg_1706527434.jpg', 'banner', 1, 0, '2024-01-29 11:22:17', '2024-01-29 06:23:54'),
 (9, 'Poltics Points', 'poltics_points_banner', 'uploads/product/news-bg_1706527729.jpg', 'banner', 1, 0, '2024-01-29 11:28:14', '2024-01-29 14:13:26'),
 (10, 'Contact Us', 'contact_us_banner', 'uploads/product/cta-bg2_1706527860.jpg', 'banner', 1, 0, '2024-01-29 11:30:07', '2024-01-29 14:13:59'),
-(11, 'title 1', 'home_section1_title', 'ABOUT POLITICS POINT', 'home', 1, 0, '2024-01-29 12:34:54', '2024-01-29 09:42:43'),
-(12, 'heading 1', 'home_section1_heading', 'About Us', 'home', 1, 0, '2024-01-29 12:34:54', '2024-01-29 09:42:43'),
-(13, 'description 1', 'home_section1_description', 'Politik Points is a platform that operates independently and without bias. Our goal is to enhance political transparency and accountability through the use of objective data-driven analysis. We aim to provide voters with fair and fact-based scoring, offering valuable insights to complement their decision-making process. We aim to promote engaged citizenship by equipping voters with the necessary resources to make well-informed choices.The Politik Points scoring system synthesizes a politician\'s record into an easy-to-understand score reflecting key categories like policy expertise, ethics, bipartisanship, and leadership skills. This quantitative assessment is designed to help voters quickly compare politicians\' competence and performance.Our team comprises political scientists, data analysts, journalists, and civic technologists dedicated to upholding impartiality and rigor. We encourage public scrutiny of our methodology and results to enhance our commitment to impartiality continually.', 'home', 1, 0, '2024-01-29 12:36:02', '2024-01-29 09:42:43'),
+(11, 'title 1', 'home_section1_title', 'ABOUT POLITICS POINT', 'home', 1, 0, '2024-01-29 12:34:54', '2024-02-06 06:52:49'),
+(12, 'heading 1', 'home_section1_heading', 'About Us', 'home', 1, 0, '2024-01-29 12:34:54', '2024-02-06 06:52:49'),
+(13, 'description 1', 'home_section1_description', 'Politik Points is a platform that operates independently and without bias. Our goal is to enhance political transparency and accountability through the use of objective data-driven analysis. We aim to provide voters with fair and fact-based scoring, offering valuable insights to complement their decision-making process. We aim to promote engaged citizenship by equipping voters with the necessary resources to make well-informed choices.\r\n\r\nThe Politik Points scoring system synthesizes a politician\'s record into an easy-to-understand score reflecting key categories like policy expertise, ethics, bipartisanship, and leadership skills. This quantitative assessment is designed to help voters quickly compare politicians\' competence and performance.\r\n\r\nOur team comprises political scientists, data analysts, journalists, and civic technologists dedicated to upholding impartiality and rigor. We encourage public scrutiny of our methodology and results to enhance our commitment to impartiality continually.', 'home', 1, 0, '2024-01-29 12:36:02', '2024-02-06 06:52:49'),
 (14, 'image 1', 'home_section1_image', 'uploads/product/about_1706533432.jpg', 'home', 1, 0, '2024-01-29 12:36:02', '2024-01-29 13:26:04'),
-(15, 'title 2', 'home_section2_title', 'MISSION & VISION', 'home', 1, 0, '2024-01-29 12:56:51', '2024-01-29 09:42:43'),
-(16, 'heading 2', 'home_section2_heading', 'Our Mission', 'home', 1, 0, '2024-01-29 12:56:51', '2024-01-29 09:42:43'),
-(17, 'description 2', 'home_section2_description', 'At Politik Points, we aim to facilitate an enlightening discovery process as you delve into candidates\' positions. We offer data-driven analysis to inform your perspectives without seeking to replace them.Our Politik Point scores provide an objective snapshot of a politician\'s track record. However, it is crucial to consider numerous other factors when deciding whom to support. Voters should undertake additional research on the issues and stances that are important to them.No solitary metric or ideology can perfectly determine a leader\'s suitability to govern. Our aim is to foster thoughtful contemplation, enabling you to evaluate leaders from diverse perspectives.Our objective is to ignite an inquisitive pursuit of facts. We provide rigorous and impartial information, empowering you to think critically and determine what matters most. Consider our scores as a starting point, rather than a final verdict. The journey of democracy is one that we embark upon together.', 'home', 1, 0, '2024-01-29 12:58:33', '2024-01-29 09:42:43'),
-(18, 'title 3', 'home_section3_title', 'POLITIK POINT MARKET CAPS', 'home section', 1, 0, '2024-01-29 12:58:33', '2024-01-29 09:42:43'),
-(19, 'heading 3', 'home_section3_heading', 'For The Executive And Legislative Branches', 'home', 1, 0, '2024-01-29 12:59:23', '2024-01-29 09:42:43'),
-(20, 'title 1', 'poltics_section1_title', 'ABOUT POLITICS POINT', 'Poltics', 1, 0, '2024-01-29 13:30:49', '2024-01-29 08:47:44'),
-(21, 'heading 1', 'poltics_section1_heading', 'About Us', 'Poltics', 1, 0, '2024-01-29 13:30:49', '2024-01-29 08:47:44'),
-(22, 'description 1', 'poltics_section1_description', 'Politik Points is a platform that operates independently and without bias. Our goal is to enhance political transparency and accountability through the use of objective data-driven analysis. We aim to provide voters with fair and fact-based scoring, offering valuable insights to complement their decision-making process. We aim to promote engaged citizenship by equipping voters with the necessary resources to make well-informed choices.The Politik Points scoring system synthesizes a politician\'s record into an easy-to-understand score reflecting key categories like policy expertise, ethics, bipartisanship, and leadership skills. This quantitative assessment is designed to help voters quickly compare politicians\' competence and performance.Our team comprises political scientists, data analysts, journalists, and civic technologists dedicated to upholding impartiality and rigor. We encourage public scrutiny of our methodology and results to enhance our commitment to impartiality continually.', 'Poltics', 1, 0, '2024-01-29 13:32:46', '2024-01-29 08:47:44'),
+(15, 'title 2', 'home_section2_title', 'MISSION & VISION', 'home', 1, 0, '2024-01-29 12:56:51', '2024-02-06 06:52:49'),
+(16, 'heading 2', 'home_section2_heading', 'Our Mission', 'home', 1, 0, '2024-01-29 12:56:51', '2024-02-06 06:52:49'),
+(17, 'description 2', 'home_section2_description', 'At Politik Points, we aim to facilitate an enlightening discovery process as you delve into candidates\' positions. We offer data-driven analysis to inform your perspectives without seeking to replace them.\r\n\r\nOur Politik Point scores provide an objective snapshot of a politician\'s track record. However, it is crucial to consider numerous other factors when deciding whom to support. Voters should undertake additional research on the issues and stances that are important to them.\r\n\r\nNo solitary metric or ideology can perfectly determine a leader\'s suitability to govern. Our aim is to foster thoughtful contemplation, enabling you to evaluate leaders from diverse perspectives.\r\n\r\nOur objective is to ignite an inquisitive pursuit of facts. We provide rigorous and impartial information, empowering you to think critically and determine what matters most. Consider our scores as a starting point, rather than a final verdict. The journey of democracy is one that we embark upon together.', 'home', 1, 0, '2024-01-29 12:58:33', '2024-02-06 06:52:49'),
+(18, 'title 3', 'home_section3_title', 'POLITIK POINT MARKET CAPS', 'home section', 1, 0, '2024-01-29 12:58:33', '2024-02-06 06:52:49'),
+(19, 'heading 3', 'home_section3_heading', 'For The Executive And Legislative Branches', 'home', 1, 0, '2024-01-29 12:59:23', '2024-02-06 06:52:49'),
+(20, 'title 1', 'poltics_section1_title', 'ABOUT POLITICS POINT', 'Poltics', 1, 0, '2024-01-29 13:30:49', '2024-02-06 07:33:31'),
+(21, 'heading 1', 'poltics_section1_heading', 'About Us', 'Poltics', 1, 0, '2024-01-29 13:30:49', '2024-02-06 07:33:31'),
+(22, 'description 1', 'poltics_section1_description', 'Our mission at Politik Points is to catalyze an enriching discovery process as you explore where candidates stand. We provide data-driven analysis to inform your opinions, not replace them.\r\n\r\nOur Politik Point scores offer an objective snapshot of a politician\'s record. But many other factors matter when choosing who to support. Voters should conduct additional research on issues and stances important to them.\r\n\r\nNo single metric or ideology can perfectly determine a leader\'s fitness to govern. We aim to nurture thoughtful reflection so you can evaluate leaders from diverse perspectives.\r\n\r\nOur goal is to spark an inquisitive pursuit of facts. We provide rigorous, impartial information so you can think critically and decide what matters most. Consider our scores a beginning, not an end. The journey of democracy is one we travel together.', 'Poltics', 1, 0, '2024-01-29 13:32:46', '2024-02-06 07:33:31'),
 (23, 'image 1', 'poltics_section1_image', 'uploads/product/about_1706536064.jpg', 'Poltics', 1, 0, '2024-01-29 13:32:46', '2024-01-29 08:47:44'),
-(24, 'title 2', 'poltics_section2_title', 'MISSION & VISION', 'Poltics', 1, 0, '2024-01-29 13:34:07', '2024-01-29 08:47:44'),
-(25, 'heading 2', 'poltics_section2_heading', 'Our Mission', 'Poltics', 1, 0, '2024-01-29 13:34:07', '2024-01-29 08:47:44'),
-(26, 'description 2', 'poltics_section2_description', 'At Politik Points, we aim to facilitate an enlightening discovery process as you delve into candidates\' positions. We offer data-driven analysis to inform your perspectives without seeking to replace them.Our Politik Point scores provide an objective snapshot of a politician\'s track record. However, it is crucial to consider numerous other factors when deciding whom to support. Voters should undertake additional research on the issues and stances that are important to them.No solitary metric or ideology can perfectly determine a leader\'s suitability to govern. Our aim is to foster thoughtful contemplation, enabling you to evaluate leaders from diverse perspectives.Our objective is to ignite an inquisitive pursuit of facts. We provide rigorous and impartial information, empowering you to think critically and determine what matters most. Consider our scores as a starting point, rather than a final verdict. The journey of democracy is one that we embark upon together.', 'Poltics', 1, 0, '2024-01-29 13:35:31', '2024-01-29 08:47:44'),
-(27, 'title 3', 'poltics_section3_title', 'POLITIK POINT MARKET CAPS', 'Poltics', 1, 0, '2024-01-29 13:35:31', '2024-01-29 08:47:44'),
-(28, 'heading 3', 'poltics_section3_heading', 'For The Executive And Legislative Branches', '', 1, 0, '2024-01-29 13:35:57', '2024-01-29 08:47:44'),
-(29, 'title 3', 'poltics_section3_title', 'POLITIK POINT MARKET CAPS', 'Poltics', 1, 0, '2024-01-29 13:40:35', '2024-01-29 08:47:44'),
-(30, 'heading 3', 'poltics_section3_heading', 'For The Executive And Legislative Branches', 'Poltics', 1, 0, '2024-01-29 13:40:35', '2024-01-29 08:47:44'),
-(31, 'title 3', 'poltics_section3_title', 'POLITIK POINT MARKET CAPS', 'Poltics', 1, 0, '2024-01-29 13:46:53', '2024-01-29 08:47:44'),
-(32, 'heading 3', 'poltics_section3_heading', 'For The Executive And Legislative Branches', 'Poltics', 1, 0, '2024-01-29 13:46:53', '2024-01-29 08:47:44'),
-(33, 'title 4', 'home_section4_title', 'TOP INTEREST SCORES', 'home', 1, 0, '2024-01-29 14:25:00', '2024-01-29 09:42:43'),
-(34, 'heading 4', 'home_section4_heading', 'Presidential Score', 'home', 1, 0, '2024-01-29 14:25:00', '2024-01-29 09:42:43'),
-(35, 'title 5', 'home_section5_title', 'Contribute Now!', 'home', 1, 0, '2024-01-29 14:26:46', '2024-01-29 09:42:43'),
-(36, 'heading 5', 'home_section5_heading', 'We aim to continuously improve our scoring system and expand our coverage of politicians. If you are interested in contributing to Politik Points, don\'t hesitate to get in touch with us contact us for more information on how to get involved.', 'home', 1, 0, '2024-01-29 14:26:46', '2024-01-29 09:42:43'),
-(37, 'title 6', 'home_section6_title', 'POLITICS POINT', 'home', 1, 0, '2024-01-29 14:29:39', '2024-01-29 09:42:43'),
-(38, 'heading 6\r\n', 'home_section6_heading', 'All Senators', 'home', 1, 0, '2024-01-29 14:29:39', '2024-01-29 09:42:43'),
-(39, 'title 6', 'home_section6_title', 'POLITICS POINT', 'home', 1, 0, '2024-01-29 14:30:03', '2024-01-29 09:42:43'),
-(40, 'heading 6', 'home_section6_heading', 'All Senators', 'home', 1, 0, '2024-01-29 14:30:03', '2024-01-29 09:42:43'),
-(41, 'title 7', 'home_section7_title', 'Stay Updated', 'home', 1, 0, '2024-01-29 14:31:25', '2024-01-29 09:42:43'),
-(42, 'heading 7', 'home_section7_heading', 'Sign up for our newsletter and follow us on social media to stay updated on the latest Politik Point scores and analysis. Don\'t miss out on significant political developments and insights – join the conversation and be part of our community.', 'home', 1, 0, '2024-01-29 14:31:25', '2024-01-29 09:42:43'),
-(43, 'title 8', 'home_section8_title', 'WATCH LIST', 'home', 1, 0, '2024-01-29 14:33:07', '2024-01-29 09:42:43'),
-(44, 'heading 8', 'home_section8_heading', 'Politic Points Weekly', 'home', 1, 0, '2024-01-29 14:33:07', '2024-01-29 09:42:43'),
-(45, 'title 8', 'home_section8_title', 'WATCH LIST', 'home', 1, 0, '2024-01-29 14:33:40', '2024-01-29 09:42:43'),
-(46, 'heading 8', 'home_section8_heading', 'Politic Points Weekly', 'home', 1, 0, '2024-01-29 14:33:40', '2024-01-29 09:42:43'),
-(47, 'title 9', 'home_section9_title', 'NEWS', 'home', 1, 0, '2024-01-29 14:35:07', '2024-01-29 09:42:44'),
-(48, 'heading 9', 'home_section9_heading', 'Latest News', 'home', 1, 0, '2024-01-29 14:35:07', '2024-01-29 09:42:44'),
-(49, 'title 9', 'home_section9_title', 'NEWS', 'home', 1, 0, '2024-01-29 14:35:24', '2024-01-29 09:42:44'),
-(50, 'heading 9', 'home_section9_heading', 'Latest News', 'home', 1, 0, '2024-01-29 14:35:24', '2024-01-29 09:42:44'),
+(24, 'title 2', 'poltics_section2_title', 'MISSION & VISION', 'Poltics', 1, 0, '2024-01-29 13:34:07', '2024-02-06 07:33:31'),
+(25, 'heading 2', 'poltics_section2_heading', 'Our Mission', 'Poltics', 1, 0, '2024-01-29 13:34:07', '2024-02-06 07:33:31'),
+(26, 'description 2', 'poltics_section2_description', 'At Politik Points, we aim to facilitate an enlightening discovery process as you delve into candidates\' positions. We offer data-driven analysis to inform your perspectives without seeking to replace them.Our Politik Point scores provide an objective snapshot of a politician\'s track record. However, it is crucial to consider numerous other factors when deciding whom to support. Voters should undertake additional research on the issues and stances that are important to them.No solitary metric or ideology can perfectly determine a leader\'s suitability to govern. Our aim is to foster thoughtful contemplation, enabling you to evaluate leaders from diverse perspectives.Our objective is to ignite an inquisitive pursuit of facts. We provide rigorous and impartial information, empowering you to think critically and determine what matters most. Consider our scores as a starting point, rather than a final verdict. The journey of democracy is one that we embark upon together.', 'Poltics', 1, 0, '2024-01-29 13:35:31', '2024-02-06 07:33:31'),
+(27, 'title 3', 'poltics_section3_title', 'POLITIK POINT MARKET CAPS', 'Poltics', 1, 0, '2024-01-29 13:35:31', '2024-02-06 07:33:31'),
+(28, 'heading 3', 'poltics_section3_heading', 'For The Executive And Legislative Branches', '', 1, 0, '2024-01-29 13:35:57', '2024-02-06 07:33:31'),
+(29, 'title 3', 'poltics_section3_title', 'POLITIK POINT MARKET CAPS', 'Poltics', 1, 0, '2024-01-29 13:40:35', '2024-02-06 07:33:31'),
+(30, 'heading 3', 'poltics_section3_heading', 'For The Executive And Legislative Branches', 'Poltics', 1, 0, '2024-01-29 13:40:35', '2024-02-06 07:33:31'),
+(31, 'title 3', 'poltics_section3_title', 'POLITIK POINT MARKET CAPS', 'Poltics', 1, 0, '2024-01-29 13:46:53', '2024-02-06 07:33:31'),
+(32, 'heading 3', 'poltics_section3_heading', 'For The Executive And Legislative Branches', 'Poltics', 1, 0, '2024-01-29 13:46:53', '2024-02-06 07:33:31'),
+(33, 'title 4', 'home_section4_title', 'TOP INTEREST SCORES', 'home', 1, 0, '2024-01-29 14:25:00', '2024-02-06 06:52:49'),
+(34, 'heading 4', 'home_section4_heading', 'Presidential Score', 'home', 1, 0, '2024-01-29 14:25:00', '2024-02-06 06:52:49'),
+(35, 'title 5', 'home_section5_title', 'Contribute Now!', 'home', 1, 0, '2024-01-29 14:26:46', '2024-02-06 06:52:49'),
+(36, 'heading 5', 'home_section5_heading', 'We aim to continuously improve our scoring system and expand our coverage of politicians. If you are interested in contributing to Politik Points, don\'t hesitate to get in touch with us contact us for more information on how to get involved.', 'home', 1, 0, '2024-01-29 14:26:46', '2024-02-06 06:52:49'),
+(37, 'title 6', 'home_section6_title', 'POLITICS POINT', 'home', 1, 0, '2024-01-29 14:29:39', '2024-02-06 06:52:49'),
+(38, 'heading 6\r\n', 'home_section6_heading', 'All Senators', 'home', 1, 0, '2024-01-29 14:29:39', '2024-02-06 06:52:49'),
+(39, 'title 6', 'home_section6_title', 'POLITICS POINT', 'home', 1, 0, '2024-01-29 14:30:03', '2024-02-06 06:52:49'),
+(40, 'heading 6', 'home_section6_heading', 'All Senators', 'home', 1, 0, '2024-01-29 14:30:03', '2024-02-06 06:52:49'),
+(41, 'title 7', 'home_section7_title', 'Stay Updated', 'home', 1, 0, '2024-01-29 14:31:25', '2024-02-06 06:52:49'),
+(42, 'heading 7', 'home_section7_heading', 'Sign up for our newsletter and follow us on social media to stay updated on the latest Politik Point scores and analysis. Don\'t miss out on significant political developments and insights – join the conversation and be part of our community.', 'home', 1, 0, '2024-01-29 14:31:25', '2024-02-06 06:52:49'),
+(43, 'title 8', 'home_section8_title', 'WATCH LIST', 'home', 1, 0, '2024-01-29 14:33:07', '2024-02-06 06:52:49'),
+(44, 'heading 8', 'home_section8_heading', 'Politic Points Weekly', 'home', 1, 0, '2024-01-29 14:33:07', '2024-02-06 06:52:49'),
+(45, 'title 8', 'home_section8_title', 'WATCH LIST', 'home', 1, 0, '2024-01-29 14:33:40', '2024-02-06 06:52:49'),
+(46, 'heading 8', 'home_section8_heading', 'Politic Points Weekly', 'home', 1, 0, '2024-01-29 14:33:40', '2024-02-06 06:52:49'),
+(47, 'title 9', 'home_section9_title', 'NEWS', 'home', 1, 0, '2024-01-29 14:35:07', '2024-02-06 06:52:49'),
+(48, 'heading 9', 'home_section9_heading', 'Latest News', 'home', 1, 0, '2024-01-29 14:35:07', '2024-02-06 06:52:49'),
+(49, 'title 9', 'home_section9_title', 'NEWS', 'home', 1, 0, '2024-01-29 14:35:24', '2024-02-06 06:52:49'),
+(50, 'heading 9', 'home_section9_heading', 'Latest News', 'home', 1, 0, '2024-01-29 14:35:24', '2024-02-06 06:52:49'),
 (51, 'title 1', 'presedential_section1_title', 'President Biden - Economic Outlook And Politik Points', 'presedential score', 1, 0, '2024-01-31 14:23:37', '2024-01-31 09:43:21'),
 (52, 'heading 1', 'presedential_section1_heading', 'CURRENT POLITIK POINT SCORE: 681/1000', 'presedential score', 1, 0, '2024-01-31 14:23:37', '2024-01-31 09:43:36'),
 (55, 'description 1', 'presedential_section1_description', 'With GDP growth projected to slow to just 1.5% in 2024, President Biden faces economic headwinds that could further erode his standing with voters.Biden\'s Politik Points have already dropped from 712 to 681 this year amid high inflation and weak growth compared to 2021. Additional declines in GDP would likely drag his score down further.Voters increasingly favor Republicans on prosperity and the economy. Without new spending to stimulate growth, Biden has limited tools to reverse this momentum.Absent a significant upside surprise, the data indicates Biden\'s economic credentials will remain under pressure through the 2024 election. This could subtract critical points related to areas like competency, leadership and vision.While the economy is not the sole factor in Biden\'s political health, it exerts an outsized influence. A Politik Point drop into the low 600s due to worsening perceptions on the economy would seriously jeopardize Biden\'s reelection prospects.In short, if GDP meets muted expectations, Biden cannot count on the economy to buoy his score. He must make up ground through strong performances on other metrics like foreign policy and social issues. But overcoming economic discontent may be his biggest politic point challenge.', 'presedential score', 1, 0, '2024-01-31 14:27:56', '2024-01-31 14:44:43'),
@@ -617,13 +627,13 @@ ALTER TABLE `attributes`
 -- AUTO_INCREMENT for table `config`
 --
 ALTER TABLE `config`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -635,7 +645,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `logo`
 --
 ALTER TABLE `logo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -677,7 +687,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `volunteer`
 --
 ALTER TABLE `volunteer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `watch_list`

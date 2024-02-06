@@ -2,7 +2,7 @@
 @section('content')
 
 <main>
-    <section class="sec-inner-banner" data-bg-image="{{asset('web/images/politic-bg.jpg')}}">
+    <section class="sec-inner-banner" data-bg-image="{{asset(getCMS('poltics_banner_image','value'))}}">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
@@ -22,20 +22,14 @@
             <div class="row gx-xxl-3 gx-xl-3 gx-lg-3 align-items-center">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <div class="img-main">
-                        <img src="{{asset('web/images/about.jpg')}}" class="img-fluid thumb" alt="">
+                        <img src="{{asset(getCMS('home_section1_image','value'))}}" class="img-fluid thumb" alt="">
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <div class="desc">
-                        <h6>ABOUT POLITICS POINT</h6>
-                        <h4>About Us</h4>
-                        <p>Politik Points is an independent, nonpartisan platform seeking to promote political transparency and accountability using objective data-driven analysis.</p>
-
-                        <p>Our mission is to provide voters with fair, fact-based scoring and insights to complement their decision-making process. We aim to foster engaged citizenship by equipping voters with resources to make well-informed choices.</p>
-
-                        <p>The Politik Points scoring system synthesizes a politician's record into an easy-to-understand score reflecting key categories like policy expertise, ethics, bipartisanship, and leadership skills. This quantitative assessment is designed to help voters quickly compare politicians' competence and performance.</p>
-
-                        <p>Our team includes political scientists, data analysts, journalists and civic technologists devoted to impartiality and rigor. We welcome public scrutiny of our methodology and results to constantly strengthen our impartiality.</p>
+                        <h6>{{ getCMS('poltics_section1_title','value') }}</h6>
+                        <h4>{{ getCMS('poltics_section1_heading','value') }}</h4>
+                        <p>{!! str_replace("\r\n", "<p>", getCMS('poltics_section1_description','value')) !!}</p>
 
                         <!-- <div class="card-grp">
                             <div class="row justify-content-around">
@@ -93,12 +87,9 @@
             <div class="row align-items-center gx-xxl-5 gx-xl-5 gx-lg-5">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <div class="desc">
-                        <h6>MISSION & VISION</h6>
-                        <h4>Our Mission</h4>
-                        <p>Our mission at Politik Points is to catalyze an enriching discovery process as you explore where candidates stand. We provide data-driven analysis to inform your opinions, not replace them.</p>
-                        <p>Our Politik Point scores offer an objective snapshot of a politician's record. But many other factors matter when choosing who to support. Voters should conduct additional research on issues and stances important to them.</p>
-                        <p>No single metric or ideology can perfectly determine a leader's fitness to govern. We aim to nurture thoughtful reflection so you can evaluate leaders from diverse perspectives.</p>
-                        <p>Our goal is to spark an inquisitive pursuit of facts. We provide rigorous, impartial information so you can think critically and decide what matters most. Consider our scores a beginning, not an end. The journey of democracy is one we travel together.</p>
+                        <h6>{{ getCMS('poltics_section2_title','value') }}</h6>
+                        <h4>{{ getCMS('poltics_section2_heading','value') }}</h4>
+                        <p>{!! str_replace("\r\n", "<p>", getCMS('poltics_section2_description','value')) !!}</p>
                         <!-- <div class="card-grp">
                             <div class="row justify-content-center">
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
@@ -129,8 +120,8 @@
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                     <div class="desc">
-                        <h6>Politik Point market caps</h6>
-                        <h4>For the executive and legislative branches</h4>
+                        <h6>{{ getCMS('poltics_section3_title','value') }}</h6>
+                        <h4>{{ getCMS('poltics_section3_heading','value') }}</h4>
                         <div class="faq-area">
                             <div class="row justify-content-center">
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">

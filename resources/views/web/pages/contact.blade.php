@@ -67,11 +67,11 @@
                 <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
                     <div class="info-box">
                         <ul>
-                            <li><a href="void:;" class="lc-ico">99 Roving St., Big City</a></li>
-                            <li><a href="mailto:indo@example.com" class="msg-ico">indo@example.com</a></li>
-                            <li><a href="tel:+1232341234" class="phn-ico">+123-234-1234</a></li>
+                            <li><a href="void:;" class="lc-ico">{{ $address->value }}</a></li>
+                            <li><a href="mailto:{{ $emailaddress->value }}" class="msg-ico">{{ $emailaddress->value }}</a></li>
+                            <li><a href="tel:{{ $phonenumber->value }}" class="phn-ico">{{ $phonenumber->value }}</a></li>
                         </ul>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d317893.9737282887!2d-0.11951900000000001!3d51.503186!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900d26973%3A0x4291f3172409ea92!2slastminute.com%20London%20Eye!5e0!3m2!1sen!2sus!4v1698870181177!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="{{ $location->value }}" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>

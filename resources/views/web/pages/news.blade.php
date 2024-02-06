@@ -2,7 +2,7 @@
 @section('content')
 
 <main>
-    <section class="sec-inner-banner" data-bg-image="web/images/news-bg.jpg">
+    <section class="sec-inner-banner" data-bg-image="{{ asset(getCMS('news_banner','value')) }}">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">

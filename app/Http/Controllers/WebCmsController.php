@@ -47,21 +47,21 @@ class WebCmsController extends Controller
 
     public function banners(){
 
-        return view('web_cms.banners')->with('title','Banners cms');
+        return view('web_cms.banners')->with('title','Banners CMS');
     }
 
     public function home(){
 
-        return view('web_cms.home')->with('title','Home');
+        return view('web_cms.home')->with('title','Home CMS');
     }
     public function politics(){
 
-        return view('web_cms.Politics')->with('title','Politics');
+        return view('web_cms.Politics')->with('title','Politics CMS');
     }
 
     public function presedential_score(){
 
-        return view('web_cms.presidential-score')->with('title','Presedential Score');
+        return view('web_cms.presidential-score')->with('title','Presedential Score CMS');
     }
 
 }

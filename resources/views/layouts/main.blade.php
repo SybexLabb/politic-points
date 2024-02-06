@@ -3,10 +3,10 @@
     <!-- START: Head-->
     <head>
         <meta charset="UTF-8">
-        <title>{{isset($title)?$title:'Index'}}</title>
+        <title>{{isset($title)?$title:'Dashboard'}} | {{env('APP_NAME')}}</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}"> 
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- START: Template CSS-->
         @include('layouts.links')
         @yield('css')
@@ -15,7 +15,7 @@
     <!-- END Head-->
 
     <!-- START: Body-->
-    
+
     <body id="main-container" class="default semi-dark" style="--primarycolor:#1e3d73;">
         @auth
             @if(Auth::user()->role_id == 1)
@@ -36,13 +36,13 @@
 
         <!-- START: Main Menu-->
         @include('layouts.sidebar')
-        
+
         <!-- END: Main Menu-->
         @endauth
         <!-- START: Main Content-->
 
         @yield('content')
-        
+
         <!-- END: Content-->
         <!-- START: Footer-->
         @auth
@@ -53,7 +53,7 @@
         <!-- END: Footer-->
 
         <!-- START: Back to top-->
-        <a href="#" class="scrollup text-center"> 
+        <a href="#" class="scrollup text-center">
             <i class="icon-arrow-up"></i>
         </a>
         <!-- END: Back to top-->
@@ -62,9 +62,9 @@
 
         <!-- START: Template JS-->
         @include('layouts.scripts')
-        
+
         @yield('js')
-        
+
         </div>
     </body>
     <!-- END: Body-->

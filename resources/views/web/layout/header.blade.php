@@ -3,7 +3,7 @@
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
                     <a class="navbar-brand" href="index">
-                        <img src="images/logo.png" class="logo" alt="">
+                        <img src="{{ $logo }}" class="logo" alt="">
                     </a>
                     <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

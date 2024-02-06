@@ -90,7 +90,7 @@ class IndexController extends Controller
         $volunteer->education = $request->education;
         $volunteer->message = $request->message;
         $volunteer->save();
-        return redirect()->back()->with('message', 'Contact Inquiry Submitted');
+        return redirect()->back()->with('message', 'Inquiry Submitted Successfully');
     }
 
 
@@ -102,7 +102,7 @@ class IndexController extends Controller
     }
     public function contact()
     {
-        return view('web.pages.contact')->with('title', 'contact');
+        return view('web.pages.contact')->with('title', 'Contact Us');
     }
     public function contact_submit(Request $request)
     {

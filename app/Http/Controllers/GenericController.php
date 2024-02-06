@@ -155,7 +155,7 @@ class GenericController extends Controller
                 $table = $this->generated_table($slug);
             }
         }
-        return view('roles/crud')->with(compact('attributes', 'slug', 'eloquent', 'form', 'table'));
+        return view('roles/crud')->with(compact('attributes', 'slug', 'eloquent', 'form', 'table'))->with('title', ucwords(str_replace("-", " ", $slug)));
     }
 
     private function generated_form($slug = '')
@@ -948,7 +948,7 @@ class GenericController extends Controller
                                           <td>' . $val->age . '</td>
                                           <td>' . $val->education . '</td>
                                           <td>' . $val->message . '</td>
-                                          <td>' . $val->created_at . '</td>
+                                          <td>' . date("M d,Y", strtotime($val->created_at)) . '</td>
 
 
                                        </tr>';
@@ -987,7 +987,7 @@ class GenericController extends Controller
                                           <td>' . $val->name . '</td>
                                           <td>' . $val->description . '</td>
                                           <td>' . $val->date . '</td>
-                                          <td><img style="width:80px;height:80px;" src="' . $i . '"></td>
+                                          <td><img style="height:80px;" src="' . $i . '"></td>
                                           <td>' . date("M d,Y", strtotime($val->created_at)) . '</td>
                                           <td>
                                              <button type="button" class="btn btn-primary editor-form" data-edit_id= "' . $val->id . '" data-title= "' . $val->title .'" data-name= "' . $val->name . '" data-description= "' . $val->description . '" data-date= "' . $val->date . '" data-image= "' . $i . '">Edit</button>
@@ -1030,8 +1030,8 @@ class GenericController extends Controller
                                        <tr>
                                           <th>S. No</th>
                                           <th>Name</th>
-                                          <th>city</th>
-                                          <th>party</th>
+                                          <th>City</th>
+                                          <th>Party</th>
                                           <th>Image</th>
                                           <th>Current Score</th>
                                           <th>Weekly Range</th>
@@ -1061,7 +1061,7 @@ class GenericController extends Controller
                                           <td>' . $val->name . '</td>
                                           <td>' . $val->city . '</td>
                                           <td>' . $val->party . '</td>
-                                          <td><img style="width:80px;height:80px;" src="' . $i . '"></td>
+                                          <td><img style="height:80px;" src="' . $i . '"></td>
                                           <td>' . $val->current_score . '</td>
                                           <td>' . $val->weekly_range . '</td>
                                           <td>' . $val->ytd_range . '</td>
@@ -1091,8 +1091,8 @@ class GenericController extends Controller
                                        <tr>
                                        <th>S. No</th>
                                           <th>Name</th>
-                                          <th>city</th>
-                                          <th>party</th>
+                                          <th>City</th>
+                                          <th>Party</th>
                                           <th>Image</th>
                                           <th>Current Score</th>
                                           <th>Weekly Range</th>
@@ -1195,7 +1195,7 @@ class GenericController extends Controller
             return redirect()->back()->with('error', "Error Code: " . $error);
         }
     }
-    
+
     public function delete_record(Request $request)
     {
         $token_ignore = ['_token' => '', 'id' => '', 'model' => ''];
