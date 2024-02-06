@@ -49,7 +49,7 @@ class IndexController extends Controller
     }
     public function news()
     {
-        return view('web.pages.news')->with('title', 'news');
+        return view('web.pages.news')->with('title', 'News');
     }
     public function political_detail($id)
     {
@@ -76,7 +76,7 @@ class IndexController extends Controller
     }
     public function volunteer()
     {
-        return view('web.pages.volunteer')->with('title', 'volunteer');
+        return view('web.pages.volunteer')->with('title', 'Volunteer');
     }
     public function volunteer_submit(Request $request)
     {
@@ -98,7 +98,7 @@ class IndexController extends Controller
     {
         $watch_list = watch_list::where('is_active', 1)->where('is_deleted', 0)->get();
 
-        return view('web.pages.watch-list', compact('watch_list'))->with('title', 'watch-list');
+        return view('web.pages.watch-list', compact('watch_list'))->with('title', 'Watch-List');
     }
     public function contact()
     {
@@ -120,5 +120,5 @@ class IndexController extends Controller
     }
 
 
-    
+
 }
