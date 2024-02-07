@@ -28,25 +28,19 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                    @foreach ($news as $key => $item)
                     <div class="card blog-detail">
                         <div class="img">
-                            <img src="{{asset('web/images/ne1.jpg')}}" class="img-fluid thumb" alt="">
+                            <img src="{{asset($item->image)}}" class="img-fluid thumb" alt="">
                         </div>
 
                         <div class="desc">
-                            <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h6>
+                            <h6>{{$item->title}}</h6>
 
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla delectus voluptate quod,
-                                vero ullam quisquam id aliquid, ea quis atque ipsa et soluta! Ducimus repellat vero
-                                voluptatem eum, voluptates nihil. Beatae iure cupiditate quidem numquam aliquam
-                                reiciendis quis fuga dicta dolores quos laboriosam, minus assumenda ipsa eligendi
-                                minima, ab itaque vitae odit! Aperiam natus hic sint harum explicabo non cum perferendis
-                                minus maxime, laborum, voluptatem mollitia inventore aspernatur dolores quae, obcaecati
-                                ex porro consequatur fugiat. Rerum in rem praesentium maiores expedita similique sint
-                                dolor illum quibusdam ipsa saepe perspiciatis quasi asperiores et eum aliquid velit quis
-                                consequuntur temporibus, architecto porro?</p>
+                            <p>{{$item->description}}</p>
 
                             <ul>
                                 <li class="usr-icn">
@@ -62,8 +56,10 @@
                             </ul>
                         </div>
                     </div>
+                    @endforeach
 
-                    <div class="card blog-detail">
+
+                    {{-- <div class="card blog-detail">
                         <div class="img">
                             <img src="{{asset('web/images/ne2.jpg')}}" class="img-fluid thumb" alt="">
                         </div>
@@ -127,7 +123,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -147,9 +143,13 @@
                         <div class="category">
                             <h5>category</h5>
                             <ul>
-                                <li>
-                                    <a href="javascript:;" data-text="10">Political theory</a>
+                                @foreach ($category as $item)
+<li>
+                                    <a href="javascript:;" data-text="{{ $item->getNews->count() }}">{{$item->name}}</a>
                                 </li>
+                                @endforeach
+
+{{--
                                 <li>
                                     <a href="javascript:;" data-text="20">Sovereignty</a>
                                 </li>
@@ -161,7 +161,7 @@
                                 </li>
                                 <li>
                                     <a href="javascript:;" data-text="5">Political game</a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
 

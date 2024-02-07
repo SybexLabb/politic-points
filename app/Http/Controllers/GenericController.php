@@ -788,6 +788,7 @@ class GenericController extends Controller
                                           <td>' . date("M d,Y", strtotime($val->created_at)) . '</td>
                                           <td>
                                              <button type="button" class="btn btn-primary editor-form" data-edit_id= "' . $val->id . '" data-name= "' . $val->name . '" >Edit</button>
+                                             <a href="' . route('news.category', $val->id) . '" class="btn btn-secondary">Add News</a>
                                              <button type="button" class="btn btn-danger delete-record" data-model="' . $data . '" data-id= "' . $val->id . '" >Delete</button>
                                           </td>
                                        </tr>';
@@ -1152,7 +1153,7 @@ class GenericController extends Controller
         $token_ignore = ['_token' => '', 'record_id' => '', 'image' => ''];
         $post_feilds = array_diff_key($_POST, $token_ignore);
         $data = 'App\Models\\' . $slug;
-        if ($slug == 'category' || $slug == 'product') {
+        if ($slug == 'product') {
             $s = $_POST['name'];
             $s = str_replace(' ', '-', $s);
             $s = strtolower($s);
@@ -1178,14 +1179,8 @@ class GenericController extends Controller
             if (isset($_POST['record_id']) && $_POST['record_id'] != '') {
                 $create = $data::where("id", $_POST['record_id'])->update($post_feilds);
                 $msg = "Record has been updated";
-            } else {
-                if ($slug == 'category') {
-                    $check_record = category::where('is_active', 1)->where('slug', $post_feilds['slug'])->first();
-                    if ($check_record) {
-                        $msg = "This Category already exists";
-                        return redirect()->back()->with('error', $msg);
-                    }
-                }
+            }
+            else {
                 $create = $data::create($post_feilds);
                 $msg = "Record has been created";
             }

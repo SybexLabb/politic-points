@@ -8,5 +8,11 @@ class category extends Model
 {
  	protected $primaryKey = 'id';
   	protected $table = 'category';
-    protected $guarded = [];  
+    protected $guarded = [];
+
+    public function getNews()
+    {
+        return $this->hasMany(news::class, 'category_id');
+    }
+
 }

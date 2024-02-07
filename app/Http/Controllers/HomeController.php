@@ -6,9 +6,11 @@ use App\Helpers\Helper;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\attributes;
+use App\Models\category;
 use App\Models\config;
 use App\Models\logo;
 use App\Models\senators;
+use App\Models\news;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 
@@ -229,5 +231,13 @@ class HomeController extends Controller
         $senator = senators::find($id);
 
         return view('roles.pages.legislative-activity', compact('id', 'senator'))->with('title', 'Legislative Activity');
+    }
+
+    public function newsCategory($id)
+    {
+
+        $category = news::where('category_id', $id)->where('is_active',1)->where('is_deleted',0)->get();
+        // dd($category);
+        return view('roles.pages.news', compact('id', 'category'))->with('title', 'News');
     }
 }

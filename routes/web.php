@@ -89,6 +89,7 @@ Route::group(['middleware' => 'auth'], function()
 
 
     Route::get('/legislative-activity/{id}', [HomeController::class, 'legislative_activity'])->name('legislative-activity');
+    Route::get('/news-category/{id}', [HomeController::class, 'newsCategory'])->name('news.category');
 
 
 

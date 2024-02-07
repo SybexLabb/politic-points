@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2024 at 01:41 PM
+-- Generation Time: Feb 07, 2024 at 02:30 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `political_point`
+-- Database: `political_points`
 --
 
 -- --------------------------------------------------------
@@ -55,7 +55,36 @@ INSERT INTO `attributes` (`id`, `project_id`, `attribute`, `name`, `role`, `colo
 (28, NULL, 'presidential-score', 'presidential-score', 'presidential-score', '#0e1317\r\n', 'presidential-score', 'icon-wallet', 1, 0, '2024-01-26 11:57:47', '2024-01-26 11:57:47', NULL),
 (29, NULL, 'volunteer', 'volunteer', 'volunteer', '#0e1317\r\n', 'volunteer', 'icon-wallet', 1, 0, '2024-01-26 12:58:44', '2024-01-26 12:58:44', NULL),
 (30, NULL, 'watch-list', 'watch-list', 'watch-list', '#0e1317\r\n', 'watch-list', 'icon-wallet', 1, 0, '2024-01-26 13:57:48', '2024-01-26 13:57:48', NULL),
-(31, 0, 'senators', 'senators', 'senators', '#0e1317', 'senators', 'icon-wallet', 1, 0, '2024-01-30 10:56:51', '2024-01-30 10:56:51', NULL);
+(31, 0, 'senators', 'senators', 'senators', '#0e1317', 'senators', 'icon-wallet', 1, 0, '2024-01-30 10:56:51', '2024-01-30 10:56:51', NULL),
+(32, NULL, 'category', 'category', 'category', '#0e1317', 'category', 'icon-wallet', 1, 0, '2024-02-07 10:28:23', '2024-02-07 10:28:23', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `name` varchar(512) NOT NULL,
+  `is_active` tinyint(4) NOT NULL DEFAULT 1,
+  `is_deleted` tinyint(4) NOT NULL DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `name`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
+(1, 'Test', 0, 1, '2024-02-07 05:36:21', '2024-02-07 05:36:33'),
+(2, 'test0000', 0, 1, '2024-02-07 05:36:47', '2024-02-07 05:37:26'),
+(3, 'Political Theory', 1, 0, '2024-02-07 05:37:39', '2024-02-07 05:37:39'),
+(4, 'Sovereignty', 1, 0, '2024-02-07 05:59:02', '2024-02-07 05:59:02'),
+(5, 'Consent Of The Governed', 1, 0, '2024-02-07 05:59:13', '2024-02-07 05:59:13'),
+(6, 'Theories Of Political Behavior', 1, 0, '2024-02-07 05:59:26', '2024-02-07 05:59:26'),
+(7, 'Political Game', 1, 0, '2024-02-07 05:59:39', '2024-02-07 05:59:39');
 
 -- --------------------------------------------------------
 
@@ -187,6 +216,34 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `image` varchar(512) NOT NULL,
+  `title` varchar(512) NOT NULL,
+  `description` longtext NOT NULL,
+  `is_active` tinyint(4) NOT NULL DEFAULT 1,
+  `is_deleted` tinyint(4) NOT NULL DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `category_id`, `image`, `title`, `description`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
+(1, 3, 'uploads/product/ne1_1707305582.jpg', 'Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit.', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla delectus voluptate quod, vero ullam quisquam id aliquid, ea quis atque ipsa et soluta! Ducimus repellat vero voluptatem eum, voluptates nihil. Beatae iure cupiditate quidem numquam aliquam reiciendis quis fuga dicta dolores quos laboriosam, minus assumenda ipsa eligendi minima, ab itaque vitae odit! Aperiam natus hic sint harum explicabo non cum perferendis minus maxime, laborum, voluptatem mollitia inventore aspernatur dolores quae, obcaecati ex porro consequatur fugiat. Rerum in rem praesentium maiores expedita similique sint dolor illum quibusdam ipsa saepe perspiciatis quasi asperiores et eum aliquid velit quis consequuntur temporibus, architecto porro?\r\n\r\n', 1, 0, '2024-02-07 06:07:22', '2024-02-07 06:33:02'),
+(2, 4, 'uploads/product/ne2_1707305646.jpg', 'Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit.', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla delectus voluptate quod, vero ullam quisquam id aliquid, ea quis atque ipsa et soluta! Ducimus repellat vero voluptatem eum, voluptates nihil. Beatae iure cupiditate quidem numquam aliquam reiciendis quis fuga dicta dolores quos laboriosam, minus assumenda ipsa eligendi minima, ab itaque vitae odit! Aperiam natus hic sint harum explicabo non cum perferendis minus maxime, laborum, voluptatem mollitia inventore aspernatur dolores quae, obcaecati ex porro consequatur fugiat. Rerum in rem praesentium maiores expedita similique sint dolor illum quibusdam ipsa saepe perspiciatis quasi asperiores et eum aliquid velit quis consequuntur temporibus, architecto porro?\r\n', 1, 0, '2024-02-07 06:34:06', '2024-02-07 06:34:06'),
+(3, 5, 'uploads/product/about_1707311006.jpg', 'Quasi aut laboris fa', 'Repudiandae sed labo', 1, 0, '2024-02-07 06:34:46', '2024-02-07 08:03:26'),
+(4, 5, 'uploads/product/about_1707311467.jpg', 'Quos quis est porro ', 'Exercitation volupta', 1, 0, '2024-02-07 08:11:07', '2024-02-07 08:11:07');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `password_resets`
 --
 
@@ -288,7 +345,7 @@ CREATE TABLE `role_assign` (
 --
 
 INSERT INTO `role_assign` (`id`, `assignee`, `role_id`, `is_active`, `is_deleted`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:18:{i:0;s:7:\"roles_1\";i:1;s:7:\"roles_2\";i:2;s:7:\"roles_3\";i:3;s:7:\"roles_4\";i:4;s:12:\"contact-us_2\";i:5;s:20:\"presidential-score_1\";i:6;s:20:\"presidential-score_2\";i:7;s:20:\"presidential-score_3\";i:8;s:20:\"presidential-score_4\";i:9;s:11:\"volunteer_2\";i:10;s:12:\"watch-list_1\";i:11;s:12:\"watch-list_2\";i:12;s:12:\"watch-list_3\";i:13;s:12:\"watch-list_4\";i:14;s:10:\"senators_1\";i:15;s:10:\"senators_2\";i:16;s:10:\"senators_3\";i:17;s:10:\"senators_4\";}', 1, 1, 0, '2021-12-03 19:54:55', '2024-01-30 06:48:01', NULL),
+(1, 'a:22:{i:0;s:7:\"roles_1\";i:1;s:7:\"roles_2\";i:2;s:7:\"roles_3\";i:3;s:7:\"roles_4\";i:4;s:12:\"contact-us_2\";i:5;s:20:\"presidential-score_1\";i:6;s:20:\"presidential-score_2\";i:7;s:20:\"presidential-score_3\";i:8;s:20:\"presidential-score_4\";i:9;s:11:\"volunteer_2\";i:10;s:12:\"watch-list_1\";i:11;s:12:\"watch-list_2\";i:12;s:12:\"watch-list_3\";i:13;s:12:\"watch-list_4\";i:14;s:10:\"senators_1\";i:15;s:10:\"senators_2\";i:16;s:10:\"senators_3\";i:17;s:10:\"senators_4\";i:18;s:10:\"category_1\";i:19;s:10:\"category_2\";i:20;s:10:\"category_3\";i:21;s:10:\"category_4\";}', 1, 1, 0, '2021-12-03 19:54:55', '2024-02-07 05:30:14', NULL),
 (9, 'N;', 5, 1, 0, '2023-01-23 13:34:01', '2023-01-23 13:34:01', NULL),
 (10, 'a:4:{i:0;s:7:\"blogs_1\";i:1;s:7:\"blogs_2\";i:2;s:7:\"blogs_3\";i:3;s:7:\"blogs_4\";}', 5, 1, 0, '2023-01-23 13:34:59', '2023-01-23 13:34:59', NULL),
 (11, 'a:4:{i:0;s:9:\"contact_1\";i:1;s:9:\"contact_2\";i:2;s:9:\"contact_3\";i:3;s:9:\"contact_4\";}', 7, 1, 0, '2023-01-24 05:59:20', '2023-01-24 05:59:20', NULL);
@@ -528,6 +585,12 @@ ALTER TABLE `attributes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `config`
 --
 ALTER TABLE `config`
@@ -556,6 +619,12 @@ ALTER TABLE `logo`
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -621,7 +690,13 @@ ALTER TABLE `web_cms`
 -- AUTO_INCREMENT for table `attributes`
 --
 ALTER TABLE `attributes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `config`
@@ -652,6 +727,12 @@ ALTER TABLE `logo`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `presidential_score`

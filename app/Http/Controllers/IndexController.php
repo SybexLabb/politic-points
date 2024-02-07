@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\category;
 use App\Models\contact_us;
+use App\Models\news;
 use App\Models\presidential_score;
 use App\Models\recent_legislation;
 use App\Models\senators;
@@ -49,11 +51,15 @@ class IndexController extends Controller
     }
     public function news()
     {
-        return view('web.pages.news')->with('title', 'News');
+        $category = category::where('is_active', 1)->where('is_deleted', 0)->get()->take(5);
+        // dd($category);
+        $news = news::where('is_active', 1)->where('is_deleted', 0)->get();
+        $categoryget = news::select('category_id')->distinct()->get();
+
+        return view('web.pages.news', compact('category', 'news', 'categoryget'))->with('title', 'News');
     }
     public function political_detail($id)
     {
-
 
         $senator = senators::find($id);
         $recent_legislation = $senator->recentlegislations;
