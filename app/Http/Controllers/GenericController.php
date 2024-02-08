@@ -350,15 +350,7 @@ class GenericController extends Controller
                         <div id="assignrole"></div>
                         <div class="col-md-12 col-sm-6 col-12" id="rank-label">
                             <div class="form-group start-date">
-                                <label for="start-date" class="">title:</label>
-                                <div class="d-flex">
-                                    <input id="title" placeholder="title" name="title" class="form-control" type="text" autocomplete="off" required/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-sm-6 col-12" id="rank-label">
-                            <div class="form-group start-date">
-                                <label for="start-date" class="">name:</label>
+                                <label for="start-date" class="">Name:</label>
                                 <div class="d-flex">
                                     <input id="name" placeholder="name" name="name" class="form-control" type="text" autocomplete="off" required/>
                                 </div>
@@ -991,7 +983,7 @@ class GenericController extends Controller
                                           <td><img style="height:80px;" src="' . $i . '"></td>
                                           <td>' . date("M d,Y", strtotime($val->created_at)) . '</td>
                                           <td>
-                                             <button type="button" class="btn btn-primary editor-form" data-edit_id= "' . $val->id . '" data-title= "' . $val->title .'" data-name= "' . $val->name . '" data-description= "' . $val->description . '" data-date= "' . $val->date . '" data-image= "' . $i . '">Edit</button>
+                                             <button type="button" class="btn btn-primary editor-form" data-edit_id= "' . $val->id . '" data-name= "' . $val->name .'" data-name= "' . $val->name . '" data-description= "' . $val->description . '" data-date= "' . $val->date . '" data-image= "' . $i . '">Edit</button>
                                              <button type="button" class="btn btn-danger delete-record" data-model="' . $data . '" data-id= "' . $val->id . '" >Delete</button>
                                           </td>
                                        </tr>';

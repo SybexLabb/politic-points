@@ -30,7 +30,7 @@
             </div>
 
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 getnews">
                     @foreach ($news as $key => $item)
                     <div class="card blog-detail">
                         <div class="img">
@@ -129,9 +129,9 @@
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="side-bar-main">
                         <div class="search-bar">
-                            <form action="">
+                            <form id="search-form">
                                 <div class="input-field">
-                                    <input class="form-control search-control" type="search"
+                                    <input class="form-control search-control" id="query" name="query" type="search"
                                         placeholder="what are you interested in ?">
                                     <button class="btn search-btn" type="search">
                                         <i class="fal fa-search"></i>
@@ -224,17 +224,18 @@
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <div class="pagination-main">
                         <ul class="page-ul">
-                            <li class="page-li"><a href="javascript:" class="page-a">
+                            {{-- <li class="page-li"><a href="javascript:" class="page-a">
                                     <i class="fa-solid fa-chevron-left"></i>
-                                </a></li>
-                            <li class="page-li"><a href="javascript:" class="page-a">1</a></li>
+                                </a></li> --}}
+                                {!! $news->links('pagination::bootstrap-4') !!}
+                            {{-- <li class="page-li"><a href="javascript:" class="page-a">1</a></li>
                             <li class="page-li"><a href="javascript:" class="page-a">2</a></li>
                             <li class="page-li"><a href="javascript:" class="page-a">3</a></li>
                             <li class="page-li"><a href="javascript:" class="page-a">4</a></li>
                             <li class="page-li"><a href="javascript:" class="page-a">5</a></li>
                             <li class="page-li"><a href="javascript:" class="page-a">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                </a></li>
+                                </a></li> --}}
                         </ul>
                     </div>
                 </div>
@@ -244,4 +245,25 @@
 </main>
 
 
+@endsection
+@section('script')
+    <script>
+        $(document).ready(function() {
+            $('#search-form').on('submit', function(e) {
+                e.preventDefault();
+                var query = $('#query').val();
+                $.ajax({
+                    type: 'get',
+                    dataType: 'json',
+                    url: "{{ route('search.news') }}",
+                    data: {
+                        query: query
+                    },
+                    success: function(response) {
+                        $(".getnews").html(response.body);
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

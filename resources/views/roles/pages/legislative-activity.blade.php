@@ -102,7 +102,7 @@
                                                 <td>{{ ++$key }}</td>
                                                 <td>{{ $value->title }}</td>
                                                 <td>{{ $value->description }}</td>
-                                                <td>{{ $value->created_at }}</td>
+                                                <td>{{ date("M d,Y", strtotime($value->created_at)) }}</td>
                                                 <td>
                                                     <button class="btn btn-primary edit-button"
                                                         data-record_id="{{ $value->id }}"

@@ -24,7 +24,7 @@
                 <div class="col-12 mt-3">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Banners</h4>
+                            <h4 class="card-title">Politics</h4>
                         </div>
                         <div class="card-content">
                             <div class="card-body">

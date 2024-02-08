@@ -37,6 +37,7 @@ Route::post('/volunteer-submit', [IndexController::class, 'volunteer_submit'])->
 Route::get('/watch-list', [IndexController::class, 'watch_list'])->name('watch-list');
 Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
 Route::post('/contact-submit', [IndexController::class, 'contact_submit'])->name('contact-submit');
+Route::get('search', [IndexController::class, 'search'])->name('search.news');
 
 
 

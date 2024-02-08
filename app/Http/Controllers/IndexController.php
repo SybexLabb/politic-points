@@ -53,7 +53,7 @@ class IndexController extends Controller
     {
         $category = category::where('is_active', 1)->where('is_deleted', 0)->get()->take(5);
         // dd($category);
-        $news = news::where('is_active', 1)->where('is_deleted', 0)->get();
+        $news = news::where('is_active', 1)->where('is_deleted', 0)->paginate(3);
         $categoryget = news::select('category_id')->distinct()->get();
 
         return view('web.pages.news', compact('category', 'news', 'categoryget'))->with('title', 'News');
@@ -123,6 +123,15 @@ class IndexController extends Controller
 
 
         return redirect()->back()->with('message', 'Contact Inquiry Submitted');
+    }
+
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $searchnews = news::where('title', 'LIKE', '%' . $query . '%')->get();
+        $body = view('web.ajax.search', compact('searchnews'))->render();
+        return response()->json(["body" => $body]);
     }
 
 
