@@ -6,6 +6,9 @@
 <script src="https://cdn.jsdelivr.net/npm/dayjs"></script>
 <script src="{{ asset('web/js/jquery.counterup.min.js') }}"></script>
 <script src="{{ asset('web/js/owl.carousel.min.js') }}"></script>
+<script>
+    var baseUrl = "{{ url('/') }}";
+</script>
 <script src="{{ asset('web/js/chart.js') }}"></script>
 <script src="{{ asset('web/js/custom.js') }}"></script>
 
