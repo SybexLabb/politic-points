@@ -115,6 +115,10 @@ header .header-mid .navbar .navbar-nav .nav-item .nav-link:hover {
   color: var(--sec-clr);
 }
 
+header .header-mid .navbar .navbar-nav .nav-item .active {
+  color: var(--sec-clr);
+}
+
 header .header-mid .navbar .navbar-nav .nav-item .nav-link.anim-active.hvr-bounce-to-top:before {
   transform: scaleY(1);
   background: #eedfcc;

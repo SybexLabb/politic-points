@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\category;
 use App\Models\contact_us;
+use App\Models\faqs;
 use App\Models\news;
 use App\Models\presidential_score;
 use App\Models\recent_legislation;
 use App\Models\senators;
 use App\Models\volunteer;
 use App\Models\watch_list;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -43,20 +45,29 @@ class IndexController extends Controller
     }
     public function index()
     {
-        $senators = senators::where('is_active', 1)->where('is_deleted', 0)->take(4)->orderBy('id', 'DESC')->get();
+        $faqs = faqs::active()->get();
+        $senators = senators::active()->take(4)->orderBy('id', 'DESC')->get();
         $watch_list = watch_list::where('is_active', 1)->where('is_deleted', 0)->get();
-
         $presidential_score = presidential_score::where('is_active', 1)->where('is_deleted', 0)->get();
-        return view('web.pages.index', compact('presidential_score', 'watch_list', 'senators'))->with('title', 'Index');
+        $news = news::active()->latest('id')->take(3)->get();
+
+        return view('web.pages.index', compact('presidential_score', 'watch_list', 'senators', 'faqs', 'news'))->with('title', 'Index');
     }
     public function news()
     {
-        $category = category::where('is_active', 1)->where('is_deleted', 0)->get()->take(5);
-        // dd($category);
-        $news = news::where('is_active', 1)->where('is_deleted', 0)->paginate(3);
-        $categoryget = news::select('category_id')->distinct()->get();
+        $category = category::active()->whereHas('getNews')->get()->take(5);
+        $news = news::active()->paginate(3);
+        $popular_news = news::active()->latest('id')->take(3)->get();
 
-        return view('web.pages.news', compact('category', 'news', 'categoryget'))->with('title', 'News');
+        return view('web.pages.news', compact('category', 'news', 'popular_news'))->with('title', 'News');
+    }
+    public function category_news($id)
+    {
+        $category = category::active()->whereHas('getNews')->get()->take(5);
+        $news = news::where('category_id', $id)->active()->paginate(3);
+        $popular_news = news::active()->latest('id')->take(3)->get();
+
+        return view('web.pages.news', compact('category', 'news', 'popular_news'))->with('title', 'News');
     }
     public function political_detail($id)
     {
@@ -74,7 +85,8 @@ class IndexController extends Controller
     }
     public function politics()
     {
-        return view('web.pages.politics')->with('title', 'Politics');
+        $faqs = faqs::active()->get();
+        return view('web.pages.politics', compact('faqs'))->with('title', 'Politics');
     }
     public function presidential_score_detail()
     {
@@ -112,17 +124,18 @@ class IndexController extends Controller
     }
     public function contact_submit(Request $request)
     {
-        $politicalpoint = new contact_us();
-        $politicalpoint->first_name = $request->first_name;
-        $politicalpoint->last_name = $request->last_name;
-        $politicalpoint->phone = $request->phone;
-        $politicalpoint->email = $request->email;
-        $politicalpoint->message = $request->massage;
-        $politicalpoint->save();
-
-
-
-        return redirect()->back()->with('message', 'Contact Inquiry Submitted');
+        try {
+            $politicalpoint = new contact_us();
+            $politicalpoint->first_name = $request->first_name;
+            $politicalpoint->last_name = $request->last_name;
+            $politicalpoint->phone = $request->phone;
+            $politicalpoint->email = $request->email;
+            $politicalpoint->message = $request->massage;
+            $politicalpoint->save();
+            return redirect()->back()->with('message', 'Contact Inquiry Submitted');
+        } catch (Exception $error) {
+            return redirect()->back()->with('error', $error->getMessage());
+        }
     }
 
 

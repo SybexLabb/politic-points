@@ -397,13 +397,11 @@ class GenericController extends Controller
                     </div>
                 </form>';
             return $body;
-        }elseif ($slug == 'senators') {
+        } elseif ($slug == 'senators') {
             $route_url = route('crud_generator', 'senators');
             $body = '<form class="" id="generic-form" enctype="multipart/form-data" method="POST" action="' . $route_url . '">
                     <input type="hidden" name="_token" value="' . csrf_token() . '">
                     <input type="hidden" name="record_id" id="record_id" value="">
-
-
                     <div class="row">
                         <div id="assignrole"></div>
                         <div class="col-md-12 col-sm-6 col-12" id="rank-label">
@@ -414,7 +412,6 @@ class GenericController extends Controller
                                 </div>
                             </div>
                         </div>
-
 
                         <div class="col-md-6 col-sm-6 col-6" id="rank-label">
                             <div class="form-group start-date">
@@ -442,7 +439,6 @@ class GenericController extends Controller
                         </div>
                         </div>
 
-
                         <div class="col-md-12 col-sm-6 col-12" id="rank-label">
                         <div class="form-group start-date">
                             <label for="start-date" class="">party:</label>
@@ -452,173 +448,171 @@ class GenericController extends Controller
                         </div>
                         </div>
 
-
-
                         <div class="col-md-12 col-sm-6 col-12" id="rank-label">
                         <div class="form-group start-date">
-                            <label for="start-date" class="">current_score:</label>
+                            <label for="start-date" class="">Current Score:</label>
                             <div class="d-flex">
-                                <input id="current_score" placeholder="current_score" name="current_score" class="form-control" type="text" autocomplete="off" required/>
+                                <input id="current_score" placeholder="Current Score" name="current_score" class="form-control" type="text" autocomplete="off" required/>
                             </div>
                        </div>
                        </div>
 
                        <div class="col-md-12 col-sm-6 col-12" id="rank-label">
                        <div class="form-group start-date">
-                           <label for="start-date" class="">weekly_range:</label>
+                           <label for="start-date" class="">Weekly Range:</label>
                            <div class="d-flex">
-                               <input id="weekly_range" placeholder="weekly_range" name="weekly_range" class="form-control" type="text" autocomplete="off" required/>
+                               <input id="weekly_range" placeholder="Weekly Range" name="weekly_range" class="form-control" type="text" autocomplete="off" required/>
                            </div>
                       </div>
                       </div>
 
-
                       <div class="col-md-12 col-sm-6 col-12" id="rank-label">
                       <div class="form-group start-date">
-                          <label for="start-date" class="">ytd_range:</label>
+                          <label for="start-date" class="">YTD Range:</label>
                           <div class="d-flex">
-                              <input id="ytd_range" placeholder="ytd_range" name="ytd_range" class="form-control" type="text" autocomplete="off" required/>
+                              <input id="ytd_range" placeholder="YTD Range" name="ytd_range" class="form-control" type="text" autocomplete="off" required/>
                           </div>
                      </div>
                      </div>
 
-
                      <div class="col-md-12 col-sm-6 col-12" id="rank-label">
                      <div class="form-group start-date">
-                         <label for="start-date" class="">1y_range:</label>
+                         <label for="start-date" class="">1Y Range:</label>
                          <div class="d-flex">
-                             <input id="1y_range" placeholder="1y_range" name="y1_range" class="form-control" type="text" autocomplete="off" required/>
+                             <input id="1y_range" placeholder="1Y Range" name="y1_range" class="form-control" type="text" autocomplete="off" required/>
                          </div>
                     </div>
                     </div>
 
-
                     <div class="col-md-12 col-sm-6 col-12" id="rank-label">
                     <div class="form-group start-date">
-                        <label for="start-date" class="">all_time_high:</label>
+                        <label for="start-date" class="">All Time High:</label>
                         <div class="d-flex">
-                            <input id="all_time_high" placeholder="all_time_high" name="all_time_high" class="form-control" type="text" autocomplete="off" required/>
+                            <input id="all_time_high" placeholder="All Time High" name="all_time_high" class="form-control" type="text" autocomplete="off" required/>
                         </div>
                    </div>
                    </div>
 
-
                    <div class="col-md-12 col-sm-6 col-12" id="rank-label">
                    <div class="form-group start-date">
-                       <label for="start-date" class="">all_time_low:</label>
+                       <label for="start-date" class="">All Time Low:</label>
                        <div class="d-flex">
-                           <input id="all_time_low" placeholder="all_time_low" name="all_time_low" class="form-control" type="text" autocomplete="off" required/>
+                           <input id="all_time_low" placeholder="All Time Low" name="all_time_low" class="form-control" type="text" autocomplete="off" required/>
                        </div>
                   </div>
                   </div>
 
-
                   <div class="col-md-12 col-sm-6 col-12" id="rank-label">
                   <div class="form-group start-date">
-                      <label for="start-date" class="">news_mentions:</label>
+                      <label for="start-date" class="">News Mentions:</label>
                       <div class="d-flex">
-                          <input id="news_mentions" placeholder="news_mentions" name="news_mentions" class="form-control" type="text" autocomplete="off" required/>
+                          <input id="news_mentions" placeholder="News Mentions" name="news_mentions" class="form-control" type="text" autocomplete="off" required/>
                       </div>
                  </div>
                  </div>
 
-
-
-
-
                  <div class="col-md-12 col-sm-6 col-12" id="rank-label">
                  <div class="form-group start-date">
-                     <label for="start-date" class="">social_posts:</label>
+                     <label for="start-date" class="">Social Posts:</label>
                      <div class="d-flex">
-                         <input id="social_posts" placeholder="social_posts" name="social_posts" class="form-control" type="text" autocomplete="off" required/>
+                         <input id="social_posts" placeholder="Social Posts" name="social_posts" class="form-control" type="text" autocomplete="off" required/>
                      </div>
                 </div>
                 </div>
 
-
+                <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                  <div class="form-group start-date">
+                        <label for="start-date" class="">Short Description:</label>
+                        <div class="d-flex">
+                            <textarea id="short_description" placeholder="Short Description" name="short_description" class="form-control" type="text" autocomplete="off" rows="3" required/></textarea>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="col-md-12 col-sm-6 col-12" id="rank-label">
                   <div class="form-group start-date">
-                      <label for="start-date" class="">description:</label>
-                      <div class="d-flex">
-                          <textarea id="description" placeholder="description" name="description" class="form-control" type="text" autocomplete="off" required/></textarea>
-                      </div>
-                 </div>
-                 </div>
-
-
-
-                 <div class="col-md-12 col-sm-6 col-12" id="rank-label">
-                  <div class="form-group start-date">
-                      <label for="start-date" class="">contact:</label>
-                      <div class="d-flex">
-                          <input id="contact" placeholder="contact" name="contact" class="form-control" type="text" autocomplete="off" required/>
-                      </div>
-                 </div>
-                 </div>
-
-
-
-                 <div class="col-md-12 col-sm-6 col-12" id="rank-label">
-                  <div class="form-group start-date">
-                      <label for="start-date" class="">email:</label>
-                      <div class="d-flex">
-                          <input id="email" placeholder="email" name="email" class="form-control" type="text" autocomplete="off" required/>
-                      </div>
-                 </div>
-                 </div>
-
-
-
-
-                 <div class="col-md-12 col-sm-6 col-12" id="rank-label">
-                  <div class="form-group start-date">
-                      <label for="start-date" class="">twitter:</label>
-                      <div class="d-flex">
-                          <input id="twitter" placeholder="twitter" name="twitter" class="form-control" type="text" autocomplete="off" required/>
-                      </div>
-                 </div>
-                 </div>
-
-
-
-                 <div class="col-md-12 col-sm-6 col-12" id="rank-label">
-                  <div class="form-group start-date">
-                      <label for="start-date" class="">facebook:</label>
-                      <div class="d-flex">
-                          <input id="facebook" placeholder="facebook" name="facebook" class="form-control" type="text" autocomplete="off" required/>
-                      </div>
-                 </div>
-                 </div>
-
-
-
-                 <div class="col-md-12 col-sm-6 col-12" id="rank-label">
-                  <div class="form-group start-date">
-                      <label for="start-date" class="">linkedin:</label>
-                      <div class="d-flex">
-                          <input id="linkedin" placeholder="linkedin" name="linkedin" class="form-control" type="text" autocomplete="off" required/>
-                      </div>
-                 </div>
-                 </div>
-
-
-
-
-
+                        <label for="start-date" class="">Description:</label>
+                        <div class="d-flex">
+                            <textarea id="description" placeholder="Description" name="description" class="form-control" type="text" autocomplete="off" rows="5" required/></textarea>
+                        </div>
                     </div>
+                </div>
 
+                <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                <div class="form-group start-date">
+                    <label for="start-date" class="">Contact:</label>
+                    <div class="d-flex">
+                        <input id="contact" placeholder="Contact" name="contact" class="form-control" type="text" autocomplete="off" required/>
+                    </div>
+                </div>
+                </div>
 
+                <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                <div class="form-group start-date">
+                    <label for="start-date" class="">Email:</label>
+                    <div class="d-flex">
+                        <input id="email" placeholder="Email" name="email" class="form-control" type="text" autocomplete="off" required/>
+                    </div>
+                </div>
+                </div>
 
+                <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                <div class="form-group start-date">
+                    <label for="start-date" class="">Twitter:</label>
+                    <div class="d-flex">
+                        <input id="twitter" placeholder="Twitter" name="twitter" class="form-control" type="text" autocomplete="off" required/>
+                    </div>
+                </div>
+                </div>
 
+                <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                <div class="form-group start-date">
+                    <label for="start-date" class="">Facebook:</label>
+                    <div class="d-flex">
+                        <input id="facebook" placeholder="Facebook" name="facebook" class="form-control" type="text" autocomplete="off" required/>
+                    </div>
+                </div>
+                </div>
 
-
-
-
-                </form>';
+                <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                <div class="form-group start-date">
+                    <label for="start-date" class="">Linkedin:</label>
+                    <div class="d-flex">
+                        <input id="linkedin" placeholder="Linkedin" name="linkedin" class="form-control" type="text" autocomplete="off" required/>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </form>';
             return $body;
-        }
-        else {
+        } elseif ($slug == 'faqs') {
+            $route_url = route('crud_generator', $slug);
+            $body = '<form class="" id="generic-form" enctype="multipart/form-data" method="POST" action="' . $route_url . '">
+                        <input type="hidden" name="_token" value="' . csrf_token() . '">
+                        <input type="hidden" name="record_id" id="record_id" value="">
+                        <div class="row">
+                            <div id="assignrole"></div>
+                            <div class="col-md-12 col-sm-6 col-12" id="rank-label">
+                                <div class="form-group start-date">
+                                    <label for="start-date" class="">Question:</label>
+                                    <div class="d-flex">
+                                        <input id="question" placeholder="Question" name="question" class="form-control" type="text" autocomplete="off" required/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-6 col-12" id="role-label">
+                                <div class="form-group end-date">
+                                    <label for="end-date" class="">Answer:</label>
+                                    <div class="d-flex">
+                                        <textarea id="answer" required name="answer" class="form-control" placeholder="Answer"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>';
+            return $body;
+        } else {
             return $body;
         }
     }
@@ -846,7 +840,7 @@ class GenericController extends Controller
                                        </tr>
                                        </thead>
                                        <tbody>';
-               }
+            }
             $script = '';
             $resp['body'] = $body;
             $resp['script'] = $script;
@@ -983,7 +977,7 @@ class GenericController extends Controller
                                           <td><img style="height:80px;" src="' . $i . '"></td>
                                           <td>' . date("M d,Y", strtotime($val->created_at)) . '</td>
                                           <td>
-                                             <button type="button" class="btn btn-primary editor-form" data-edit_id= "' . $val->id . '" data-name= "' . $val->name .'" data-name= "' . $val->name . '" data-description= "' . $val->description . '" data-date= "' . $val->date . '" data-image= "' . $i . '">Edit</button>
+                                             <button type="button" class="btn btn-primary editor-form" data-edit_id= "' . $val->id . '" data-name= "' . $val->name . '" data-name= "' . $val->name . '" data-description= "' . $val->description . '" data-date= "' . $val->date . '" data-image= "' . $i . '">Edit</button>
                                              <button type="button" class="btn btn-danger delete-record" data-model="' . $data . '" data-id= "' . $val->id . '" >Delete</button>
                                           </td>
                                        </tr>';
@@ -1034,6 +1028,7 @@ class GenericController extends Controller
                                           <th>All Time Low</th>
                                           <th>News Mentions</th>
                                           <th>Social Posts</th>
+                                          <th>Short Description</th>
                                           <th>Description</th>
                                           <th>Contact</th>
                                           <th>Email</th>
@@ -1063,6 +1058,7 @@ class GenericController extends Controller
                                           <td>' . $val->all_time_low . '</td>
                                           <td>' . $val->news_mentions . '</td>
                                           <td>' . $val->social_posts . '</td>
+                                          <td>' . $val->short_description . '</td>
                                           <td>' . $val->description . '</td>
                                           <td>' . $val->contact . '</td>
                                           <td>' . $val->email . '</td>
@@ -1072,7 +1068,7 @@ class GenericController extends Controller
 
                                           <td>' . date("M d,Y", strtotime($val->created_at)) . '</td>
                                           <td>
-                                             <button type="button" class="btn btn-primary editor-form" data-edit_id= "' . $val->id . '" data-name= "' . $val->name . '" data-city= "' . $val->city . '" data-party= "' . $val->party .'" data-current_score	= "' . $val->current_score	 .'" data-weekly_range= "' . $val->weekly_range .'" data-ytd_range= "' . $val->ytd_range .'" data-y1_range= "' . $val->y1_range .'" data-all_time_high	= "' . $val->all_time_high	 .'" data-all_time_low	= "' . $val->all_time_low	 .'" data-news_mentions= "' . $val->news_mentions .'" data-social_posts= "' . $val->social_posts . '" data-contact= "' . $val->contact . '" data-email	= "' . $val->email . '" data-twitter= "' . $val->twitter .   '" data-facebook= "' . $val->facebook . '" data-linkedin= "' . $val->linkedin .'" data-description= "' . $val->description . '" data-date= "' . $val->date . '" data-image= "' . $i . '">Edit</button>
+                                             <button type="button" class="btn btn-primary editor-form" data-edit_id= "' . $val->id . '" data-name= "' . $val->name . '" data-city= "' . $val->city . '" data-party= "' . $val->party . '" data-current_score	= "' . $val->current_score . '" data-weekly_range= "' . $val->weekly_range . '" data-ytd_range= "' . $val->ytd_range . '" data-y1_range= "' . $val->y1_range . '" data-all_time_high	= "' . $val->all_time_high . '" data-all_time_low	= "' . $val->all_time_low . '" data-news_mentions= "' . $val->news_mentions . '" data-social_posts= "' . $val->social_posts . '" data-contact= "' . $val->contact . '" data-email	= "' . $val->email . '" data-twitter= "' . $val->twitter . '" data-facebook= "' . $val->facebook . '" data-linkedin= "' . $val->linkedin . '" data-description= "' . $val->description . '" data-short_description= "' . $val->short_description . '" data-date= "' . $val->date . '" data-image= "' . $i . '">Edit</button>
                                              <a href="' . route('legislative-activity', $val->id) . '" class="btn btn-secondary">Add Legislation</a>
                                              <button type="button" class="btn btn-danger delete-record" data-model="' . $data . '" data-id= "' . $val->id . '" >Delete</button>
                                              </td>
@@ -1095,6 +1091,7 @@ class GenericController extends Controller
                                           <th>All Time Low</th>
                                           <th>News Mentions</th>
                                           <th>Social Posts</th>
+                                          <th>Short Description</th>
                                           <th>Description</th>
                                           <th>Contact</th>
                                           <th>Email</th>
@@ -1118,6 +1115,7 @@ class GenericController extends Controller
                                         $("#all_time_low").val($(this).data("all_time_low"))
                                         $("#news_mentions").val($(this).data("news_mentions"))
                                         $("#social_posts").val($(this).data("social_posts"))
+                                        $("#short_description").val($(this).data("short_description"))
                                         $("#description").val($(this).data("description"))
                                         $("#contact").val($(this).data("contact"))
                                         $("#email").val($(this).data("email"))
@@ -1130,6 +1128,60 @@ class GenericController extends Controller
                                         $("#image-add").attr("src",$(this).data("image"));
                                         $("#addevent").modal("show")
                                     })';
+            $resp['body'] = $body;
+            $resp['script'] = $script;
+            return $resp;
+        } elseif ($slug == "faqs") {
+            $data = 'App\Models\\' . $slug;
+            $loop = $data::active()->get();
+            if ($loop) {
+                $body = '<thead>
+                            <tr>
+                                <th>S. No</th>
+                                <th>Question</th>
+                                <th>Answer</th>
+                                <th>Creation Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                    <tbody>';
+                if ($loop) {
+                    foreach ($loop as $key => $val) {
+                        $body .= '<tr>
+                                          <td>' . ++$key . '</td>
+                                          <td>' . $val->question . '</td>
+                                          <td>' . $val->answer . '</td>
+                                          <td>' . date("M d,Y", strtotime($val->created_at)) . '</td>
+                                          <td>
+                                            <button type="button" class="btn btn-primary editor-form"
+                                            data-edit_id= "' . $val->id . '"
+                                            data-question= "' . $val->question . '"
+                                            data-answer= "' . $val->answer . '"
+                                            >Edit</button>
+
+                                            <button type="button" class="btn btn-danger delete-record" data-model="' . $data . '" data-id= "' . $val->id . '" >Delete</button>
+                                          </td>
+                                       </tr>';
+                    }
+                }
+                $body .= '</tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>S. No</th>
+                                            <th>Question</th>
+                                            <th>Answer</th>
+                                            <th>Creation Date</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>';
+            }
+            $script = '$("body").on("click" ,".editor-form",function(){
+                                                $("#question").val($(this).data("question"))
+                                                var answer = $(this).data("answer");
+                                                CKEDITOR.instances.answer.setData(answer);
+                                                $("#record_id").val($(this).data("edit_id"))
+                                                $("#addevent").modal("show")
+                                            })';
             $resp['body'] = $body;
             $resp['script'] = $script;
             return $resp;
@@ -1171,8 +1223,7 @@ class GenericController extends Controller
             if (isset($_POST['record_id']) && $_POST['record_id'] != '') {
                 $create = $data::where("id", $_POST['record_id'])->update($post_feilds);
                 $msg = "Record has been updated";
-            }
-            else {
+            } else {
                 $create = $data::create($post_feilds);
                 $msg = "Record has been created";
             }

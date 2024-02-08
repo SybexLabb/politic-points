@@ -27,6 +27,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 getnews">
                         @foreach ($news as $key => $item)
@@ -34,9 +35,12 @@
                                 <div class="img">
                                     <img src="{{ asset($item->image) }}" class="img-fluid thumb" alt="">
                                 </div>
+
                                 <div class="desc">
                                     <h6>{{ $item->title }}</h6>
+
                                     <p>{{ $item->description }}</p>
+
                                     <ul>
                                         <li class="usr-icn">
                                             By Admin
@@ -44,6 +48,7 @@
                                         <li class="cln-icn">
                                             {{ date('d M, Y', strtotime($item->created_at)) }}
                                         </li>
+
                                         <li class="vws-icn">
                                             100 Views
                                         </li>
@@ -66,6 +71,7 @@
                                     </div>
                                 </form>
                             </div>
+
                             <div class="category">
                                 <h5>category</h5>
                                 <ul>
@@ -77,6 +83,7 @@
                                     @endforeach
                                 </ul>
                             </div>
+
                             <div class="news">
                                 <h5>popular feeds</h5>
                                 @foreach ($popular_news as $item)
@@ -93,6 +100,7 @@
                                     </div>
                                 @endforeach
                             </div>
+
                             <div class="tags">
                                 <h5>popular Tags</h5>
                                 <ul>

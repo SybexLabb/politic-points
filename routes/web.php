@@ -25,9 +25,9 @@ Auth::routes();
 
 
 Route::get('/login', [IndexController::class, 'login'])->name('login');
-// Route::get('/', [IndexController::class, 'login'])->name('index');
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/news', [IndexController::class, 'news'])->name('news');
+Route::get('/category-news/{id}', [IndexController::class, 'category_news'])->name('category.news');
 Route::get('/political-detail/{id}', [IndexController::class, 'political_detail'])->name('political-detail');
 Route::get('/political-point', [IndexController::class, 'political_point'])->name('political-point');
 Route::get('/politics', [IndexController::class, 'politics'])->name('politics');
@@ -45,8 +45,6 @@ Route::get('search', [IndexController::class, 'search'])->name('search.news');
 
 Route::group(['middleware' => 'auth'], function()
 {
-
-
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
     Route::get('/home', [HomeController::class, 'user_profile'])->name('user_profile');
     Route::get('/profile', [HomeController::class, 'user_profile'])->name('user_profile');
@@ -91,8 +89,6 @@ Route::group(['middleware' => 'auth'], function()
 
     Route::get('/legislative-activity/{id}', [HomeController::class, 'legislative_activity'])->name('legislative-activity');
     Route::get('/news-category/{id}', [HomeController::class, 'newsCategory'])->name('news.category');
-
-
 
 });
 

@@ -2,7 +2,7 @@
         <div class="header-mid">
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
-                    <a class="navbar-brand" href="index">
+                    <a class="navbar-brand" href="{{ route('index') }}">
                         <img src="{{ $logo }}" class="logo" alt="">
                     </a>
                     <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
@@ -13,19 +13,24 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav m-auto">
                             <li class="nav-item">
-                                <a class="nav-link anim-active hvr-underline-from-left" href="{{route('index')}}">home</a>
+                                <a class="nav-link hvr-underline-from-left {{ Route::currentRouteName() == 'index' ? 'active' : '' }}"
+                                    href="{{ route('index') }}">home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hvr-underline-from-left" href="{{route('politics')}}">Politics</a>
+                                <a class="nav-link hvr-underline-from-left {{ Route::currentRouteName() == 'politics' ? 'active' : '' }}"
+                                    href="{{ route('politics') }}">Politics</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hvr-underline-from-left" href="{{route('news')}}">News</a>
+                                <a class="nav-link hvr-underline-from-left {{ Route::currentRouteName() == 'news' ? 'active' : '' }}"
+                                    href="{{ route('news') }}">News</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hvr-underline-from-left" href="{{route('watch-list')}}">Watchlist</a>
+                                <a class="nav-link hvr-underline-from-left {{ Route::currentRouteName() == 'watch-list' ? 'active' : '' }}"
+                                    href="{{ route('watch-list') }}">Watchlist</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hvr-underline-from-left" href="{{route('political-point')}}">Politics Point</a>
+                                <a class="nav-link hvr-underline-from-left {{ Route::currentRouteName() == 'political-point' ? 'active' : '' }}"
+                                    href="{{ route('political-point') }}">Politics Point</a>
                             </li>
                             <!-- <li class="nav-item dropdown-sm">
                                 <a class="nav-link dropdown-toggle-arrow hvr-underline-from-left"
@@ -78,7 +83,7 @@
                                 <div class="dropdown-menu-ct-sm collapse multi-collapse" id="drp-two">
                                     <ul class="sm-menu-ul">
                                         <li>
-                                            <a href="{{route('contact')}}">
+                                            <a href="{{ route('contact') }}">
                                                 Contact us
                                             </a>
                                         </li>
@@ -89,7 +94,7 @@
 
                         <ul class="side-ul">
                             <li class="sd-li">
-                                <a class="cart-anchor basket-icon" href="{{route('volunteer')}}">
+                                <a class="cart-anchor basket-icon" href="{{ route('volunteer') }}">
                                     Become a Volunteer
                                 </a>
                             </li>

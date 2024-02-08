@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2024 at 10:09 AM
+-- Generation Time: Feb 08, 2024 at 02:50 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -56,7 +56,8 @@ INSERT INTO `attributes` (`id`, `project_id`, `attribute`, `name`, `role`, `colo
 (29, NULL, 'volunteer', 'volunteer', 'volunteer', '#0e1317\r\n', 'volunteer', 'icon-wallet', 1, 0, '2024-01-26 12:58:44', '2024-01-26 12:58:44', NULL),
 (30, NULL, 'watch-list', 'watch-list', 'watch-list', '#0e1317\r\n', 'watch-list', 'icon-wallet', 1, 0, '2024-01-26 13:57:48', '2024-01-26 13:57:48', NULL),
 (31, 0, 'senators', 'senators', 'senators', '#0e1317', 'senators', 'icon-wallet', 1, 0, '2024-01-30 10:56:51', '2024-01-30 10:56:51', NULL),
-(32, NULL, 'category', 'category', 'category', '#0e1317', 'category', 'icon-wallet', 1, 0, '2024-02-07 10:28:23', '2024-02-07 10:28:23', NULL);
+(32, NULL, 'category', 'category', 'category', '#0e1317', 'category', 'icon-wallet', 1, 0, '2024-02-07 10:28:23', '2024-02-08 10:03:08', NULL),
+(33, NULL, 'faqs', 'faqs', 'faqs', '#0e1317', 'faqs', 'icon-wallet', 1, 0, '2024-02-08 11:41:34', '2024-02-08 11:41:34', NULL);
 
 -- --------------------------------------------------------
 
@@ -78,8 +79,6 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
-(1, 'Test', 0, 1, '2024-02-07 05:36:21', '2024-02-07 05:36:33'),
-(2, 'test0000', 0, 1, '2024-02-07 05:36:47', '2024-02-07 05:37:26'),
 (3, 'Political Theory', 1, 0, '2024-02-07 05:37:39', '2024-02-07 05:37:39'),
 (4, 'Sovereignty', 1, 0, '2024-02-07 05:59:02', '2024-02-07 05:59:02'),
 (5, 'Consent Of The Governed', 1, 0, '2024-02-07 05:59:13', '2024-02-07 05:59:13'),
@@ -142,7 +141,8 @@ INSERT INTO `contact_us` (`id`, `first_name`, `last_name`, `phone`, `email`, `me
 (1, 'Merrill', 'Mullins', '11', 'kokegida@mailinator.com', 'Aut et et aut dolore', 1, 0, '2024-01-26 06:50:12', '2024-01-26 06:50:12'),
 (2, 'Finn', 'Raymond', '81', 'raxywusi@mailinator.com', 'Cupidatat ex at qui', 1, 0, '2024-01-26 06:52:05', '2024-01-26 06:52:05'),
 (3, 'Burton', 'Stein', '4', 'nakesin@mailinator.com', 'Amet expedita perfe', 1, 0, '2024-01-31 10:53:29', '2024-01-31 10:53:29'),
-(4, 'Idona', 'Mullins', '42', 'xuqalumoba@mailinator.com', 'Doloremque iure est', 1, 0, '2024-02-06 07:36:43', '2024-02-06 07:36:43');
+(4, 'Idona', 'Mullins', '42', 'xuqalumoba@mailinator.com', 'Doloremque iure est', 1, 0, '2024-02-06 07:36:43', '2024-02-06 07:36:43'),
+(5, 'a', 'a', '123123123', '1@a.com', 'asdsad', 1, 0, '2024-02-08 06:30:35', '2024-02-08 06:30:35');
 
 -- --------------------------------------------------------
 
@@ -159,6 +159,31 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faqs`
+--
+
+CREATE TABLE `faqs` (
+  `id` int(11) NOT NULL,
+  `question` mediumtext NOT NULL,
+  `answer` mediumtext NOT NULL,
+  `is_active` tinyint(4) NOT NULL DEFAULT 1,
+  `is_deleted` tinyint(4) NOT NULL DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `faqs`
+--
+
+INSERT INTO `faqs` (`id`, `question`, `answer`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
+(1, 'Politik Point Market Caps: Assessing Government Competence', '<ul>\r\n	<li>The hypothetical Politik Point market caps calculated below aim to quantify the overall competence and performance of each branch of government and each party within them.</li>\r\n</ul>\r\n', 1, 0, '2024-02-08 06:57:35', '2024-02-08 07:27:10'),
+(2, 'Executive Branch Market Cap', '<ul>\r\n	<li>The total executive branch Politik Point market cap stands at 8212. This reflects the combined scores of the President, Vice President, and Cabinet secretaries. The President&#39;s score fluctuations likely have an outsized impact on the overall executive score.</li>\r\n</ul>\r\n', 1, 0, '2024-02-08 07:08:19', '2024-02-08 07:08:19'),
+(3, 'Legislative Branch Market Cap', '<ul>\r\n	<li>The total Politik Point market cap for the legislative branch is 9102. This measures the aggregated scores for all Senators and Representatives. The breakdown by party is.</li>\r\n	<li>Senate Democrats: 2144</li>\r\n	<li>Senate Republicans: 1915 House Democrats: 2595</li>\r\n	<li>House Republicans: 2448</li>\r\n	<li>Comparing the hypothetical totals, the legislative branch currently has a higher market cap than the executive branch. The Democratic Party also leads Republicans in both chambers.</li>\r\n	<li>Tracking the market caps periodically provides a 30,000 foot view of perceived government competence. As leaders change, we can monitor resulting shifts in the quantitative data.</li>\r\n</ul>\r\n', 1, 0, '2024-02-08 07:25:33', '2024-02-08 08:24:10');
 
 -- --------------------------------------------------------
 
@@ -236,9 +261,9 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `category_id`, `image`, `title`, `description`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
-(1, 3, 'uploads/product/ne1_1707305582.jpg', 'Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit.', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla delectus voluptate quod, vero ullam quisquam id aliquid, ea quis atque ipsa et soluta! Ducimus repellat vero voluptatem eum, voluptates nihil. Beatae iure cupiditate quidem numquam aliquam reiciendis quis fuga dicta dolores quos laboriosam, minus assumenda ipsa eligendi minima, ab itaque vitae odit! Aperiam natus hic sint harum explicabo non cum perferendis minus maxime, laborum, voluptatem mollitia inventore aspernatur dolores quae, obcaecati ex porro consequatur fugiat. Rerum in rem praesentium maiores expedita similique sint dolor illum quibusdam ipsa saepe perspiciatis quasi asperiores et eum aliquid velit quis consequuntur temporibus, architecto porro?\r\n\r\n', 1, 0, '2024-02-07 06:07:22', '2024-02-07 06:33:02'),
-(2, 4, 'uploads/product/ne2_1707305646.jpg', 'Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit.', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla delectus voluptate quod, vero ullam quisquam id aliquid, ea quis atque ipsa et soluta! Ducimus repellat vero voluptatem eum, voluptates nihil. Beatae iure cupiditate quidem numquam aliquam reiciendis quis fuga dicta dolores quos laboriosam, minus assumenda ipsa eligendi minima, ab itaque vitae odit! Aperiam natus hic sint harum explicabo non cum perferendis minus maxime, laborum, voluptatem mollitia inventore aspernatur dolores quae, obcaecati ex porro consequatur fugiat. Rerum in rem praesentium maiores expedita similique sint dolor illum quibusdam ipsa saepe perspiciatis quasi asperiores et eum aliquid velit quis consequuntur temporibus, architecto porro?\r\n', 1, 0, '2024-02-07 06:34:06', '2024-02-07 06:34:06'),
-(3, 5, 'uploads/product/about_1707311006.jpg', 'Quasi aut laboris fa', 'Repudiandae sed labo', 1, 0, '2024-02-07 06:34:46', '2024-02-07 08:03:26'),
+(1, 3, 'uploads/product/ne1_1707305582.jpg', 'Lorem Ipsum Dolor', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla delectus voluptate quod, vero ullam quisquam id aliquid, ea quis atque ipsa et soluta! Ducimus repellat vero voluptatem eum, voluptates nihil. Beatae iure cupiditate quidem numquam aliquam reiciendis quis fuga dicta dolores quos laboriosam, minus assumenda ipsa eligendi minima, ab itaque vitae odit! Aperiam natus hic sint harum explicabo non cum perferendis minus maxime, laborum, voluptatem mollitia inventore aspernatur dolores quae, obcaecati ex porro consequatur fugiat. Rerum in rem praesentium maiores expedita similique sint dolor illum quibusdam ipsa saepe perspiciatis quasi asperiores et eum aliquid velit quis consequuntur temporibus, architecto porro?\r\n\r\n', 1, 0, '2024-02-07 06:07:22', '2024-02-08 13:14:54'),
+(2, 4, 'uploads/product/ne2_1707305646.jpg', 'Lorem Ipsum Dolor', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla delectus voluptate quod, vero ullam quisquam id aliquid, ea quis atque ipsa et soluta! Ducimus repellat vero voluptatem eum, voluptates nihil. Beatae iure cupiditate quidem numquam aliquam reiciendis quis fuga dicta dolores quos laboriosam, minus assumenda ipsa eligendi minima, ab itaque vitae odit! Aperiam natus hic sint harum explicabo non cum perferendis minus maxime, laborum, voluptatem mollitia inventore aspernatur dolores quae, obcaecati ex porro consequatur fugiat. Rerum in rem praesentium maiores expedita similique sint dolor illum quibusdam ipsa saepe perspiciatis quasi asperiores et eum aliquid velit quis consequuntur temporibus, architecto porro?\r\n', 1, 0, '2024-02-07 06:34:06', '2024-02-08 13:14:58'),
+(3, 5, 'uploads/product/ne1_1707305582_1707390927.jpg', 'Quasi aut laboris fa', 'Repudiandae sed labo', 1, 0, '2024-02-07 06:34:46', '2024-02-08 06:15:27'),
 (4, 5, 'uploads/product/about_1707311467.jpg', 'Quos quis est porro ', 'Exercitation volupta', 1, 0, '2024-02-07 08:11:07', '2024-02-07 08:11:07');
 
 -- --------------------------------------------------------
@@ -345,7 +370,7 @@ CREATE TABLE `role_assign` (
 --
 
 INSERT INTO `role_assign` (`id`, `assignee`, `role_id`, `is_active`, `is_deleted`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'a:22:{i:0;s:7:\"roles_1\";i:1;s:7:\"roles_2\";i:2;s:7:\"roles_3\";i:3;s:7:\"roles_4\";i:4;s:12:\"contact-us_2\";i:5;s:20:\"presidential-score_1\";i:6;s:20:\"presidential-score_2\";i:7;s:20:\"presidential-score_3\";i:8;s:20:\"presidential-score_4\";i:9;s:11:\"volunteer_2\";i:10;s:12:\"watch-list_1\";i:11;s:12:\"watch-list_2\";i:12;s:12:\"watch-list_3\";i:13;s:12:\"watch-list_4\";i:14;s:10:\"senators_1\";i:15;s:10:\"senators_2\";i:16;s:10:\"senators_3\";i:17;s:10:\"senators_4\";i:18;s:10:\"category_1\";i:19;s:10:\"category_2\";i:20;s:10:\"category_3\";i:21;s:10:\"category_4\";}', 1, 1, 0, '2021-12-03 19:54:55', '2024-02-07 05:30:14', NULL),
+(1, 'a:26:{i:0;s:7:\"roles_1\";i:1;s:7:\"roles_2\";i:2;s:7:\"roles_3\";i:3;s:7:\"roles_4\";i:4;s:12:\"contact-us_2\";i:5;s:20:\"presidential-score_1\";i:6;s:20:\"presidential-score_2\";i:7;s:20:\"presidential-score_3\";i:8;s:20:\"presidential-score_4\";i:9;s:11:\"volunteer_2\";i:10;s:12:\"watch-list_1\";i:11;s:12:\"watch-list_2\";i:12;s:12:\"watch-list_3\";i:13;s:12:\"watch-list_4\";i:14;s:10:\"senators_1\";i:15;s:10:\"senators_2\";i:16;s:10:\"senators_3\";i:17;s:10:\"senators_4\";i:18;s:10:\"category_1\";i:19;s:10:\"category_2\";i:20;s:10:\"category_3\";i:21;s:10:\"category_4\";i:22;s:6:\"faqs_1\";i:23;s:6:\"faqs_2\";i:24;s:6:\"faqs_3\";i:25;s:6:\"faqs_4\";}', 1, 1, 0, '2021-12-03 19:54:55', '2024-02-08 06:46:31', NULL),
 (9, 'N;', 5, 1, 0, '2023-01-23 13:34:01', '2023-01-23 13:34:01', NULL),
 (10, 'a:4:{i:0;s:7:\"blogs_1\";i:1;s:7:\"blogs_2\";i:2;s:7:\"blogs_3\";i:3;s:7:\"blogs_4\";}', 5, 1, 0, '2023-01-23 13:34:59', '2023-01-23 13:34:59', NULL),
 (11, 'a:4:{i:0;s:9:\"contact_1\";i:1;s:9:\"contact_2\";i:2;s:9:\"contact_3\";i:3;s:9:\"contact_4\";}', 7, 1, 0, '2023-01-24 05:59:20', '2023-01-24 05:59:20', NULL);
@@ -370,6 +395,7 @@ CREATE TABLE `senators` (
   `all_time_low` varchar(512) NOT NULL,
   `news_mentions` varchar(512) NOT NULL,
   `social_posts` varchar(512) NOT NULL,
+  `short_description` mediumtext NOT NULL,
   `description` longtext NOT NULL,
   `contact` varchar(512) NOT NULL,
   `email` varchar(512) NOT NULL,
@@ -386,13 +412,13 @@ CREATE TABLE `senators` (
 -- Dumping data for table `senators`
 --
 
-INSERT INTO `senators` (`id`, `name`, `city`, `party`, `image`, `current_score`, `weekly_range`, `ytd_range`, `y1_range`, `all_time_high`, `all_time_low`, `news_mentions`, `social_posts`, `description`, `contact`, `email`, `twitter`, `facebook`, `linkedin`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
-(1, 'John Doe', 'Senator From Montana', 'Democratic Party', 'uploads/product/politic-detail_1706615580.webp', '728', '720-735', '715-740', '690-780', '810', '630', 'High', 'Medium', 'John Doe has served the people of Montana in the U.S. Senate since 1990. A dedicated public servant, Doe has a long history of working on bipartisan legislation, with a strong focus on conservation and agriculture. Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.', '+123-456-7890', 'abc@gmail.com', 'https://twitter.com/', 'https://facebook.com/', 'https://linkedin.com', 1, 0, '2024-01-30 06:53:00', '2024-01-30 07:51:49'),
-(2, 'Kevin McCarthy', 'Senator From Montana', 'Democratic Party', 'uploads/product/sen1_1706616401.webp', '728', ' 720-735', '715-740', '690-780', '810', '630', 'High', 'Medium', 'John Doe has served the people of Montana in the U.S. Senate since 1990. A dedicated public servant, Doe has a long history of working on bipartisan legislation, with a strong focus on conservation and agriculture. Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.', '+123-456-7890', 'abc@gmail.com', 'https://twitter.com', 'https://facebook.com ', 'https://linkendin.com', 1, 0, '2024-01-30 07:06:41', '2024-01-31 13:33:52'),
-(3, 'Jim Jordan', 'Senator From Montana', 'Democratic Party', 'uploads/product/sen2_1706616512.jpg', '728', ' 720-735', '715-740', ' 690-780', ' 810', '630', 'high', 'medium', 'John Doe has served the people of Montana in the U.S. Senate since 1990. A dedicated public servant, Doe has a long history of working on bipartisan legislation, with a strong focus on conservation and agriculture. Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.', '12313213', 'abc@gmail.com', 'https://twitter.com', 'https://facebook.com', 'https://linkedin.com', 1, 0, '2024-01-30 07:08:32', '2024-01-30 12:52:39'),
-(4, 'Bob Menendez', 'Senator From Montana', 'Democratic Party', 'uploads/product/sen3_1706616617.jpg', '728', ' 720-735', '715-740', '690-780', '810', '630', 'high', 'medium', 'John Doe has served the people of Montana in the U.S. Senate since 1990. A dedicated public servant, Doe has a long history of working on bipartisan legislation, with a strong focus on conservation and agriculture. Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.', '123123132', 'abc@gmail.com', 'https://twitter.com', 'https://facebook.com', 'https://linkedin.com', 1, 0, '2024-01-30 07:10:17', '2024-01-30 12:52:51'),
-(5, 'Jamaal Bowman', 'Senator From Montana', 'Democratic Party', 'uploads/product/sen4_1706616708.jpeg', '728', '720-735', '715-740', '690-780', '810', '630', 'high', 'medium', 'John Doe has served the people of Montana in the U.S. Senate since 1990. A dedicated public servant, Doe has a long history of working on bipartisan legislation, with a strong focus on conservation and agriculture. Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.', '123123132', 'abc@gmail.com', 'https://twitter.com', 'https://facebook.com', 'https://linkedin.com', 1, 0, '2024-01-30 07:11:48', '2024-01-30 12:53:03'),
-(6, 'John Kennedy', 'Senator From Montana', 'Democratic Party', 'uploads/product/sen6_1706699688.jpg', '728', ' 720-735', ' 715-740', ' 690-780', '810', '630', 'high', 'medium', 'John Doe has served the people of Montana in the U.S. Senate since 1990. A dedicated public servant, Doe has a long history of working on bipartisan legislation, with a strong focus on conservation and agriculture. Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.\r\n\r\n', '123456', 'abc@gmail.com', 'https://twitter.com', 'https://facebook.com', 'https://linkedin.com', 1, 0, '2024-01-31 06:14:48', '2024-01-31 06:14:48');
+INSERT INTO `senators` (`id`, `name`, `city`, `party`, `image`, `current_score`, `weekly_range`, `ytd_range`, `y1_range`, `all_time_high`, `all_time_low`, `news_mentions`, `social_posts`, `short_description`, `description`, `contact`, `email`, `twitter`, `facebook`, `linkedin`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
+(1, 'John Doe', 'Senator From Montana', 'Democratic Party', 'uploads/product/politic-detail_1706615580.webp', '728', '720-735', '715-740', '690-780', '810', '630', 'High', 'Medium', 'Bipartisanship: -20 points (bypassing compromise for power deal)', 'John Doe has served the people of Montana in the U.S. Senate since 1990. A dedicated public servant, Doe has a long history of working on bipartisan legislation, with a strong focus on conservation and agriculture. Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.', '+123-456-7890', 'abc@gmail.com', 'https://twitter.com/', 'https://facebook.com/', 'https://linkedin.com', 1, 0, '2024-01-30 06:53:00', '2024-02-08 08:04:59'),
+(2, 'Kevin McCarthy', 'Senator From Montana', 'Democratic Party', 'uploads/product/sen1_1706616401.webp', '728', ' 720-735', '715-740', '690-780', '810', '630', 'High', 'Medium', 'Bipartisanship: -20 points (bypassing compromise for power deal)', 'John Doe has served the people of Montana in the U.S. Senate since 1990. A dedicated public servant, Doe has a long history of working on bipartisan legislation, with a strong focus on conservation and agriculture. Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.', '+123-456-7890', 'abc@gmail.com', 'https://twitter.com', 'https://facebook.com ', 'https://linkendin.com', 1, 0, '2024-01-30 07:06:41', '2024-02-08 13:05:14'),
+(3, 'Jim Jordan', 'Senator From Montana', 'Democratic Party', 'uploads/product/sen2_1706616512.jpg', '728', ' 720-735', '715-740', ' 690-780', ' 810', '630', 'high', 'medium', 'Bipartisanship: -20 points (bypassing compromise for power deal)', 'John Doe has served the people of Montana in the U.S. Senate since 1990. A dedicated public servant, Doe has a long history of working on bipartisan legislation, with a strong focus on conservation and agriculture. Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.', '12313213', 'abc@gmail.com', 'https://twitter.com', 'https://facebook.com', 'https://linkedin.com', 1, 0, '2024-01-30 07:08:32', '2024-02-08 13:05:16'),
+(4, 'Bob Menendez', 'Senator From Montana', 'Democratic Party', 'uploads/product/sen3_1706616617.jpg', '728', ' 720-735', '715-740', '690-780', '810', '630', 'high', 'medium', 'Bipartisanship: -20 points (bypassing compromise for power deal)', 'John Doe has served the people of Montana in the U.S. Senate since 1990. A dedicated public servant, Doe has a long history of working on bipartisan legislation, with a strong focus on conservation and agriculture. Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.', '123123132', 'abc@gmail.com', 'https://twitter.com', 'https://facebook.com', 'https://linkedin.com', 1, 0, '2024-01-30 07:10:17', '2024-02-08 13:05:18'),
+(5, 'Jamaal Bowman', 'Senator From Montana', 'Democratic Party', 'uploads/product/sen4_1706616708.jpeg', '728', '720-735', '715-740', '690-780', '810', '630', 'high', 'medium', 'Bipartisanship: -20 points (bypassing compromise for power deal)', 'John Doe has served the people of Montana in the U.S. Senate since 1990. A dedicated public servant, Doe has a long history of working on bipartisan legislation, with a strong focus on conservation and agriculture. Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.', '123123132', 'abc@gmail.com', 'https://twitter.com', 'https://facebook.com', 'https://linkedin.com', 1, 0, '2024-01-30 07:11:48', '2024-02-08 13:05:20'),
+(6, 'John Kennedy', 'Senator From Montana', 'Democratic Party', 'uploads/product/sen6_1706699688.jpg', '728', ' 720-735', ' 715-740', ' 690-780', '810', '630', 'high', 'medium', 'Bipartisanship: -20 points (bypassing compromise for power deal)', 'John Doe has served the people of Montana in the U.S. Senate since 1990. A dedicated public servant, Doe has a long history of working on bipartisan legislation, with a strong focus on conservation and agriculture. Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.Prior to his Senate service, he was the Mayor of Missoula and has been a champion for rural healthcare and community development.\r\n\r\n', '123456', 'abc@gmail.com', 'https://twitter.com', 'https://facebook.com', 'https://linkedin.com', 1, 0, '2024-01-31 06:14:48', '2024-02-08 13:05:21');
 
 -- --------------------------------------------------------
 
@@ -610,6 +636,12 @@ ALTER TABLE `failed_jobs`
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
+-- Indexes for table `faqs`
+--
+ALTER TABLE `faqs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `logo`
 --
 ALTER TABLE `logo`
@@ -690,7 +722,7 @@ ALTER TABLE `web_cms`
 -- AUTO_INCREMENT for table `attributes`
 --
 ALTER TABLE `attributes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -708,13 +740,19 @@ ALTER TABLE `config`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `faqs`
+--
+ALTER TABLE `faqs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `logo`

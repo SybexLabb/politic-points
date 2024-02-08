@@ -11,6 +11,10 @@ class news extends Model
     protected $table = 'news';
     protected $guarded = [];
 
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', 1)->where('is_deleted', 0);
+    }
     public function category()
     {
         return $this->belongsTo(category::class, 'category_id');

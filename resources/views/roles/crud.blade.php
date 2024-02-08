@@ -117,8 +117,6 @@
                 @endforeach
                 </div>
             @endif
-
-
             @if(Helper::can_view($slug))
                 @if($eloquent != '' && $table != null)
                     <div class="row">
@@ -177,8 +175,12 @@
     {!! $table['script'] !!}
 </script>
 @endif
-<script type="text/javascript">
+<script>
+    var slug = '{{ $slug }}'
 
+    if(slug == 'faqs'){
+        CKEDITOR.replace('answer');
+    }
    $("#add-generic").click(function(f){
         var has_error = 0
         // $("#generic-form").find("select,textarea,input")
@@ -235,6 +237,9 @@
         $("#generic-form").find("select,textarea,input").each(function(i,e){
             $(e).attr("disabled",false);
         })
+        if(slug == 'faqs'){
+            CKEDITOR.instances.answer.setData('');
+        }
         $("#image").attr("required",true);
         $("#image").css("display","")
         $('#image').prop('required', true);

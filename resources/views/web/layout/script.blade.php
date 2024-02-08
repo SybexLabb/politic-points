@@ -4,7 +4,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="https://cdn.jsdelivr.net/npm/dayjs"></script>
-<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script> -->
 <script src="{{ asset('web/js/jquery.counterup.min.js') }}"></script>
 <script src="{{ asset('web/js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('web/js/chart.js') }}"></script>
