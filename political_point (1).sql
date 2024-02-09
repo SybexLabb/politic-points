@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2024 at 02:50 PM
+-- Generation Time: Feb 09, 2024 at 12:07 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -546,15 +546,15 @@ CREATE TABLE `web_cms` (
 --
 
 INSERT INTO `web_cms` (`id`, `name`, `slug`, `value`, `tag`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
-(1, 'Home Banner', 'home_banner_image', 'uploads/product/home image_1706525786.jpg', 'banners', 1, 0, '2024-01-29 10:46:04', '2024-01-29 05:56:26'),
+(1, 'Home Banner Image', 'home_banner_image', 'uploads/product/home image_1706525786.jpg', 'banners', 1, 0, '2024-01-29 10:46:04', '2024-02-09 11:06:48'),
 (2, 'Title', 'home_banner_title', 'CORE SCORING SYSTEM', 'banners', 1, 0, '2024-01-29 10:57:37', '2024-01-29 06:31:00'),
 (3, 'Heading', 'home_banner_heading', 'Understanding Politics, One Point At A Time', 'banners', 1, 0, '2024-01-29 10:57:37', '2024-01-29 06:31:00'),
 (4, 'Description', 'home_banner_description', 'The President\'s Politic Points total has remained steady at 65 this week, despite the recent approval of a significant infrastructure spending package. Our analysis indicates that while the bill garnered bipartisan support, there were apprehensions regarding its potential impact on inflation and the deficit. The President has accrued points for his economic initiatives thus far this year, but it will be crucial to uphold party unity in the run-up to the midterms to maintain his current score.', 'banners', 1, 0, '2024-01-29 10:57:37', '2024-01-29 06:31:00'),
-(5, 'Poltics Banner', 'poltics_banner_image', 'uploads/product/politic-bg_1706527039.jpg', 'banner', 1, 0, '2024-01-29 11:09:15', '2024-01-29 06:17:19'),
-(6, 'News Banner', 'news_banner', 'uploads/product/news-bg_1706527253.jpg', 'banner', 1, 0, '2024-01-29 11:20:05', '2024-01-29 06:20:53'),
-(7, 'Watchlist Banner', 'watchlist_banner', 'uploads/product/news-bg_1706527434.jpg', 'banner', 1, 0, '2024-01-29 11:22:17', '2024-01-29 06:23:54'),
-(9, 'Poltics Points', 'poltics_points_banner', 'uploads/product/news-bg_1706527729.jpg', 'banner', 1, 0, '2024-01-29 11:28:14', '2024-01-29 14:13:26'),
-(10, 'Contact Us', 'contact_us_banner', 'uploads/product/cta-bg2_1706527860.jpg', 'banner', 1, 0, '2024-01-29 11:30:07', '2024-01-29 14:13:59'),
+(5, 'Poltics Banner Image', 'poltics_banner_image', 'uploads/product/politic-bg_1706527039.jpg', 'banner', 1, 0, '2024-01-29 11:09:15', '2024-02-09 11:06:43'),
+(6, 'News Banner Image', 'news_banner', 'uploads/product/news-bg_1706527253.jpg', 'banner', 1, 0, '2024-01-29 11:20:05', '2024-02-09 11:06:36'),
+(7, 'Watchlist Banner Image', 'watchlist_banner', 'uploads/product/news-bg_1706527434.jpg', 'banner', 1, 0, '2024-01-29 11:22:17', '2024-02-09 11:06:30'),
+(9, 'Poltics Points Banner Image', 'poltics_points_banner', 'uploads/product/news-bg_1706527729.jpg', 'banner', 1, 0, '2024-01-29 11:28:14', '2024-02-09 11:06:25'),
+(10, 'Contact Us Banner Image', 'contact_us_banner', 'uploads/product/cta-bg2_1706527860.jpg', 'banner', 1, 0, '2024-01-29 11:30:07', '2024-02-09 11:05:51'),
 (11, 'title 1', 'home_section1_title', 'ABOUT POLITICS POINT', 'home', 1, 0, '2024-01-29 12:34:54', '2024-02-06 06:52:49'),
 (12, 'heading 1', 'home_section1_heading', 'About Us', 'home', 1, 0, '2024-01-29 12:34:54', '2024-02-06 06:52:49'),
 (13, 'description 1', 'home_section1_description', 'Politik Points is a platform that operates independently and without bias. Our goal is to enhance political transparency and accountability through the use of objective data-driven analysis. We aim to provide voters with fair and fact-based scoring, offering valuable insights to complement their decision-making process. We aim to promote engaged citizenship by equipping voters with the necessary resources to make well-informed choices.\r\n\r\nThe Politik Points scoring system synthesizes a politician\'s record into an easy-to-understand score reflecting key categories like policy expertise, ethics, bipartisanship, and leadership skills. This quantitative assessment is designed to help voters quickly compare politicians\' competence and performance.\r\n\r\nOur team comprises political scientists, data analysts, journalists, and civic technologists dedicated to upholding impartiality and rigor. We encourage public scrutiny of our methodology and results to enhance our commitment to impartiality continually.', 'home', 1, 0, '2024-01-29 12:36:02', '2024-02-06 06:52:49'),
@@ -598,7 +598,12 @@ INSERT INTO `web_cms` (`id`, `name`, `slug`, `value`, `tag`, `is_active`, `is_de
 (51, 'title 1', 'presedential_section1_title', 'President Biden - Economic Outlook And Politik Points', 'presedential score', 1, 0, '2024-01-31 14:23:37', '2024-01-31 09:43:21'),
 (52, 'heading 1', 'presedential_section1_heading', 'CURRENT POLITIK POINT SCORE: 681/1000', 'presedential score', 1, 0, '2024-01-31 14:23:37', '2024-01-31 09:43:36'),
 (55, 'description 1', 'presedential_section1_description', 'With GDP growth projected to slow to just 1.5% in 2024, President Biden faces economic headwinds that could further erode his standing with voters.Biden\'s Politik Points have already dropped from 712 to 681 this year amid high inflation and weak growth compared to 2021. Additional declines in GDP would likely drag his score down further.Voters increasingly favor Republicans on prosperity and the economy. Without new spending to stimulate growth, Biden has limited tools to reverse this momentum.Absent a significant upside surprise, the data indicates Biden\'s economic credentials will remain under pressure through the 2024 election. This could subtract critical points related to areas like competency, leadership and vision.While the economy is not the sole factor in Biden\'s political health, it exerts an outsized influence. A Politik Point drop into the low 600s due to worsening perceptions on the economy would seriously jeopardize Biden\'s reelection prospects.In short, if GDP meets muted expectations, Biden cannot count on the economy to buoy his score. He must make up ground through strong performances on other metrics like foreign policy and social issues. But overcoming economic discontent may be his biggest politic point challenge.', 'presedential score', 1, 0, '2024-01-31 14:27:56', '2024-01-31 14:44:43'),
-(56, 'image 1', 'presedential_section1_image', 'uploads/product/politic-detail_1706712173.webp', 'presedential score', 1, 0, '2024-01-31 14:27:56', '2024-01-31 09:42:53');
+(56, 'image 1', 'presedential_section1_image', 'uploads/product/politic-detail_1706712173.webp', 'presedential score', 1, 0, '2024-01-31 14:27:56', '2024-01-31 09:42:53'),
+(58, 'Title', 'politics_banner_title', 'Politics', 'banners', 1, 0, '2024-02-09 10:41:19', '2024-02-09 11:03:46'),
+(59, 'Title', 'news_banner_title', 'News', 'banners', 1, 0, '2024-02-09 10:41:19', '2024-02-09 11:03:56'),
+(60, 'Title', 'watchlist_banner_title', 'Watchlist\r\n', 'banners', 1, 0, '2024-02-09 10:44:43', '2024-02-09 11:03:59'),
+(61, 'Title', 'politics_point_title', 'Poltics Points\r\n', 'banners', 1, 0, '2024-02-09 10:44:43', '2024-02-09 11:04:02'),
+(62, 'Title', 'contact_us_title', 'Contact Us', 'banners', 1, 0, '2024-02-09 10:50:40', '2024-02-09 11:04:06');
 
 --
 -- Indexes for dumped tables
@@ -818,7 +823,7 @@ ALTER TABLE `watch_list`
 -- AUTO_INCREMENT for table `web_cms`
 --
 ALTER TABLE `web_cms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

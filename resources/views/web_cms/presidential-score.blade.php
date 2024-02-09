@@ -41,6 +41,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
 
                                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
                                                     <div class="input-group">
@@ -82,6 +83,9 @@
                                                 </div>
 
 
+
+
+
                                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
                                                     <label for="validationCustomUsername"></label>
                                                     <div class="input-group">
@@ -89,12 +93,10 @@
                                                             <span
                                                                 class="input-group-text">{{ getCMS('presedential_section1_description', 'name') }}</span>
                                                         </div>
-                                                        <input required class="form-control input-cms" type="text"
-                                                            name="{{ getCMS('presedential_section1_description', 'slug') }}"
-                                                            value="{{ getCMS('presedential_section1_description', 'value') }}">
+                                                        <textarea required rows="5" class="form-control input-cms" id="description"
+                                                            name="{{ getCMS('presedential_section1_description', 'slug') }}">{{ getCMS('presedential_section1_description', 'value') }}</textarea>
                                                     </div>
                                                 </div>
-
 
                                                 <hr>
                                                 {{--  submit button --}}

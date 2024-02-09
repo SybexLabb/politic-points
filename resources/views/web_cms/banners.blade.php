@@ -33,6 +33,8 @@
                                         <form action="{{ route('cms.generator') }}" method="POST"
                                             enctype="multipart/form-data">
                                             @csrf
+
+                                            {{-- home section start --}}
                                             <div class="row mb-3">
                                                 <div class="col-md-12 mb-12">
                                                     <div class="input-group">
@@ -41,7 +43,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
@@ -59,9 +60,12 @@
                                                     <label for="validationCustomUsername"></label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">{{ getCMS('home_banner_title', 'name') }}</span>
+                                                            <span
+                                                                class="input-group-text">{{ getCMS('home_banner_title', 'name') }}</span>
                                                         </div>
-                                                        <input required class="form-control input-cms" type="text" name="{{ getCMS('home_banner_title','slug') }}" value="{{ getCMS('home_banner_title', 'value') }}">
+                                                        <input required class="form-control input-cms" type="text"
+                                                            name="{{ getCMS('home_banner_title', 'slug') }}"
+                                                            value="{{ getCMS('home_banner_title', 'value') }}">
                                                     </div>
                                                 </div>
 
@@ -69,9 +73,12 @@
                                                     <label for="validationCustomUsername"></label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">{{ getCMS('home_banner_heading', 'name') }}</span>
+                                                            <span
+                                                                class="input-group-text">{{ getCMS('home_banner_heading', 'name') }}</span>
                                                         </div>
-                                                        <input required class="form-control input-cms" type="text" name="{{ getCMS('home_banner_heading','slug') }}" value="{{ getCMS('home_banner_heading', 'value') }}">
+                                                        <input required class="form-control input-cms" type="text"
+                                                            name="{{ getCMS('home_banner_heading', 'slug') }}"
+                                                            value="{{ getCMS('home_banner_heading', 'value') }}">
                                                     </div>
                                                 </div>
 
@@ -82,7 +89,25 @@
                                                             <span
                                                                 class="input-group-text">{{ getCMS('home_banner_description', 'name') }}</span>
                                                         </div>
-                                                        <textarea required class="form-control input-cms" id="description" name="{{ getCMS('home_banner_description','slug') }}">{{ getCMS('home_banner_description', 'value') }}</textarea>
+                                                        <textarea required rows="5" class="form-control input-cms" id="description"
+                                                            name="{{ getCMS('home_banner_description', 'slug') }}">{{ getCMS('home_banner_description', 'value') }}</textarea>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <hr>
+                                            {{-- home section end --}}
+
+
+
+                                            {{-- Politics section start --}}
+
+                                            <div class="row mb-3">
+                                                <div class="col-md-12 mb-12">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <h5 class="cms-heading">Politics</h5>
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -100,6 +125,37 @@
                                                 </div>
 
                                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                    <label for="validationCustomUsername"></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span
+                                                                class="input-group-text">{{ getCMS('politics_banner_title', 'name') }}</span>
+                                                        </div>
+                                                        <input required class="form-control input-cms" type="text"
+                                                            name="{{ getCMS('politics_banner_title', 'slug') }}"
+                                                            value="{{ getCMS('politics_banner_title', 'value') }}">
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <hr>
+                                            {{-- Politics section end --}}
+
+
+                                            {{-- news section start --}}
+
+
+                                            <div class="row mb-3">
+                                                <div class="col-md-12 mb-12">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <h5 class="cms-heading">News</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <label
@@ -109,6 +165,35 @@
                                                             src="{{ asset(getCMS('news_banner', 'value')) }}">
                                                         <input style="display:none;" type="file"
                                                             name="{{ getCMS('news_banner', 'slug') }}">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                    <label for="validationCustomUsername"></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span
+                                                                class="input-group-text">{{ getCMS('news_banner_title', 'name') }}</span>
+                                                        </div>
+                                                        <input required class="form-control input-cms" type="text"
+                                                            name="{{ getCMS('news_banner_title', 'slug') }}"
+                                                            value="{{ getCMS('news_banner_title', 'value') }}">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <hr>
+                                            {{-- news section end --}}
+
+
+                                            {{-- Watch List start --}}
+                                            <div class="row mb-3">
+                                                <div class="col-md-12 mb-12">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <h5 class="cms-heading">Watch List</h5>
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -125,6 +210,40 @@
                                                     </div>
                                                 </div>
 
+
+                                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                    <label for="validationCustomUsername"></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span
+                                                                class="input-group-text">{{ getCMS('watchlist_banner_title', 'name') }}</span>
+                                                        </div>
+                                                        <input required class="form-control input-cms" type="text"
+                                                            name="{{ getCMS('watchlist_banner_title', 'slug') }}"
+                                                            value="{{ getCMS('watchlist_banner_title', 'value') }}">
+                                                    </div>
+                                                </div>
+
+
+
+
+                                            </div>
+                                            <hr>
+                                            {{-- Watch List end --}}
+
+
+
+                                            {{-- Political Points start --}}
+
+                                            <div class="row mb-3">
+                                                <div class="col-md-12 mb-12">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <h5 class="cms-heading">Political Points</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
@@ -138,6 +257,39 @@
                                                     </div>
                                                 </div>
 
+
+
+                                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                    <label for="validationCustomUsername"></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span
+                                                                class="input-group-text">{{ getCMS('politics_point_title', 'name') }}</span>
+                                                        </div>
+                                                        <input required class="form-control input-cms" type="text"
+                                                            name="{{ getCMS('politics_point_title', 'slug') }}"
+                                                            value="{{ getCMS('politics_point_title', 'value') }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                            <hr>
+                                            {{-- Political Points end --}}
+
+
+                                            {{-- Contact us start --}}
+
+                                            <div class="row mb-3">
+                                                <div class="col-md-12 mb-12">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <h5 class="cms-heading">Contact us</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
@@ -151,13 +303,25 @@
                                                     </div>
                                                 </div>
 
+
+
+                                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                    <label for="validationCustomUsername"></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span
+                                                                class="input-group-text">{{ getCMS('contact_us_title', 'name') }}</span>
+                                                        </div>
+                                                        <input required class="form-control input-cms" type="text"
+                                                            name="{{ getCMS('contact_us_title', 'slug') }}"
+                                                            value="{{ getCMS('contact_us_title', 'value') }}">
+                                                    </div>
+                                                </div>
+
                                             </div>
-
-
-
-
-
                                             <hr>
+                                            {{-- Contact us end --}}
+
                                             {{--  submit button --}}
                                             <button class="btn btn-primary submit-button-cms" type="submit">Submit
                                                 form</button>
