@@ -37,7 +37,7 @@
                                             <div class="col-md-12 mb-12">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <h5 class="cms-heading">Home Section 1</h5>
+                                                        <h5 class="cms-heading">About Us Section</h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -101,7 +101,7 @@
                                             <div class="col-md-12 mb-12">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <h5 class="cms-heading">Home Section 2</h5>
+                                                        <h5 class="cms-heading">Mission and Vision Section </h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -155,7 +155,7 @@
                                             <div class="col-md-12 mb-12">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <h5 class="cms-heading">Home Section 3</h5>
+                                                        <h5 class="cms-heading">Politik Point Market Caps Section</h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -192,7 +192,7 @@
                                             <div class="col-md-12 mb-12">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <h5 class="cms-heading">Home Section 4</h5>
+                                                        <h5 class="cms-heading">Top Interst Scores Section </h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -228,7 +228,7 @@
                                             <div class="col-md-12 mb-12">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <h5 class="cms-heading">Home Section 5</h5>
+                                                        <h5 class="cms-heading">Contribute Now! Section </h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -267,7 +267,7 @@
                                             <div class="col-md-12 mb-12">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <h5 class="cms-heading">Home Section 6</h5>
+                                                        <h5 class="cms-heading">Political Point Section </h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -305,7 +305,7 @@
                                             <div class="col-md-12 mb-12">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <h5 class="cms-heading">Home Section 7</h5>
+                                                        <h5 class="cms-heading">Stay Updated Section</h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -334,93 +334,7 @@
                                                         name="{{ getCMS('home_section7_heading', 'slug') }}">{{ getCMS('home_section7_heading', 'value') }}</textarea>
                                                 </div>
                                             </div>
-                                        </div>
-                                        {{-- Home Section 7 End --}}
-                                        <hr>
-                                         {{-- Home Section 8 Start --}}
-                                         <div class="row mb-3">
-                                            <div class="col-md-12 mb-12">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <h5 class="cms-heading">Home Section 8</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
-                                                <label for="validationCustomUsername"></label>
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span
-                                                            class="input-group-text">{{ getCMS('home_section8_title', 'name') }}</span>
-                                                    </div>
-                                                    <input required class="form-control input-cms" type="text"
-                                                        name="{{ getCMS('home_section8_title', 'slug') }}"
-                                                        value="{{ getCMS('home_section8_title', 'value') }}">
-                                                </div>
-                                            </div>
 
-                                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
-                                                <label for="validationCustomUsername"></label>
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span
-                                                            class="input-group-text">{{ getCMS('home_section8_heading', 'name') }}</span>
-                                                    </div>
-                                                    <input required class="form-control input-cms" type="text"
-                                                        name="{{ getCMS('home_section8_heading', 'slug') }}"
-                                                        value="{{ getCMS('home_section8_heading', 'value') }}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{-- Home Section 8 End --}}
-                                        <hr>
-                                         {{-- Home Section 9 Start --}}
-                                         <div class="row mb-3">
-                                            <div class="col-md-12 mb-12">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <h5 class="cms-heading">Home Section 9</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
-                                                <label for="validationCustomUsername"></label>
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span
-                                                            class="input-group-text">{{ getCMS('home_section9_title', 'name') }}</span>
-                                                    </div>
-                                                    <input required class="form-control input-cms" type="text"
-                                                        name="{{ getCMS('home_section9_title', 'slug') }}"
-                                                        value="{{ getCMS('home_section9_title', 'value') }}">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
-                                                <label for="validationCustomUsername"></label>
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span
-                                                            class="input-group-text">{{ getCMS('home_section9_heading', 'name') }}</span>
-                                                    </div>
-                                                    <input required class="form-control input-cms" type="text"
-                                                        name="{{ getCMS('home_section9_heading', 'slug') }}"
-                                                        value="{{ getCMS('home_section9_heading', 'value') }}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{-- Home Section 9 End --}}
-                                        <hr>
-
-                                         {{-- Home Section 10 Start --}}
-                                         <div class="row mb-3">
-                                            <div class="col-md-12 mb-12">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <h5 class="cms-heading">Home Section 10</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
                                                 <label for="validationCustomUsername"></label>
                                                 <div class="input-group">
@@ -473,8 +387,83 @@
                                                 value="{{ getCMS('year_experience', 'value') }}">
                                             </div>
                                        </div>
+                                    </div>
+                                        {{-- Home Section 7 End --}}
+                                        <hr>
+                                         {{-- Home Section 8 Start --}}
+                                         <div class="row mb-3">
+                                            <div class="col-md-12 mb-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <h5 class="cms-heading">Watchlist Section 8</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                <label for="validationCustomUsername"></label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span
+                                                            class="input-group-text">{{ getCMS('home_section8_title', 'name') }}</span>
+                                                    </div>
+                                                    <input required class="form-control input-cms" type="text"
+                                                        name="{{ getCMS('home_section8_title', 'slug') }}"
+                                                        value="{{ getCMS('home_section8_title', 'value') }}">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                <label for="validationCustomUsername"></label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span
+                                                            class="input-group-text">{{ getCMS('home_section8_heading', 'name') }}</span>
+                                                    </div>
+                                                    <input required class="form-control input-cms" type="text"
+                                                        name="{{ getCMS('home_section8_heading', 'slug') }}"
+                                                        value="{{ getCMS('home_section8_heading', 'value') }}">
+                                                </div>
+                                            </div>
                                         </div>
-                                        {{-- Home Section 10 End --}}
+                                        {{-- Home Section 8 End --}}
+                                        <hr>
+                                         {{-- Home Section 9 Start --}}
+                                         <div class="row mb-3">
+                                            <div class="col-md-12 mb-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <h5 class="cms-heading">News Section</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                <label for="validationCustomUsername"></label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span
+                                                            class="input-group-text">{{ getCMS('home_section9_title', 'name') }}</span>
+                                                    </div>
+                                                    <input required class="form-control input-cms" type="text"
+                                                        name="{{ getCMS('home_section9_title', 'slug') }}"
+                                                        value="{{ getCMS('home_section9_title', 'value') }}">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                <label for="validationCustomUsername"></label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span
+                                                            class="input-group-text">{{ getCMS('home_section9_heading', 'name') }}</span>
+                                                    </div>
+                                                    <input required class="form-control input-cms" type="text"
+                                                        name="{{ getCMS('home_section9_heading', 'slug') }}"
+                                                        value="{{ getCMS('home_section9_heading', 'value') }}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- Home Section 9 End --}}
+                                        
                                         <hr>
 
                                         <button class="btn btn-primary" type="submit">Submit</button>

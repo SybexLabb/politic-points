@@ -31,13 +31,13 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <form action="{{ route('cms.generator') }}" method="POST"
-                                            enctype="multipart/form-data">
-                                            @csrf
-                                            <div class="row mb-3">
+                                             enctype="multipart/form-data">
+                                             @csrf
+                                             <div class="row mb-3">
                                                 <div class="col-md-12 mb-12">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <h5 class="cms-heading">Home</h5>
+                                                            <h5 class="cms-heading">About Political Point Section</h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -90,10 +90,20 @@
                                                             <span
                                                                 class="input-group-text">{{ getCMS('poltics_section1_description', 'name') }}</span>
                                                         </div>
-                                                        <textarea required class="form-control input-cms" id="description" name="{{ getCMS('poltics_section1_description','slug') }}">{{ getCMS('poltics_section1_description', 'value') }}</textarea>
+                                                        <textarea required rows="5" class="form-control input-cms" id="description" name="{{ getCMS('poltics_section1_description','slug') }}">{{ getCMS('poltics_section1_description', 'value') }}</textarea>
                                                     </div>
                                                 </div>
+                                            </div>
+                                                <hr>
 
+                                                <div class="row mb-3">
+                                                    <div class="col-md-12 mb-12">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <h5 class="cms-heading">Mission And Vision Section  </h5>
+                                                            </div>
+                                                        </div>
+                                                </div>
                                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
                                                     <label for="validationCustomUsername"></label>
                                                     <div class="input-group">
@@ -129,10 +139,19 @@
                                                             <span
                                                                 class="input-group-text">{{ getCMS('poltics_section2_description', 'name') }}</span>
                                                         </div>
-                                                        <textarea required class="form-control input-cms" id="description" name="{{ getCMS('poltics_section2_description','slug') }}">{{ getCMS('poltics_section2_description', 'value') }}</textarea>
+                                                        <textarea required rows="5" class="form-control input-cms" id="description" name="{{ getCMS('poltics_section2_description','slug') }}">{{ getCMS('poltics_section2_description', 'value') }}</textarea>
                                                     </div>
                                                 </div>
-
+                                            </div>
+                                                    <hr>
+                                                    <div class="row mb-3">
+                                                        <div class="col-md-12 mb-12">
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <h5 class="cms-heading">Politik Point Market Caps Section</h5>
+                                                                </div>
+                                                            </div>
+                                                    </div>
                                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
                                                     <label for="validationCustomUsername"></label>
                                                     <div class="input-group">
