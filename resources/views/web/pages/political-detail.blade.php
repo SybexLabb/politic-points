@@ -1,12 +1,12 @@
 @extends('web.layout.master')
 @section('content')
     <main>
-        <section class="sec-inner-banner" data-bg-image="images/news-bg.jpg">
+        <section class="sec-inner-banner" data-bg-image="{{ asset(getCMS('poltics_points_banner','value')) }}">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                         <div class="desc">
-                            <h4>Politic Point</h4>
+                            <h4>{{ getCMS('politics_point_title','value') }}</h4>
                             <ul>
                                 <li><a href="{{ route('index') }}">home</a></li>
                                 <li><a href="{{ route('political-point') }}">politics Point</a></li>

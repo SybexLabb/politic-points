@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2024 at 03:44 PM
+-- Generation Time: Feb 09, 2024 at 04:18 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -142,7 +142,8 @@ INSERT INTO `contact_us` (`id`, `first_name`, `last_name`, `phone`, `email`, `me
 (2, 'Finn', 'Raymond', '81', 'raxywusi@mailinator.com', 'Cupidatat ex at qui', 1, 0, '2024-01-26 06:52:05', '2024-01-26 06:52:05'),
 (3, 'Burton', 'Stein', '4', 'nakesin@mailinator.com', 'Amet expedita perfe', 1, 0, '2024-01-31 10:53:29', '2024-01-31 10:53:29'),
 (4, 'Idona', 'Mullins', '42', 'xuqalumoba@mailinator.com', 'Doloremque iure est', 1, 0, '2024-02-06 07:36:43', '2024-02-06 07:36:43'),
-(5, 'a', 'a', '123123123', '1@a.com', 'asdsad', 1, 0, '2024-02-08 06:30:35', '2024-02-08 06:30:35');
+(5, 'a', 'a', '123123123', '1@a.com', 'asdsad', 1, 0, '2024-02-08 06:30:35', '2024-02-08 06:30:35'),
+(6, 'Nathan', 'Baldwin', '63', 'vamu@mailinator.com', 'Mollit hic quia sequ', 1, 0, '2024-02-09 09:59:01', '2024-02-09 09:59:01');
 
 -- --------------------------------------------------------
 
@@ -547,9 +548,9 @@ CREATE TABLE `web_cms` (
 
 INSERT INTO `web_cms` (`id`, `name`, `slug`, `value`, `tag`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
 (1, 'Banner Image', 'home_banner_image', 'uploads/product/home image_1706525786.jpg', 'banners', 1, 0, '2024-01-29 10:46:04', '2024-02-09 11:28:45'),
-(2, 'Title', 'home_banner_title', 'CORE SCORING SYSTEM', 'banners', 1, 0, '2024-01-29 10:57:37', '2024-01-29 06:31:00'),
-(3, 'Heading', 'home_banner_heading', 'Understanding Politics, One Point At A Time', 'banners', 1, 0, '2024-01-29 10:57:37', '2024-01-29 06:31:00'),
-(4, 'Description', 'home_banner_description', 'The President\'s Politic Points total has remained steady at 65 this week, despite the recent approval of a significant infrastructure spending package. Our analysis indicates that while the bill garnered bipartisan support, there were apprehensions regarding its potential impact on inflation and the deficit. The President has accrued points for his economic initiatives thus far this year, but it will be crucial to uphold party unity in the run-up to the midterms to maintain his current score.', 'banners', 1, 0, '2024-01-29 10:57:37', '2024-01-29 06:31:00'),
+(2, 'Title', 'home_banner_title', 'CORE SCORING SYSTEM', 'banners', 1, 0, '2024-01-29 10:57:37', '2024-02-09 10:06:55'),
+(3, 'Heading', 'home_banner_heading', 'Understanding Politics, One Point At A Time', 'banners', 1, 0, '2024-01-29 10:57:37', '2024-02-09 10:06:55'),
+(4, 'Description', 'home_banner_description', 'The President\'s Politic Points total has remained steady at 65 this week, despite the recent approval of a significant infrastructure spending package. Our analysis indicates that while the bill garnered bipartisan support, there were apprehensions regarding its potential impact on inflation and the deficit. The President has accrued points for his economic initiatives thus far this year, but it will be crucial to uphold party unity in the run-up to the midterms to maintain his current score.', 'banners', 1, 0, '2024-01-29 10:57:37', '2024-02-09 10:06:55'),
 (5, 'Banner Image', 'poltics_banner_image', 'uploads/product/politic-bg_1706527039.jpg', 'banner', 1, 0, '2024-01-29 11:09:15', '2024-02-09 11:28:57'),
 (6, 'Banner Image', 'news_banner', 'uploads/product/news-bg_1706527253.jpg', 'banner', 1, 0, '2024-01-29 11:20:05', '2024-02-09 11:29:03'),
 (7, 'Banner Image', 'watchlist_banner', 'uploads/product/news-bg_1706527434.jpg', 'banner', 1, 0, '2024-01-29 11:22:17', '2024-02-09 11:29:09'),
@@ -595,21 +596,24 @@ INSERT INTO `web_cms` (`id`, `name`, `slug`, `value`, `tag`, `is_active`, `is_de
 (48, 'Subtitle', 'home_section9_heading', 'Latest News', 'home', 1, 0, '2024-01-29 14:35:07', '2024-02-09 14:21:16'),
 (49, 'Title', 'home_section9_title', 'NEWS', 'home', 1, 0, '2024-01-29 14:35:24', '2024-02-09 14:21:25'),
 (50, 'Subtitle', 'home_section9_heading', 'Latest News', 'home', 1, 0, '2024-01-29 14:35:24', '2024-02-09 14:21:31'),
-(51, 'Title', 'presedential_section1_title', 'President Biden - Economic Outlook And Politik Points', 'presedential score', 1, 0, '2024-01-31 14:23:37', '2024-02-09 14:39:49'),
-(52, 'Subtitle', 'presedential_section1_heading', 'CURRENT POLITIK POINT SCORE: 681/10000', 'presedential score', 1, 0, '2024-01-31 14:23:37', '2024-02-09 14:39:53'),
-(55, 'Description', 'presedential_section1_description', 'With GDP growth projected to slow to just 1.5% in 2024, President Biden faces economic headwinds that could further erode his standing with voters.Biden\'s Politik Points have already dropped from 712 to 681 this year amid high inflation and weak growth compared to 2021. Additional declines in GDP would likely drag his score down further.Voters increasingly favor Republicans on prosperity and the economy. Without new spending to stimulate growth, Biden has limited tools to reverse this momentum.Absent a significant upside surprise, the data indicates Biden\'s economic credentials will remain under pressure through the 2024 election. This could subtract critical points related to areas like competency, leadership and vision.While the economy is not the sole factor in Biden\'s political health, it exerts an outsized influence. A Politik Point drop into the low 600s due to worsening perceptions on the economy would seriously jeopardize Biden\'s reelection prospects.In short, if GDP meets muted expectations, Biden cannot count on the economy to buoy his score. He must make up ground through strong performances on other metrics like foreign policy and social issues. But overcoming economic discontent may be his biggest politic point challenge.', 'presedential score', 1, 0, '2024-01-31 14:27:56', '2024-02-09 14:40:05'),
+(51, 'Title', 'presedential_section1_title', 'President Biden - Economic Outlook And Politik Points', 'presedential score', 1, 0, '2024-01-31 14:23:37', '2024-02-09 10:16:18'),
+(52, 'Subtitle', 'presedential_section1_heading', 'CURRENT POLITIK POINT SCORE: 681/1000', 'presedential score', 1, 0, '2024-01-31 14:23:37', '2024-02-09 10:16:18'),
+(55, 'Description', 'presedential_section1_description', 'With GDP growth projected to slow to just 1.5% in 2024, President Biden faces economic headwinds that could further erode his standing with voters.\r\n\r\nBiden\'s Politik Points have already dropped from 712 to 681 this year amid high inflation and weak growth compared to 2021. Additional declines in GDP would likely drag his score down further.\r\n\r\nVoters increasingly favor Republicans on prosperity and the economy. Without new spending to stimulate growth, Biden has limited tools to reverse this momentum.\r\n\r\nAbsent a significant upside surprise, the data indicates Biden\'s economic credentials will remain under pressure through the 2024 election. This could subtract critical points related to areas like competency, leadership and vision.\r\n\r\nWhile the economy is not the sole factor in Biden\'s political health, it exerts an outsized influence. A Politik Point drop into the low 600s due to worsening perceptions on the economy would seriously jeopardize Biden\'s reelection prospects.\r\n\r\nIn short, if GDP meets muted expectations, Biden cannot count on the economy to buoy his score. He must make up ground through strong performances on other metrics like foreign policy and social issues. But overcoming economic discontent may be his biggest politic point challenge.', 'presedential score', 1, 0, '2024-01-31 14:27:56', '2024-02-09 10:16:18'),
 (56, 'Main Image', 'presedential_section1_image', 'uploads/product/politic-detail_1706712173.webp', 'presedential score', 1, 0, '2024-01-31 14:27:56', '2024-02-09 14:40:11'),
-(58, 'Title', 'politics_banner_title', 'Politics', 'banners', 1, 0, '2024-02-09 10:41:19', '2024-02-09 11:03:46'),
-(59, 'Title', 'news_banner_title', 'News', 'banners', 1, 0, '2024-02-09 10:41:19', '2024-02-09 11:03:56'),
-(60, 'Title', 'watchlist_banner_title', 'Watchlist\r\n', 'banners', 1, 0, '2024-02-09 10:44:43', '2024-02-09 11:03:59'),
-(61, 'Title', 'politics_point_title', 'Poltics Points\r\n', 'banners', 1, 0, '2024-02-09 10:44:43', '2024-02-09 11:04:02'),
-(62, 'Title', 'contact_us_title', 'Contact Us', 'banners', 1, 0, '2024-02-09 10:50:40', '2024-02-09 11:04:06'),
+(58, 'Title', 'politics_banner_title', 'Politics', 'banners', 1, 0, '2024-02-09 10:41:19', '2024-02-09 10:06:55'),
+(59, 'Title', 'news_banner_title', 'News', 'banners', 1, 0, '2024-02-09 10:41:19', '2024-02-09 10:06:55'),
+(60, 'Title', 'watchlist_banner_title', 'Watchlist', 'banners', 1, 0, '2024-02-09 10:44:43', '2024-02-09 10:06:55'),
+(61, 'Title', 'politics_point_title', 'Poltics Points', 'banners', 1, 0, '2024-02-09 10:44:43', '2024-02-09 10:06:55'),
+(62, 'Title', 'contact_us_title', 'Contact Us', 'banners', 1, 0, '2024-02-09 10:50:40', '2024-02-09 10:06:55'),
 (63, 'Active Volunteer', 'active_volunteer', '21K', 'home section', 1, 0, '2024-02-09 11:50:03', '2024-02-09 08:08:43'),
 (64, 'Area Coverage\r\n\r\n', 'area_coverage', '68+', 'home section', 1, 0, '2024-02-09 11:50:03', '2024-02-09 08:08:43'),
 (65, 'Success Campaign', 'success_campaign', '158+', 'home section', 1, 0, '2024-02-09 11:54:34', '2024-02-09 08:08:43'),
 (66, 'Year Experience', 'year_experience', '30+', 'home section', 1, 0, '2024-02-09 11:54:34', '2024-02-09 08:08:43'),
 (67, 'Key Economic Stats:', 'key_economic_stats\r\n', 'GDP Growth: 4/10\r\nInflation: 3/10\r\nConsumer Confidence: 5/10\r\n', 'presidential score', 1, 0, '2024-02-09 14:42:48', '2024-02-09 14:42:48'),
-(68, 'Key Economic Stats:', 'key_economic_stats', 'GDP Growth: 4/10 Inflation: 3/10 Consumer Confidence: 5/10', 'presidential score', 1, 0, '2024-02-09 14:43:53', '2024-02-09 14:43:53');
+(68, 'Key Economic Stats:', 'key_economic_stats', 'GDP Growth: 4/10\r\nInflation: 3/10\r\nConsumer Confidence: 5/10', 'presidential score', 1, 0, '2024-02-09 14:43:53', '2024-02-09 10:16:18'),
+(69, 'Presidential Score Banner', 'presidential_score_banner', 'uploads/product/news-bg_1707491215.jpg', 'banners', 1, 0, '2024-02-09 15:03:50', '2024-02-09 10:06:55'),
+(70, 'Banner Title', 'presidential_score_banner_title', 'Presidential Score', 'banners', 1, 0, '2024-02-09 15:03:50', '2024-02-09 10:06:55'),
+(71, 'Sub Title', 'presidential_section1_sub_title', 'Key Economic Stats:', 'presendational_score', 1, 0, '2024-02-09 15:15:42', '2024-02-09 10:16:18');
 
 --
 -- Indexes for dumped tables
@@ -751,7 +755,7 @@ ALTER TABLE `config`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -829,7 +833,7 @@ ALTER TABLE `watch_list`
 -- AUTO_INCREMENT for table `web_cms`
 --
 ALTER TABLE `web_cms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

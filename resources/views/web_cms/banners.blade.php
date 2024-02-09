@@ -320,6 +320,47 @@
 
                                             </div>
                                             <hr>
+
+
+                                            <div class="row mb-3">
+                                                <div class="col-md-12 mb-12">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <h5 class="cms-heading">Presidential Score Banner</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <label
+                                                                class="col-md-12 col-sm-12 col-form-label">{{ getCMS('presidential_score_banner', 'name') }}</label>
+                                                        </div>
+                                                        <img class="banner-image"
+                                                            src="{{ asset(getCMS('presidential_score_banner', 'value')) }}">
+                                                        <input style="display:none;" type="file"
+                                                            name="{{ getCMS('presidential_score_banner', 'slug') }}">
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                    <label for="validationCustomUsername"></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span
+                                                                class="input-group-text">{{ getCMS('presidential_score_banner_title', 'name') }}</span>
+                                                        </div>
+                                                        <input required class="form-control input-cms" type="text"
+                                                            name="{{ getCMS('presidential_score_banner_title', 'slug') }}"
+                                                            value="{{ getCMS('presidential_score_banner_title', 'value') }}">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <hr>
                                             {{-- Contact us end --}}
 
                                             {{--  submit button --}}

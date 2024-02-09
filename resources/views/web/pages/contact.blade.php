@@ -1,12 +1,12 @@
 @extends('web.layout.master')
 @section('content')
     <main>
-        <section class="sec-inner-banner" data-bg-image="web/images/cta-bg2.jpg">
+        <section class="sec-inner-banner" data-bg-image="{{ asset(getCMS('contact_us_banner','value')) }}">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                         <div class="desc">
-                            <h4>Contact Us</h4>
+                            <h4>{{ getCMS('contact_us_title','value') }}</h4>
                             <ul>
                                 <li><a href="{{ route('index') }}">home</a></li>
                                 <li>Contact Us</li>

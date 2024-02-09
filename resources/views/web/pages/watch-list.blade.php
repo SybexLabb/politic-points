@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                         <div class="desc">
-                            <h4>Watchlist</h4>
+                            <h4>{{ getCMS('watchlist_banner_title','value') }}</h4>
                             <ul>
                                 <li><a href="{{ route('index') }}">home</a></li>
                                 <li>Watchlist</li>

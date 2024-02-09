@@ -101,9 +101,21 @@
                                                         <span
                                                             class="input-group-text">{{ getCMS('key_economic_stats', 'name') }}</span>
                                                     </div>
+                                                    <textarea required rows="5" class="form-control input-cms" id="description"
+                                                        name="{{ getCMS('key_economic_stats', 'slug') }}">{{ getCMS('key_economic_stats', 'value') }}</textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                <label for="validationCustomUsername"></label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span
+                                                            class="input-group-text">{{ getCMS('presidential_section1_sub_title', 'name') }}</span>
+                                                    </div>
                                                     <input required class="form-control input-cms" type="text"
-                                                        name="{{ getCMS('key_economic_stats', 'slug') }}"
-                                                        value="{{ getCMS('key_economic_stats', 'value') }}">
+                                                        name="{{ getCMS('presidential_section1_sub_title', 'slug') }}"
+                                                        value="{{ getCMS('presidential_section1_sub_title', 'value') }}">
                                                 </div>
                                             </div>
 
