@@ -911,8 +911,8 @@ class GenericController extends Controller
                 $body = '<thead>
                                        <tr>
                                           <th>S. No</th>
-                                          <th>First_name</th>
-                                          <th>Last_name</th>
+                                          <th>First Name</th>
+                                          <th>Last Name</th>
                                           <th>Phone</th>
                                           <th>Email</th>
                                           <th>Age</th>
