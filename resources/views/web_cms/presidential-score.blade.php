@@ -43,65 +43,61 @@
                                                 </div>
                                             </div>
 
-                                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <label
-                                                                class="col-md-12 col-sm-12 col-form-label">{{ getCMS('presedential_section1_image', 'name') }}</label>
-                                                        </div>
-                                                        <img class="banner-image"
-                                                            src="{{ asset(getCMS('presedential_section1_image', 'value')) }}">
-                                                        <input style="display:none;" type="file"
-                                                            name="{{ getCMS('presedential_section1_image', 'slug') }}">
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <label
+                                                            class="col-md-12 col-sm-12 col-form-label">{{ getCMS('presedential_section1_image', 'name') }}</label>
                                                     </div>
+                                                    <img class="banner-image"
+                                                        src="{{ asset(getCMS('presedential_section1_image', 'value')) }}">
+                                                    <input style="display:none;" type="file"
+                                                        name="{{ getCMS('presedential_section1_image', 'slug') }}">
                                                 </div>
+                                            </div>
 
-                                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
-                                                    <label for="validationCustomUsername"></label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span
-                                                                class="input-group-text">{{ getCMS('presedential_section1_title', 'name') }}</span>
-                                                        </div>
-                                                        <input required class="form-control input-cms" type="text"
-                                                            name="{{ getCMS('presedential_section1_title', 'slug') }}"
-                                                            value="{{ getCMS('presedential_section1_title', 'value') }}">
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                <label for="validationCustomUsername"></label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span
+                                                            class="input-group-text">{{ getCMS('presedential_section1_title', 'name') }}</span>
                                                     </div>
+                                                    <input required class="form-control input-cms" type="text"
+                                                        name="{{ getCMS('presedential_section1_title', 'slug') }}"
+                                                        value="{{ getCMS('presedential_section1_title', 'value') }}">
                                                 </div>
+                                            </div>
 
-                                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
-                                                    <label for="validationCustomUsername"></label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span
-                                                                class="input-group-text">{{ getCMS('presedential_section1_heading', 'name') }}</span>
-                                                        </div>
-                                                        <input required class="form-control input-cms" type="text"
-                                                            name="{{ getCMS('presedential_section1_heading', 'slug') }}"
-                                                            value="{{ getCMS('presedential_section1_heading', 'value') }}">
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                <label for="validationCustomUsername"></label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span
+                                                            class="input-group-text">{{ getCMS('presedential_section1_heading', 'name') }}</span>
                                                     </div>
+                                                    <input required class="form-control input-cms" type="text"
+                                                        name="{{ getCMS('presedential_section1_heading', 'slug') }}"
+                                                        value="{{ getCMS('presedential_section1_heading', 'value') }}">
                                                 </div>
+                                            </div>
 
-
-
-
-
-                                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
-                                                    <label for="validationCustomUsername"></label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span
-                                                                class="input-group-text">{{ getCMS('presedential_section1_description', 'name') }}</span>
-                                                        </div>
-                                                        <textarea required rows="5" class="form-control input-cms" id="description"
-                                                            name="{{ getCMS('presedential_section1_description', 'slug') }}">{{ getCMS('presedential_section1_description', 'value') }}</textarea>
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-6">
+                                                <label for="validationCustomUsername"></label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span
+                                                            class="input-group-text">{{ getCMS('presedential_section1_description', 'name') }}</span>
                                                     </div>
+                                                    <textarea required rows="5" class="form-control input-cms" id="description"
+                                                        name="{{ getCMS('presedential_section1_description', 'slug') }}">{{ getCMS('presedential_section1_description', 'value') }}</textarea>
                                                 </div>
+                                            </div>
 
-                                                <hr>
-                                                {{--  submit button --}}
-                                                <button class="btn btn-primary submit-button-cms" type="submit">Submit
-                                                    form</button>
+                                            <hr>
+                                            {{--  submit button --}}
+                                            <button class="btn btn-primary submit-button-cms" type="submit">Submit
+                                                form</button>
                                         </form>
                                     </div>
                                 </div>
@@ -109,7 +105,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <!-- END: Card DATA-->
         </div>

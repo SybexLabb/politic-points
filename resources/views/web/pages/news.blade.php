@@ -93,7 +93,7 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <div class="tags">
+                            {{-- <div class="tags">
                                 <h5>popular Tags</h5>
                                 <ul>
                                     <li><a href="void:;">Absolute monarchy</a></li>
@@ -105,7 +105,7 @@
                                     <li><a href="void:;">Dictatorship</a></li>
                                     <li><a href="void:;">Despotism</a></li>
                                 </ul>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
