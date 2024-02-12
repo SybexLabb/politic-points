@@ -1,4 +1,4 @@
-fetch(baseUrl + "/web/js/data.json")
+fetch(getJsFiles())
     .then((response) => {
         if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -149,7 +149,7 @@ fetch(baseUrl + "/web/js/data.json")
     });
 
 // Fetching the JSON file using the fetch API
-fetch(baseUrl + "/web/js/data.json")
+fetch(getJsFiles())
     .then((response) => {
         if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -300,7 +300,7 @@ fetch(baseUrl + "/web/js/data.json")
     });
 
 // Fetching the JSON file using the fetch API
-fetch(baseUrl + "/web/js/data.json")
+fetch(getJsFiles())
     .then((response) => {
         if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -451,7 +451,7 @@ fetch(baseUrl + "/web/js/data.json")
     });
 
 // Fetching the JSON file using the fetch API
-fetch(baseUrl + "/web/js/data.json")
+fetch(getJsFiles())
     .then((response) => {
         if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -602,7 +602,7 @@ fetch(baseUrl + "/web/js/data.json")
     });
 
 // Fetching the JSON file using the fetch API
-fetch(baseUrl + "/web/js/data.json")
+fetch(getJsFiles())
     .then((response) => {
         if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -753,7 +753,7 @@ fetch(baseUrl + "/web/js/data.json")
     });
 
 // Fetching the JSON file using the fetch API
-fetch(baseUrl + "/web/js/data.json")
+fetch(getJsFiles())
     .then((response) => {
         if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -904,7 +904,7 @@ fetch(baseUrl + "/web/js/data.json")
     });
 
 // Fetching the JSON file using the fetch API
-fetch(baseUrl + "/web/js/data.json")
+fetch(getJsFiles())
     .then((response) => {
         if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -1055,7 +1055,7 @@ fetch(baseUrl + "/web/js/data.json")
     });
 
 // Fetching the JSON file using the fetch API
-fetch(baseUrl + "/web/js/data.json")
+fetch(getJsFiles())
     .then((response) => {
         if (!response.ok) {
             throw new Error("Network response was not ok");
