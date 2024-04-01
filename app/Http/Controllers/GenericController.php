@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\senatorssExport;
 use App\Helpers\Helper;
+use App\Imports\senatorsImport;
 use Illuminate\Http\Request;
 use App\Http\Requests\RequestAttributes;
 use Illuminate\Support\Facades\Validator;
@@ -15,6 +17,7 @@ use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
+use Maatwebsite\Excel\Facades\Excel;
 
 class GenericController extends Controller
 {
@@ -1020,6 +1023,7 @@ class GenericController extends Controller
                                           <th>City</th>
                                           <th>Party</th>
                                           <th>Image</th>
+
                                           <th>Current Score</th>
                                           <th>Weekly Range</th>
                                           <th>YTD Range</th>
@@ -1037,13 +1041,18 @@ class GenericController extends Controller
                                           <th>Linkedin</th>
                                           <th>Creation Date</th>
                                           <th>Action</th>
-
-                                       </tr>
+                                          </tr>
                                     </thead>
                                     <tbody>';
                 if ($loop) {
                     foreach ($loop as $key => $val) {
-                        $i = asset($val->image);
+                        $i= '';
+                        if($i){
+                            $i = asset($val->image);                            
+                        }
+                        else{
+                            $i = asset('uploads/product/sen3_1706616617.jpg');                            
+                        }
                         $body .= '<tr>
                                           <td>' . ++$key . '</td>
                                           <td>' . $val->name . '</td>
@@ -1250,5 +1259,18 @@ class GenericController extends Controller
             $status['status'] = 0;
             return json_encode($status);
         }
+    }
+
+
+    // public function export_senator()
+    // {
+    //     return Excel::download(new senatorssExport, 'senators.xlsx');
+    // }
+
+    public function import_senator()
+    {
+        Excel::import(new senatorsImport,request()->file('file'));
+
+        return back();
     }
 }

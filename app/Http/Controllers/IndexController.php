@@ -46,7 +46,7 @@ class IndexController extends Controller
     public function index()
     {
         $faqs = faqs::active()->get();
-        $senators = senators::active()->take(4)->orderBy('id', 'DESC')->get();
+        $senators = senators::active()->orderBy('id', 'DESC')->get();
         $watch_list = watch_list::where('is_active', 1)->where('is_deleted', 0)->get();
         $presidential_score = presidential_score::where('is_active', 1)->where('is_deleted', 0)->get();
         $news = news::active()->latest('id')->take(3)->get();

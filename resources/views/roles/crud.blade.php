@@ -94,6 +94,7 @@
                 <div class="row">
 
                 @foreach($attributes as $att)
+                {{-- @dd($attributes) --}}
                     @if($att->attribute == $slug)
                         @if($slug == "profile")
                         @else
@@ -127,7 +128,14 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-
+                                    @if ($slug == "senators")
+                                    <form action="{{ route('import_senator') }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="file" name="file" class="btn btn-primary" />
+                                        <button type="submit" class="btn btn-primary">Import CSV</button>
+                                        {{-- <a href="{{ route('export_senator') }}" class="btn btn-primary">Export CSV</a> --}}
+                                    </form>
+                                    @endif
                                     <table id="example" class="display table dataTable table-striped table-bordered">
                                         {!! $table['body'] !!}
                                     </table>

@@ -68,6 +68,8 @@ Route::group(['middleware' => 'auth'], function()
 
     Route::post('/{slug?}/create', [GenericController::class , 'crud_generator'])->name('crud_generator');
 
+    Route::post('import-senator', [GenericController::class, 'import_senator'])->name('import_senator');
+    // Route::get('export-senator', [GenericController::class, 'export_senator'])->name('export_senator');
 
     Route::get('/attributes', [GenericController::class , 'roles'])->name('roles');
     Route::get('/attribute/{slug}', [GenericController::class , 'listing'])->name('listing');
@@ -89,6 +91,7 @@ Route::group(['middleware' => 'auth'], function()
 
     Route::get('/legislative-activity/{id}', [HomeController::class, 'legislative_activity'])->name('legislative-activity');
     Route::get('/news-category/{id}', [HomeController::class, 'newsCategory'])->name('news.category');
+
 
 });
 

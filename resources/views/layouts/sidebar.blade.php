@@ -15,7 +15,7 @@
                                         {{ ucwords(str_replace('-', ' ', $side)) }}</a></li>
                             @endif
                         @endforeach
-                    @endif
+                    @endif 
 
                 </ul>
             </li>
@@ -36,7 +36,7 @@
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"><i class="icon-layers mr-1"></i> Web CMS</a>
-                    <ul>    
+                    <ul>
                         <li class="{{ Request::path() == 'banners-cms' ? 'active' : '' }}"><a
                                 href="{{ route('banners.cms') }}"><i class="icon-energy"></i> Banners CMS</a></li>
                         <li class="{{ Request::path() == 'home-cms' ? 'active' : '' }}"><a

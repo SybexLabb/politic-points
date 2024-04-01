@@ -148,7 +148,7 @@
             </div>
         </section>
 
-        <section class="sec-senators">
+        {{-- <section class="sec-senators">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
@@ -177,6 +177,62 @@
                     @endforeach
                     <div class="col-12 col-sm-6 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <a href="{{ route('political-point') }}" class="btn view-btn">view more</a>
+                    </div>
+                </div>
+            </div>
+        </section> --}}
+
+        <section class="sec-table-data">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                        <div class="head">
+                            <h4>{{-- Track Voting Data --}} {{ getCMS('home_section6_heading', 'value') }}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col"></th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">State</th>
+                                        <th scope="col">Party</th>
+                                        <th scope="col">Class</th>
+                                        <th scope="col">Office Room</th>
+                                        <th scope="col">Phone</th>
+                                        <th scope="col">Percentage Change</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($senators as $key => $value)
+                                        <tr>
+                                            <td>{{ ++$key }}</td>
+                                            <td>
+                                                @if(isset($value->image))
+                                                <img src="{{ asset($value->image) }}" alt="Picture1"></td>
+                                                @else
+                                                <img src="{{ asset('uploads/product/sen3_1706616617.jpg') }}" alt="Picture1"></td>
+                                                @endif
+                                            <td>{{ $value->name }}</td>
+                                            <td>{{ $value->state }}</td>
+                                            <td>{{ $value->party }}</td>
+                                            <td>{{ $value->class }}</td>
+                                            <td>{{ $value->office_room }}</td>
+                                            <td>{{ $value->contact }}</td>
+                                            <td>
+                                                <div id="chart{{ ++$key }}" class="chart"></div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -247,8 +303,8 @@
                                 <div class="row align-items-center justify-content-evenly">
                                     <div class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 col-xxl-2">
                                         <div class="date">
-                                            <h6>{{ date("d", strtotime($item->created_at)) }}</h6>
-                                            <span>{{ date("M Y", strtotime($item->created_at)) }}</span>
+                                            <h6>{{ date('d', strtotime($item->created_at)) }}</h6>
+                                            <span>{{ date('M Y', strtotime($item->created_at)) }}</span>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-7 col-xxl-7">

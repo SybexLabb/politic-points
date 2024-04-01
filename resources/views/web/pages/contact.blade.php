@@ -1,4 +1,4 @@
-@extends('web.layout.master')
+    @extends('web.layout.master')
 @section('content')
     <main>
         <section class="sec-inner-banner" data-bg-image="{{ asset(getCMS('contact_us_banner','value')) }}">
