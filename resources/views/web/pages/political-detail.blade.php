@@ -24,7 +24,12 @@
                     <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
                         <div class="desc">
                             <div class="img-main">
+                                @if (!empty($senator->image))
                                 <img src="{{ asset($senator->image) }}" class="img-fluid thumb" alt="">
+                                @else
+                                <img src="{{ asset('web/images/no-image.jpg') }}" class="img-fluid thumb" alt="">
+                                @endif
+
                             </div>
                             <h3>{{ $senator->name }}</h3>
                             <h4>{{ $senator->city }}</h4>

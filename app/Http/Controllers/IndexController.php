@@ -51,7 +51,7 @@ class IndexController extends Controller
         $presidential_score = presidential_score::where('is_active', 1)->where('is_deleted', 0)->get();
         $news = news::active()->latest('id')->take(3)->get();
 
-        return view('web.pages.index', compact('presidential_score', 'watch_list', 'senators', 'faqs', 'news'))->with('title', 'Index');
+        return view('web.pages.index', compact('presidential_score', 'watch_list', 'senators', 'faqs', 'news'))->with('title', 'Home');
     }
     public function news()
     {

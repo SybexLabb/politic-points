@@ -216,7 +216,7 @@
                                                 @if(isset($value->image))
                                                 <img src="{{ asset($value->image) }}" alt="Picture1"></td>
                                                 @else
-                                                <img src="{{ asset('uploads/product/sen3_1706616617.jpg') }}" alt="Picture1"></td>
+                                                <img src="{{ asset('web/images/no-image.jpg') }}" alt="Picture1"></td>
                                                 @endif
                                             <td>{{ $value->name }}</td>
                                             <td>{{ $value->state }}</td>

@@ -2143,7 +2143,7 @@ footer .footer-btm-main .btm-ul .btm-li:last-child .btm-a {
   width: 113px;
   border-radius: 6px;
   height: 72px;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 /***************************** sec-table-data close *****************************/
