@@ -1507,159 +1507,159 @@
 //         console.error("There was a problem fetching the data:", error);
 //     });
 
-// // Fetching the JSON file using the fetch API
-// fetch(getJsFiles())
-//     .then((response) => {
-//         if (!response.ok) {
-//             throw new Error("Network response was not ok");
-//         }
-//         return response.json(); // Parse the JSON from the response
-//     })
-//     .then((data) => {
-//         // Work with the fetched JSON data
-//         console.log(data); // This will log the content of your JSON file
+// Fetching the JSON file using the fetch API
+fetch(getJsFiles())
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json(); // Parse the JSON from the response
+    })
+    .then((data) => {
+        // Work with the fetched JSON data
+        console.log(data); // This will log the content of your JSON file
 
-//         // Perform operations with the data (e.g., use it in your chart)
-//         // Example: Assuming your chart creation logic
-//         const transformedData = data.map((d) => ({
-//             x: new Date(d.date),
-//             y: [d.open, d.open, d.close, d.close],
-//         }));
+        // Perform operations with the data (e.g., use it in your chart)
+        // Example: Assuming your chart creation logic
+        const transformedData = data.map((d) => ({
+            x: new Date(d.date),
+            y: [d.open, d.open, d.close, d.close],
+        }));
 
-//         // Your chart creation with the transformed data
-//         var options = {
-//             series: [
-//                 {
-//                     name: "Close Price",
-//                     data: transformedData,
-//                 },
-//             ],
-//             chart: {
-//                 stacked: false,
-//                 height: 300,
-//                 toolbar: {
-//                     show: true,
-//                 },
+        // Your chart creation with the transformed data
+        var options = {
+            series: [
+                {
+                    name: "Close Price",
+                    data: transformedData,
+                },
+            ],
+            chart: {
+                stacked: false,
+                height: 300,
+                toolbar: {
+                    show: true,
+                },
 
-//                 zoom: {
-//                     type: "x",
+                zoom: {
+                    type: "x",
 
-//                     enabled: true,
+                    enabled: true,
 
-//                     autoScaleYaxis: true,
-//                 },
-//             },
+                    autoScaleYaxis: true,
+                },
+            },
 
-//             colors: ["#e01515", "#e01515"],
+            colors: ["#e01515", "#e01515"],
 
-//             dataLabels: {
-//                 enabled: false,
-//             },
+            dataLabels: {
+                enabled: false,
+            },
 
-//             grid: {
-//                 yaxis: {
-//                     // set to false to remove horizontal lines through graph
+            grid: {
+                yaxis: {
+                    // set to false to remove horizontal lines through graph
 
-//                     lines: {
-//                         show: false,
-//                     },
-//                 },
-//             },
+                    lines: {
+                        show: false,
+                    },
+                },
+            },
 
-//             legend: {
-//                 show: true,
+            legend: {
+                show: true,
 
-//                 position: "top",
+                position: "top",
 
-//                 horizontalAlign: "left",
+                horizontalAlign: "left",
 
-//                 labels: {},
-//             },
+                labels: {},
+            },
 
-//             stroke: {
-//                 width: 3,
+            stroke: {
+                width: 3,
 
-//                 curve: "smooth",
+                curve: "smooth",
 
-//                 lineCap: "butt",
+                lineCap: "butt",
 
-//                 dashArray: [0, 3],
-//             },
+                dashArray: [0, 3],
+            },
 
-//             theme: {},
+            theme: {},
 
-//             tooltip: {
-//                 x: {
-//                     formatter: function (val) {
-//                         console.log(val);
+            tooltip: {
+                x: {
+                    formatter: function (val) {
+                        console.log(val);
 
-//                         return dayjs(val).format("MMM DD, YYYY");
-//                     },
-//                 },
+                        return dayjs(val).format("MMM DD, YYYY");
+                    },
+                },
 
-//                 shared: false,
+                shared: false,
 
-//                 marker: false,
-//             },
+                marker: false,
+            },
 
-//             xaxis: {
-//                 type: "datetime",
+            xaxis: {
+                type: "datetime",
 
-//                 tooltip: {
-//                     enabled: false,
-//                 },
+                tooltip: {
+                    enabled: false,
+                },
 
-//                 axisTicks: {
-//                     show: false,
-//                 },
-//                 tooltip: {
-//                     enabled: true,
-//                     formatter: function (val) {
-//                         return dayjs(val).format("MMM YYYY");
-//                     },
-//                 },
-//                 labels: {
-//                     show: true,
+                axisTicks: {
+                    show: false,
+                },
+                tooltip: {
+                    enabled: true,
+                    formatter: function (val) {
+                        return dayjs(val).format("MMM YYYY");
+                    },
+                },
+                labels: {
+                    show: true,
 
-//                     showDuplicates: false,
+                    showDuplicates: false,
 
-//                     formatter: function (val) {
-//                         return dayjs(val).format("MMM YYYY");
-//                     },
-//                 },
-//             },
+                    formatter: function (val) {
+                        return dayjs(val).format("MMM YYYY");
+                    },
+                },
+            },
 
-//             yaxis: [
-//                 {
-//                     seriesName: "Close Price",
+            yaxis: [
+                {
+                    seriesName: "Close Price",
 
-//                     axisBorder: {
-//                         show: true,
-//                     },
+                    axisBorder: {
+                        show: true,
+                    },
 
-//                     axisTicks: {
-//                         show: true,
-//                     },
+                    axisTicks: {
+                        show: true,
+                    },
 
-//                     labels: {
-//                         show: true,
-//                         style: {},
-//                     },
+                    labels: {
+                        show: true,
+                        style: {},
+                    },
 
-//                     opposite: false,
-//                 },
-//             ],
-//         };
+                    opposite: false,
+                },
+            ],
+        };
 
-//         var chart = new ApexCharts(
-//             document.querySelector("#chart-detail"),
-//             options
-//         );
-//         chart.render();
-//     })
-//     .catch((error) => {
-//         console.error("There was a problem fetching the data:", error);
-//     });
+        var chart = new ApexCharts(
+            document.querySelector("#chart-detail"),
+            options
+        );
+        chart.render();
+    })
+    .catch((error) => {
+        console.error("There was a problem fetching the data:", error);
+    });
 
 
 // for (var i = 0; i < 100; i++) {

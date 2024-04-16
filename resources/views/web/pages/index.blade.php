@@ -215,20 +215,20 @@
                                             <td>
                                                 @if (isset($value->image))
                                                     <img src="{{ asset($value->image) }}" alt="Picture1">
+                                                @else
+                                                    <img src="{{ asset('web/images/no-image.jpg') }}" alt="Picture1">
+                                                @endif
                                             </td>
-                                        @else
-                                            <img src="{{ asset('web/images/no-image.jpg') }}" alt="Picture1"></td>
-                                    @endif
-                                    <td>{{ $value->name }}</td>
-                                    <td>{{ $value->state }}</td>
-                                    <td>{{ $value->party }}</td>
-                                    <td>{{ $value->class }}</td>
-                                    <td>{{ $value->office_room }}</td>
-                                    <td>{{ $value->contact }}</td>
-                                    <td>
-                                        <div id="chart{{ ++$key }}" class="chart"></div>
-                                    </td>
-                                    </tr>
+                                            <td>{{ $value->name }}</td>
+                                            <td>{{ $value->state }}</td>
+                                            <td>{{ $value->party }}</td>
+                                            <td>{{ $value->class }}</td>
+                                            <td>{{ $value->office_room }}</td>
+                                            <td>{{ $value->contact }}</td>
+                                            <td>
+                                                <div id="chart" class="chart{{ $key }}"></div>
+                                            </td>
+                                        </tr>
                                     @endforeach
 
                                 </tbody>
@@ -399,26 +399,22 @@
 @section('script')
     <script>
         $(document).ready(function() {
-            for (var i = 0; i < 100; i++) {
+            @foreach ($senators as $key => $value)
+                fetchChartData({{ $key }});
+            @endforeach
+            function fetchChartData(key) {
                 fetch(getJsFiles())
                     .then((response) => {
                         if (!response.ok) {
                             throw new Error("Network response was not ok");
                         }
-                        return response.json(); // Parse the JSON from the response
+                        return response.json();
                     })
                     .then((data) => {
-                        // Work with the fetched JSON data
-                        console.log(data); // This will log the content of your JSON file
-
-                        // Perform operations with the data (e.g., use it in your chart)
-                        // Example: Assuming your chart creation logic
                         const transformedData = data.map((d) => ({
                             x: new Date(d.date),
                             y: [d.open, d.open, d.close, d.close],
                         }));
-
-                        // Your chart creation with the transformed data
                         var options = {
                             series: [{
                                 name: "Close Price",
@@ -448,8 +444,6 @@
 
                             grid: {
                                 yaxis: {
-                                    // set to false to remove horizontal lines through graph
-
                                     lines: {
                                         show: false,
                                     },
@@ -539,7 +533,7 @@
                             }, ],
                         };
 
-                        var chart = new ApexCharts(document.querySelector("#chart2"), options);
+                        var chart = new ApexCharts(document.querySelector(".chart" + key), options);
                         chart.render();
                     })
                     .catch((error) => {
